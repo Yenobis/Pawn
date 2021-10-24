@@ -4,14 +4,14 @@ using UnityEngine;
 public class MainMenuScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    void PlayGame(){
+    public void PlayGame(){
 
     }
 
-    void QuitGame()
+    public void QuitGame()
     {
 
-
+        Debug.Log("quit");
         Application.Quit();
     }
 }
