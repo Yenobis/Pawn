@@ -188,9 +188,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 83734434}
-  playerSpeed: 3
+  playerSpeed: 5
   fallVelocity: 0
-  gravity: 9.8
+  fuerzaSalto: 8
+  gravity: 30
   mainCamera: {fileID: 1096352596}
 --- !u!1001 &252560893
 PrefabInstance:

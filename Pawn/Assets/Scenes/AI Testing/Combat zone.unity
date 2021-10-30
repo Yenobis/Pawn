@@ -362,9 +362,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 285037012}
-  playerSpeed: 3.5
+  playerSpeed: 5
   fallVelocity: 1
-  gravity: 9.8
+  fuerzaSalto: 8
+  gravity: 30
   mainCamera: {fileID: 668467811}
 --- !u!65 &285037014
 BoxCollider:

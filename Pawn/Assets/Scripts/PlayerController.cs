@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public CharacterController player;
     public float playerSpeed;
     public float fallVelocity;
+    public float fuerzaSalto;
     private Vector3 movePlayer;
 
     public float gravity = 9.8f;
@@ -42,10 +43,12 @@ public class PlayerController : MonoBehaviour
 
         SetGravity();
 
+        HabilidadesJugador();
+
         player.Move(movePlayer * Time.deltaTime);
 
     }
-
+    //Función para determinar la dirección a la que mira la cámara
     void camDirection() 
     {
         camForward = mainCamera.transform.forward;
@@ -58,6 +61,7 @@ public class PlayerController : MonoBehaviour
         camRight = camRight.normalized;
 
     }
+    //Función para establecer la gravedad
     void SetGravity() 
     {
         if (player.isGrounded) 
@@ -71,6 +75,15 @@ public class PlayerController : MonoBehaviour
             movePlayer.y = fallVelocity;
         }
         
+    }
+    //Función para realizar las habilidades del jugador 
+    void HabilidadesJugador() 
+    {
+        if (player.isGrounded && Input.GetButtonDown("Jump")) {
+
+            fallVelocity = fuerzaSalto;
+            movePlayer.y = fallVelocity;
+        }
     }
    
 }
