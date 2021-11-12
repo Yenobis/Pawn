@@ -15,6 +15,7 @@ public class EnemyAI : MonoBehaviour
     public LayerMask whatIsGround, whatIsPlayer;
 
     public float health;
+    float damage = 5f;
 
     //Patroling
     public Vector3 walkPoint;
@@ -119,6 +120,12 @@ public class EnemyAI : MonoBehaviour
     private void DestroyEnemy()
     {
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        other.gameObject.GetComponent<HealthScript>().TakeDamage(damage);
+        
     }
 
     private void OnDrawGizmosSelected()
