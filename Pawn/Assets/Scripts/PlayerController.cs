@@ -18,11 +18,13 @@ public class PlayerController : MonoBehaviour
     public Camera mainCamera;
     private Vector3 camForward;
     private Vector3 camRight;
+    private float defaultSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
         player.GetComponent<CharacterController>();
+        defaultSpeed = playerSpeed;
     }
 
     // Update is called once per frame
@@ -84,6 +86,15 @@ public class PlayerController : MonoBehaviour
             fallVelocity = fuerzaSalto;
             movePlayer.y = fallVelocity;
         }
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            playerSpeed = playerSpeed * 2;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            playerSpeed = defaultSpeed;
+        }
+
     }
    
 }
