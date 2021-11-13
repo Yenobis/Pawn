@@ -15,7 +15,7 @@ public class EnemyAI : MonoBehaviour
     public LayerMask whatIsGround, whatIsPlayer;
 
     public float health;
-    float damage = 5f;
+    public float damage = 5f;
 
     //Patroling
     public Vector3 walkPoint;
