@@ -605,7 +605,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ec0a9c9241a874458bb3ed34c12bcd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidas: []
+  vidas:
+  - {fileID: 306455417}
+  - {fileID: 659114732}
+  - {fileID: 12179321}
+  - {fileID: 1668970574}
+  - {fileID: 1668970574}
   life: 0
 --- !u!1 &1096352594
 GameObject:
