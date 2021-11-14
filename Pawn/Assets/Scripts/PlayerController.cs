@@ -8,9 +8,9 @@ public class PlayerController : MonoBehaviour
     private float verticalMove;
     private Vector3 playerInput;
     public CharacterController player;
-    public float playerSpeed;
-    public float fallVelocity;
-    public float fuerzaSalto;
+    [SerializeField]private float playerSpeed;
+    [SerializeField]private float fallVelocity;
+    [SerializeField]private float fuerzaSalto;
     private Vector3 movePlayer;
 
     public float gravity = 9.8f;
