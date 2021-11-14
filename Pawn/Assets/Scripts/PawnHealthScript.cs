@@ -7,6 +7,7 @@ public class PawnHealthScript : MonoBehaviour
 {
     public GameObject[] vidas;
     public int life;
+    public int stamina;
     // Start is called before the first frame update
     void Start()
     {
