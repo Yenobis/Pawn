@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Damager : MonoBehaviour
+public class Sword : MonoBehaviour
 {
 
     float damage = 5f;
@@ -20,7 +20,10 @@ public class Damager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        other.gameObject.GetComponent<HealthScript>().TakeDamage(damage);
+        if (other.gameObject.layer == LayerMask.NameToLayer("whatIsEnemy"))
+        {
+            other.gameObject.GetComponent<HealthScript>().TakeDamage(damage);
+        }
         //Debug.Log("Hit something");
     }
 }
