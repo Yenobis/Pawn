@@ -24,7 +24,10 @@ public class animationState : MonoBehaviour
         bool keyPressed = false;
         bool isWalking = animator.GetBool("isWalking");
         bool isRunning = animator.GetBool("isRunning");
+        bool isAttacking = animator.GetBool("isAttacking");
         bool runPressed = Input.GetKey("left shift");
+        
+       // bool attackPressed = Input.GetMouseButtonDown(0);
 
         if (Input.GetKey("w")|| Input.GetKey("a")|| Input.GetKey("s")|| Input.GetKey("d")){
             keyPressed=true;
@@ -45,6 +48,13 @@ public class animationState : MonoBehaviour
             animator.SetBool("isRunning", false);
         }
 
+        /*
+        if (!isAttacking && attackPressed){
+            animator.SetBool("isAttacking", true);
+        }else if  (isAttacking && !attackPressed) {
+            animator.SetBool("isAttacking", false);
+        }
+        */
 
     }
 }
