@@ -1640,15 +1640,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2315326711588894180, guid: e5aac427b6c721a42a94228d8265db17, type: 3}
       propertyPath: m_Orbits.Array.data[0].m_Height
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2315326711588894180, guid: e5aac427b6c721a42a94228d8265db17, type: 3}
       propertyPath: m_Orbits.Array.data[0].m_Radius
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2315326711588894180, guid: e5aac427b6c721a42a94228d8265db17, type: 3}
+      propertyPath: m_Orbits.Array.data[2].m_Height
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2315326711588894180, guid: e5aac427b6c721a42a94228d8265db17, type: 3}
       propertyPath: m_Orbits.Array.data[2].m_Radius
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2315326711588894180, guid: e5aac427b6c721a42a94228d8265db17, type: 3}
+      propertyPath: m_RecenterToTargetHeading.m_WaitTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2315326711588894180, guid: e5aac427b6c721a42a94228d8265db17, type: 3}
+      propertyPath: m_RecenterToTargetHeading.m_RecenteringTime
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2315326711588894181, guid: e5aac427b6c721a42a94228d8265db17, type: 3}
       propertyPath: m_LocalPosition.y
