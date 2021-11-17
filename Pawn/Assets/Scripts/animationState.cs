@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class animationState : MonoBehaviour
 {
-
+    private int life; 
     Animator animator;
 
 
@@ -12,6 +12,7 @@ public class animationState : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        
 
     }
 
@@ -26,8 +27,8 @@ public class animationState : MonoBehaviour
         bool isRunning = animator.GetBool("isRunning");
         bool isAttacking = animator.GetBool("isAttacking");
         bool runPressed = Input.GetKey("left shift");
-        
-       // bool attackPressed = Input.GetMouseButtonDown(0);
+
+        bool attackPressed = Input.GetMouseButtonDown(0);
 
         if (Input.GetKey("w")|| Input.GetKey("a")|| Input.GetKey("s")|| Input.GetKey("d")){
             keyPressed=true;
@@ -48,13 +49,18 @@ public class animationState : MonoBehaviour
             animator.SetBool("isRunning", false);
         }
 
-        /*
+        
         if (!isAttacking && attackPressed){
             animator.SetBool("isAttacking", true);
         }else if  (isAttacking && !attackPressed) {
             animator.SetBool("isAttacking", false);
         }
-        */
+
+        life = GameObject.Find("Pawn").GetComponent<PawnHealthScript>().life;
+        if (life == 0) {
+            animator.SetTrigger("Die");
+        }
+        
 
     }
 }

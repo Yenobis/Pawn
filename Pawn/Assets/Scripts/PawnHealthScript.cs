@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class PawnHealthScript : MonoBehaviour
 {
     public GameObject[] vidas;
-    public int life;
-    public int stamina;
+    public int life = 100;
+    
     // Start is called before the first frame update
     void Start()
     {
-        life = 100;
+        
     }
 
     // Update is called once per frame
