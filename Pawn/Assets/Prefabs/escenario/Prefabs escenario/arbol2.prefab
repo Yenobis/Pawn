@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8264191757343139734}
   - component: {fileID: 6148743727796376412}
   - component: {fileID: -6580949117240438477}
+  - component: {fileID: 1491052373173481353}
   m_Layer: 0
   m_Name: arbol2
   m_TagString: Untagged
@@ -94,5 +95,19 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.324415, y: 10.0874815, z: 3.2010174}
-  m_Center: {x: -0.007708192, y: 5.0437407, z: 0.0827834}
+  m_Size: {x: 3.324415, y: 2.0407183, z: 0.882782}
+  m_Center: {x: -0.007708192, y: 1.0203592, z: -0.0034313202}
+--- !u!136 &1491052373173481353
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5644212820734734985}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.7963202
+  m_Height: 8.363174
+  m_Direction: 1
+  m_Center: {x: -0.007708192, y: 5.9058943, z: -0.051329374}

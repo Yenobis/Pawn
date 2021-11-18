@@ -1,5 +1,91 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1333682899044875020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8654979618054639207}
+  - component: {fileID: 5577637020166231546}
+  - component: {fileID: 168248843687955990}
+  - component: {fileID: 6635498283507655199}
+  - component: {fileID: 3035695199494150492}
+  m_Layer: 0
+  m_Name: colliders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8654979618054639207
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333682899044875020}
+  m_LocalRotation: {x: 0, y: 0, z: 0.11086183, w: 0.99383587}
+  m_LocalPosition: {x: -1.866, y: 0.73, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4886312028684284388}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 12.73}
+--- !u!65 &5577637020166231546
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333682899044875020}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.6366506, y: 0.33348653, z: 0.3824687}
+  m_Center: {x: 0.4649136, y: 0.016880838, z: -1.3454716}
+--- !u!65 &168248843687955990
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333682899044875020}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.6366506, y: 0.33348653, z: 0.3824687}
+  m_Center: {x: 0.4649136, y: 0.016880838, z: 1.23}
+--- !u!65 &6635498283507655199
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333682899044875020}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.970757, y: 1.092127, z: 3.1363554}
+  m_Center: {x: 2.4085946, y: 0.78930104, z: -0.020310879}
+--- !u!65 &3035695199494150492
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333682899044875020}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4396498, y: 1.4706403, z: 1.4048681}
+  m_Center: {x: 1.4903898, y: 1.0993608, z: -0.3322978}
 --- !u!1 &5225435926469127006
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +97,8 @@ GameObject:
   - component: {fileID: 4886312028684284388}
   - component: {fileID: 8385827249151999553}
   - component: {fileID: 6018082586133138059}
-  - component: {fileID: 4976517632199709102}
+  - component: {fileID: 2784651329969446994}
+  - component: {fileID: 4224308726582164857}
   m_Layer: 0
   m_Name: carro1
   m_TagString: Untagged
@@ -29,7 +116,8 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.9815588, y: -1.4221791, z: -5.7318625}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 8654979618054639207}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -84,7 +172,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4976517632199709102
+--- !u!65 &2784651329969446994
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,5 +183,18 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.490019, y: 3.0118861, z: 5.1438785}
-  m_Center: {x: -0.87661266, y: 1.5059431, z: -0.05592394}
+  m_Size: {x: 2.558248, y: 2.5339415, z: 0.94556093}
+  m_Center: {x: 0.51213205, y: 1.2669708, z: -2.155083}
+--- !u!65 &4224308726582164857
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5225435926469127006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.558248, y: 2.5339415, z: 0.94556093}
+  m_Center: {x: 0.51213205, y: 1.2669708, z: 2.07}

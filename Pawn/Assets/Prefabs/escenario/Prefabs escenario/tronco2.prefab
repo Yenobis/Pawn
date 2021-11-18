@@ -1,5 +1,63 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &617997828752799266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2659801097229022171}
+  - component: {fileID: 1686324851354688864}
+  - component: {fileID: 2914413620547967165}
+  m_Layer: 0
+  m_Name: coll
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2659801097229022171
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617997828752799266}
+  m_LocalRotation: {x: -0.17450753, y: 0, z: 0, w: 0.98465586}
+  m_LocalPosition: {x: 0, y: 0.892, z: -1.008}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1165166442808324562}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -20.1, y: 0, z: 0}
+--- !u!65 &1686324851354688864
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617997828752799266}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.14004776, y: 0.2361212, z: 2.8720727}
+  m_Center: {x: -0.34163475, y: 0.012303162, z: 0.063139215}
+--- !u!65 &2914413620547967165
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617997828752799266}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.31772804, y: 1.0872853, z: 1.0344679}
+  m_Center: {x: -0.34113598, y: 0.043637913, z: 0.960141}
 --- !u!1 &1972664702097681256
 GameObject:
   m_ObjectHideFlags: 0
@@ -29,7 +87,8 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 6.594967, y: -0.8487803, z: 8.09376}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2659801097229022171}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -97,5 +156,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.481687, y: 1.8999124, z: 2.9840755}
-  m_Center: {x: 0.2358771, y: 0.9499562, z: -0.8146846}
+  m_Size: {x: 3.481687, y: 0.9072443, z: 1.1182182}
+  m_Center: {x: 0.23587704, y: 0.45362216, z: 0.11824405}

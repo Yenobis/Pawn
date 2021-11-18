@@ -8,17 +8,11 @@ public class animationState : MonoBehaviour
     Animator animator;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
-        
 
     }
-
-    // Update is called once per frame
-
-    
 
     void Update()
     {
@@ -28,6 +22,7 @@ public class animationState : MonoBehaviour
         bool isAttacking = animator.GetBool("isAttacking");
         bool runPressed = Input.GetKey("left shift");
 
+        life = GameObject.Find("Pawn").GetComponent<PawnHealthScript>().life;
         bool attackPressed = Input.GetMouseButtonDown(0);
 
         if (Input.GetKey("w")|| Input.GetKey("a")|| Input.GetKey("s")|| Input.GetKey("d")){
@@ -52,13 +47,13 @@ public class animationState : MonoBehaviour
         
         if (!isAttacking && attackPressed){
             animator.SetBool("isAttacking", true);
-        }else if  (isAttacking && !attackPressed) {
+        } else if  (isAttacking && !attackPressed) {
             animator.SetBool("isAttacking", false);
         }
-
-        life = GameObject.Find("Pawn").GetComponent<PawnHealthScript>().life;
-        if (life == 0) {
+        
+        if (life <= 0) {
             animator.SetTrigger("Die");
+
         }
         
 
