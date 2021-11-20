@@ -26,7 +26,6 @@ public class animationScript_IA_Version : MonoBehaviour
         bool isRunning = animator.GetBool("isRunning");
         bool isAttacking = animator.GetBool("isAttacking");
         bool runPressed = Input.GetKey("left shift");
-        Debug.Log(probando);
         //life = GameObject.Find("Pawn").GetComponent<PawnHealthScript>().life;
         cur_health = GameObject.Find("Pawn").GetComponent<HealthScript>().cur_health;
         bool attackPressed = Input.GetMouseButtonDown(0);

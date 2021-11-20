@@ -119,11 +119,13 @@ public class EnemyAI : MonoBehaviour
 
     private void DestroyEnemy()
     {
-        Destroy(gameObject);
+        
+        //Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if(other.gameObject.layer == 8 || other.gameObject.layer == 9)
         other.gameObject.GetComponent<HealthScript>().TakeDamage(damage);
         
     }
