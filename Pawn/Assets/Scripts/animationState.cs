@@ -23,8 +23,8 @@ public class animationState : MonoBehaviour
         bool isAttacking = animator.GetBool("isAttacking");
         bool runPressed = Input.GetKey("left shift");
 
-        //life = GameObject.Find("Pawn").GetComponent<PawnHealthScript>().life;
-        cur_health = GameObject.Find("Pawn").GetComponent<HealthScript>().cur_health;
+        life = GameObject.Find("Pawn").GetComponent<PawnHealthScript>().life;
+        //cur_health = GameObject.Find("Pawn").GetComponent<HealthScript>().cur_health;
         bool attackPressed = Input.GetMouseButtonDown(0);
 
         if (Input.GetKey("w")|| Input.GetKey("a")|| Input.GetKey("s")|| Input.GetKey("d")){
@@ -53,15 +53,15 @@ public class animationState : MonoBehaviour
             animator.SetBool("isAttacking", false);
         }
 
-        if (cur_health <= 0)
+        /*if (cur_health <= 0)
         {
             animator.SetTrigger("Die");
+        }*/
+
+        if (life <= 0) {
+
+             animator.SetTrigger("Die");
         }
-
-            /* if (life <= 0) {
-                 animator.SetTrigger("Die");
-
-             }*/
 
 
         }
