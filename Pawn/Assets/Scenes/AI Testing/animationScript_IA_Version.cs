@@ -1,0 +1,97 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class animationScript_IA_Version : MonoBehaviour
+{
+    private int life;
+    private float cur_health;
+    public bool probando = false;
+    private int frames = 60;
+
+    Animator animator;
+
+
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+
+    }
+
+    void Update()
+    {
+        
+        bool keyPressed = false;
+        bool isWalking = animator.GetBool("isWalking");
+        bool isRunning = animator.GetBool("isRunning");
+        bool isAttacking = animator.GetBool("isAttacking");
+        bool runPressed = Input.GetKey("left shift");
+        Debug.Log(probando);
+        //life = GameObject.Find("Pawn").GetComponent<PawnHealthScript>().life;
+        cur_health = GameObject.Find("Pawn").GetComponent<HealthScript>().cur_health;
+        bool attackPressed = Input.GetMouseButtonDown(0);
+
+        if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d"))
+        {
+            keyPressed = true;
+        }
+        else
+        {
+            keyPressed = false;
+        }
+
+
+        if (!isWalking && keyPressed)
+        {
+            animator.SetBool("isWalking", true);
+        }
+        else if (isWalking && !keyPressed)
+        {
+            animator.SetBool("isWalking", false);
+        }
+
+        if (!isRunning && keyPressed && runPressed)
+        {
+            animator.SetBool("isRunning", true);
+        }
+        else if (isRunning && (!keyPressed || !runPressed))
+        {
+            animator.SetBool("isRunning", false);
+        }
+
+
+        if (!isAttacking && attackPressed)
+        {
+            animator.SetBool("isAttacking", true);
+            probando = true;
+            frames = 300;
+        }
+
+        if (!isAttacking && !attackPressed)
+        {
+            if (frames <= 0)
+            {
+                probando = false;
+            }
+            else { frames = frames - 1; }
+        }
+
+        else if (isAttacking && !attackPressed)
+        {
+            animator.SetBool("isAttacking", false);
+
+        }
+
+        if (cur_health <= 0)
+        {
+            animator.SetTrigger("Die");
+        }
+
+        /* if (life <= 0) {
+             animator.SetTrigger("Die");
+
+         }*/
+
+
+    }
+}

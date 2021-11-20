@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Sword : MonoBehaviour
 {
-
-    float damage = 5f;
+    public bool atacando = false;
+    float damage = 20f;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,15 +15,24 @@ public class Sword : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        atacando = GetComponentInParent<animationScript_IA_Version>().probando;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("whatIsEnemy"))
+        if (other.gameObject.layer == 8)
         {
-            other.gameObject.GetComponent<HealthScript>().TakeDamage(damage);
+            if (atacando)
+            {
+                //Debug.Log("DAÑOOOOOOOOOOOOOO");
+                other.gameObject.GetComponent<HealthScript>().TakeDamage(damage);
+            }
         }
-        //Debug.Log("Hit something");
+        /*
+        if (other.gameObject.layer == 7)
+        {
+            Debug.Log("DAÑO a mí mismo");
+        }
+        */
     }
 }

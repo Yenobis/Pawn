@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,7 +15,6 @@ public class PlayerController : MonoBehaviour
     private Vector3 movePlayer;
 
     public float gravity = 9.8f;
-
     public Camera mainCamera;
     private Vector3 camForward;
     private Vector3 camRight;
@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(estaAtacando);
         horizontalMove = Input.GetAxis("Horizontal");
         verticalMove = Input.GetAxis("Vertical");
 
