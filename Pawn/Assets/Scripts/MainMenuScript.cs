@@ -17,7 +17,7 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] private TMP_Text volumeTextField = null;
     [SerializeField] private Slider volumeSlider = null;
     [SerializeField] private GameObject confirmationPrompt = null;
-    [SerializeField] private float defVolumen = 1;
+    [SerializeField] private float defVolumen = 1.0f;
     public void PlayGame(){
         SceneManager.LoadScene(_escenaAcargar);
     }
@@ -55,13 +55,16 @@ public class MainMenuScript : MonoBehaviour
     public void ResetButtom(string MenuType)
     {
 
-        if(MenuType == "Audio")
+        if(MenuType == "Audio" && AudioListener.volume != defVolumen)
         {
+            Debug.Log(defVolumen);
             AudioListener.volume = defVolumen;
             volumeSlider.value = defVolumen;
             volumeTextField.text = (defVolumen*100).ToString("0.0");
             AplicarVolumen();
         }
+
+        
     }
     public IEnumerator ConfirmationBox()
     {

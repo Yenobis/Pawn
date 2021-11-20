@@ -562,7 +562,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Volver
+  m_text: <<<
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3633,7 +3633,7 @@ MonoBehaviour:
   volumeTextField: {fileID: 1290464988}
   volumeSlider: {fileID: 318250980}
   confirmationPrompt: {fileID: 1618723661}
-  defVolumen: 100
+  defVolumen: 1
 --- !u!4 &1280401476
 Transform:
   m_ObjectHideFlags: 0
@@ -3705,7 +3705,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 100.0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
