@@ -62,18 +62,8 @@ public class animationScript_IA_Version : MonoBehaviour
         if (!isAttacking && attackPressed)
         {
             animator.SetBool("isAttacking", true);
-            probando = true;
-            frames = 300;
         }
 
-        if (!isAttacking && !attackPressed)
-        {
-            if (frames <= 0)
-            {
-                probando = false;
-            }
-            else { frames = frames - 1; }
-        }
 
         else if (isAttacking && !attackPressed)
         {
@@ -90,7 +80,17 @@ public class animationScript_IA_Version : MonoBehaviour
              animator.SetTrigger("Die");
 
          }*/
+    }
 
+    void dealingDamage()
+    {
+        GetComponentInChildren<Sword>().atacando = true;
+        Debug.Log("ATACANDO");
+    }
 
+    void notDealingDamage()
+    {
+        GetComponentInChildren<Sword>().atacando = false;
+        Debug.Log("NO ATACANDO");
     }
 }

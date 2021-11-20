@@ -15,12 +15,11 @@ public class Sword : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        atacando = GetComponentInParent<animationScript_IA_Version>().probando;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 8)
+        if (other.gameObject.layer == LayerMask.NameToLayer("whatIsEnemy"))
         {
             if (atacando)
             {
@@ -28,11 +27,5 @@ public class Sword : MonoBehaviour
                 other.gameObject.GetComponent<HealthScript>().TakeDamage(damage);
             }
         }
-        /*
-        if (other.gameObject.layer == 7)
-        {
-            Debug.Log("DAÑO a mí mismo");
-        }
-        */
     }
 }

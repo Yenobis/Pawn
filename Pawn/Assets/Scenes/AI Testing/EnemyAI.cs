@@ -125,8 +125,10 @@ public class EnemyAI : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer == 8 || other.gameObject.layer == 9)
-        other.gameObject.GetComponent<HealthScript>().TakeDamage(damage);
+        if (other.gameObject.layer == LayerMask.NameToLayer("whatIsPlayer"))
+        {
+            other.gameObject.GetComponent<HealthScript>().TakeDamage(damage);
+        }
         
     }
 
