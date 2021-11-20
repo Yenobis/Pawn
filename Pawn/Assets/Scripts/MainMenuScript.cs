@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 using TMPro;
 public class MainMenuScript : MonoBehaviour
 {
+    private static readonly string FirstPlay = "FirstPlay";
+    private static readonly string BackgroundMusic = "BackgroundMusic";
+    private static readonly string SfxMusic = "SfxMusic";
+    int firstPlayInt = 0;
+
     // Start is called before the first frame update
     [Header("Niveles a Cargar")]
     private string partidaAcargar;
@@ -14,10 +19,35 @@ public class MainMenuScript : MonoBehaviour
 
     public string _escenaAcargar;
     [Header("Volumen")]
-    [SerializeField] private TMP_Text volumeTextField = null;
-    [SerializeField] private Slider volumeSlider = null;
+    [SerializeField] private TMP_Text musicTextField = null;
+    [SerializeField] private Slider musicSlider = null;
+    [SerializeField] private TMP_Text sfxTextField = null;
+    [SerializeField] private Slider sfxSlider = null;
+    [SerializeField] private AudioSource audioBackground = null;
+    [SerializeField] private AudioSource[] audioSFX = null;
     [SerializeField] private GameObject confirmationPrompt = null;
     [SerializeField] private float defVolumen = 1.0f;
+
+    void Start()
+    {
+        firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
+     if (firstPlayInt == 0 )
+      {
+            musicSlider.value = defVolumen;
+            musicTextField.text = (defVolumen * 100).ToString("0.0");
+            sfxSlider.value = defVolumen;
+            sfxTextField.text = (defVolumen * 100).ToString("0.0");
+            AplicarVolumen();
+            PlayerPrefs.SetInt(FirstPlay, -1);
+      }
+     else {
+            musicSlider.value =  PlayerPrefs.GetFloat(BackgroundMusic);
+            sfxSlider.value = PlayerPrefs.GetFloat(SfxMusic);
+            musicTextField.text = (musicSlider.value * 100).ToString("0.0");
+            sfxTextField.text = (sfxSlider.value * 100).ToString("0.0");
+            AplicarVolumen();
+        }
+    }
     public void PlayGame(){
         SceneManager.LoadScene(_escenaAcargar);
     }
@@ -42,14 +72,24 @@ public class MainMenuScript : MonoBehaviour
         }
 
     }
-    public void SetVolumen(float volume)
+    public void SetMusicVolumen(float volume)
     {
-        AudioListener.volume = volume;
-        volumeTextField.text = (volume*100).ToString("0.0");
+        audioBackground.volume = volume;
+        musicTextField.text = (volume*100).ToString("0.0");
     }
+    public void SetSfxVolumen(float volume)
+    {
+        for (int i=0; i < audioSFX.Length; ++i)
+        {
+            audioSFX[i].volume = volume;
+        }
+        sfxTextField.text = (volume * 100).ToString("0.0");
+    }
+
     public void AplicarVolumen()
     {
-        PlayerPrefs.SetFloat("volumenGlobal",AudioListener.volume);
+        PlayerPrefs.SetFloat(BackgroundMusic, musicSlider.value);
+        PlayerPrefs.SetFloat(SfxMusic, sfxSlider.value);
         StartCoroutine(ConfirmationBox());
     }
     public void ResetButtom(string MenuType)
@@ -59,8 +99,8 @@ public class MainMenuScript : MonoBehaviour
         {
             Debug.Log(defVolumen);
             AudioListener.volume = defVolumen;
-            volumeSlider.value = defVolumen;
-            volumeTextField.text = (defVolumen*100).ToString("0.0");
+            musicSlider.value = defVolumen;
+            musicTextField.text = (defVolumen*100).ToString("0.0");
             AplicarVolumen();
         }
 
