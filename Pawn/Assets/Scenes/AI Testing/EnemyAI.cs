@@ -19,6 +19,7 @@ public class EnemyAI : MonoBehaviour
 
     //Patroling
     public Vector3 walkPoint;
+    public Vector3 pos_player;
     bool walkPointSet;
     public float walkPointRange;
 
@@ -78,7 +79,8 @@ public class EnemyAI : MonoBehaviour
 
     private void ChasePlayer()
     {
-        agent.SetDestination(player.position);
+        pos_player = new Vector3(player.position.x, player.position.y - 2, player.position.z);
+        agent.SetDestination(pos_player);
     }
 
     private void AttackPlayer()
@@ -86,7 +88,7 @@ public class EnemyAI : MonoBehaviour
         //Make sure enemy doesn't move
         agent.SetDestination(transform.position);
 
-        transform.LookAt(player);
+        //transform.LookAt(player);
 
         if (!alreadyAttacked)
         {
