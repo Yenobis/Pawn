@@ -16,8 +16,8 @@ public class MainMenuScript : MonoBehaviour
     private string partidaAcargar;
     [SerializeField] private GameObject noGameSaved = null;
     [SerializeField] private GameObject newGame = null;
-
     public string _escenaAcargar;
+
     [Header("Volumen")]
     [SerializeField] private TMP_Text musicTextField = null;
     [SerializeField] private Slider musicSlider = null;
@@ -28,19 +28,52 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] private GameObject confirmationPrompt = null;
     [SerializeField] private float defVolumen = 1.0f;
 
-    void Start()
-    {
+    [Space(10)]
+    [SerializeField] private Toggle fullscreenToggle ;
+
+    [Header("Graficos")]
+    [SerializeField] private Slider brightnessSlider = null;
+    [SerializeField] private TMP_Text brightnessField = null;
+    [SerializeField] private float defBrightness = 0.5f;
+    private float _brightnessLevel;
+    private bool _isFullScreen;
+
+    [Header("Resoluciones")]
+    public TMP_Dropdown resolutionDropdown = null;
+    private Resolution[] resolutions;
+
+
+
+   void Start(){
+        //Resoluciones
+        resolutions = Screen.resolutions;
+        resolutionDropdown.ClearOptions();
+        List<string> opciones = new List<string>();
+        int currentResolutionIndex = 0;
+        for (int i = 0; i < resolutions.Length; ++i)
+        {
+            string option = resolutions[i].width + "x" + resolutions[i].height;
+            opciones.Add(option);
+            if(resolutions[i].width == Screen.width && resolutions[i].height== Screen.height)
+            {
+                currentResolutionIndex = i;
+            }
+        }
+        resolutionDropdown.AddOptions(opciones);
+        resolutionDropdown.value = currentResolutionIndex;
+        resolutionDropdown.RefreshShownValue();
+        //Volumen
         firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
-     if (firstPlayInt == 0 )
-      {
+        if (firstPlayInt == 0 )
+        {
             musicSlider.value = defVolumen;
             musicTextField.text = (defVolumen * 100).ToString("0.0");
             sfxSlider.value = defVolumen;
             sfxTextField.text = (defVolumen * 100).ToString("0.0");
             AplicarVolumen();
             PlayerPrefs.SetInt(FirstPlay, -1);
-      }
-     else {
+        }
+        else {
             musicSlider.value =  PlayerPrefs.GetFloat(BackgroundMusic);
             sfxSlider.value = PlayerPrefs.GetFloat(SfxMusic);
             musicTextField.text = (musicSlider.value * 100).ToString("0.0");
@@ -85,6 +118,20 @@ public class MainMenuScript : MonoBehaviour
         }
         sfxTextField.text = (volume * 100).ToString("0.0");
     }
+    public void SetBrightness(float brightness)
+    {
+        _brightnessLevel = brightness;
+        brightnessField.text = (brightness * 100).ToString("0.0");
+    }
+    public void SetFullScreen(bool fullscreen)
+    {
+        _isFullScreen = fullscreen;
+    }
+    public void SetResolution(int resolutionIndex)
+    {
+        Resolution resolution = resolutions[resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
 
     public void AplicarVolumen()
     {
@@ -92,19 +139,49 @@ public class MainMenuScript : MonoBehaviour
         PlayerPrefs.SetFloat(SfxMusic, sfxSlider.value);
         StartCoroutine(ConfirmationBox());
     }
+
+    public void AplicarGraficos()
+    {
+        PlayerPrefs.SetFloat("masterBrillo", _brightnessLevel);
+        //Cambiar brillo del postprocesado **FALTA VERLO**
+
+        PlayerPrefs.SetInt("masterFullScreen", _isFullScreen ? 1:0);
+        Screen.fullScreen = _isFullScreen;
+        StartCoroutine(ConfirmationBox());
+    }
     public void ResetButtom(string MenuType)
     {
 
-        if(MenuType == "Audio" && AudioListener.volume != defVolumen)
+        if(MenuType == "Audio")
         {
-            Debug.Log(defVolumen);
-            AudioListener.volume = defVolumen;
+            audioBackground.volume = defVolumen;
+            for (int i = 0; i < audioSFX.Length; ++i)
+            {
+                audioSFX[i].volume = defVolumen;
+            }
+
             musicSlider.value = defVolumen;
             musicTextField.text = (defVolumen*100).ToString("0.0");
+
+            sfxSlider.value = defVolumen;
+            sfxTextField.text = (defVolumen * 100).ToString("0.0");
             AplicarVolumen();
         }
+        if (MenuType == "Graficos")
+        {
+            //Resetear Brillo **FALTA VERLO**
+            brightnessSlider.value = defBrightness;
+            brightnessField.text = (defBrightness * 100).ToString("0.0");
 
-        
+            fullscreenToggle.isOn = true;
+            Screen.fullScreen = true;
+            Resolution currentResolution = Screen.currentResolution;
+            Screen.SetResolution(currentResolution.width, currentResolution.height, Screen.fullScreen);
+            resolutionDropdown.value = resolutions.Length;
+            AplicarGraficos();
+        }
+
+
     }
     public IEnumerator ConfirmationBox()
     {
