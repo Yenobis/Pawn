@@ -12,8 +12,11 @@ public class EnemyAI : MonoBehaviour
 
     public Transform player;
 
+    Animator animator;
+
     public LayerMask whatIsGround, whatIsPlayer;
 
+    public float speed;
     public float health;
     float damage = 5f;
 
@@ -36,13 +39,26 @@ public class EnemyAI : MonoBehaviour
     {
         player = GameObject.Find("Pawn").transform;
         agent = GetComponent<NavMeshAgent>();
+        
     }
+
+    void Start()
+    {
+        speed = GetComponent<NavMeshAgent>().speed;
+        animator = GetComponent<Animator>();
+    }
+
 
     private void Update()
     {
+        bool isWalking = animator.GetBool("isWalking");
+        bool isRunning = animator.GetBool("isRunning");
+        bool isAttacking = animator.GetBool("isAttacking");
+        health = GameObject.Find("Enemigo").GetComponent<HealthScript>().cur_health;
+
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
-
+        if (health <= 0) animator.SetTrigger("Die");
         if (!playerInSightRange && !playerInAttackRange) Patroling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInSightRange && playerInAttackRange) AttackPlayer();
@@ -52,6 +68,12 @@ public class EnemyAI : MonoBehaviour
 
     private void Patroling()
     {
+        GetComponent<NavMeshAgent>().speed = speed;
+        animator.SetBool("isAttacking", false);
+        animator.SetBool("isRunning", false);
+        animator.SetBool("isWalking", true);
+        
+
         if (!walkPointSet) SearchWalkPoint();
 
         if (walkPointSet)
@@ -79,16 +101,23 @@ public class EnemyAI : MonoBehaviour
 
     private void ChasePlayer()
     {
-        pos_player = new Vector3(player.position.x, player.position.y - 2, player.position.z);
-        agent.SetDestination(pos_player);
+        GetComponent<NavMeshAgent>().speed = speed + 1;
+        animator.SetBool("isAttacking", false);
+        animator.SetBool("isWalking", true);
+        animator.SetBool("isRunning", true);
+        pos_player = new Vector3(player.position.x, 0.5f, player.position.z);
+        agent.SetDestination(player.position);
+        //transform.LookAt(pos_player);
     }
 
     private void AttackPlayer()
     {
+        animator.SetBool("isWalking", false);
+        animator.SetBool("isRunning", false);
         //Make sure enemy doesn't move
         agent.SetDestination(transform.position);
-
-        //transform.LookAt(player);
+        pos_player = new Vector3(player.position.x, 0.5f, player.position.z);
+        transform.LookAt(pos_player);
 
         if (!alreadyAttacked)
         {
@@ -100,7 +129,7 @@ public class EnemyAI : MonoBehaviour
             */
 
             ///
-
+            animator.SetBool("isAttacking", true);
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
@@ -108,6 +137,7 @@ public class EnemyAI : MonoBehaviour
 
     private void ResetAttack()
     {
+        animator.SetBool("isAttacking", false);
         alreadyAttacked = false;
     }
 
@@ -116,22 +146,12 @@ public class EnemyAI : MonoBehaviour
     {
         health -= damage;
 
-        if (health <= 0) Invoke(nameof(DestroyEnemy), .5f);
+        if (health <= 0) Destroy(gameObject, .5f);
     }
 
     private void DestroyEnemy()
     {
-        
-        //Destroy(gameObject);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.layer == LayerMask.NameToLayer("whatIsPlayer"))
-        {
-            other.gameObject.GetComponent<HealthScript>().TakeDamage(damage);
-        }
-        
+        Destroy(gameObject);
     }
 
     private void OnDrawGizmosSelected()
@@ -142,9 +162,16 @@ public class EnemyAI : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, sightRange);
     }
     // Start is called before the first frame update
-    void Start()
+    
+    void dealingDamage()
     {
-        
+        GetComponentInChildren<Enemy_Sword>().atacando = true;
+        Debug.Log("ATACANDO");
     }
 
+    void notDealingDamage()
+    {
+        GetComponentInChildren<Enemy_Sword>().atacando = false;
+        Debug.Log("NO ATACANDO");
+    }
 }

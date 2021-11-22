@@ -6,8 +6,6 @@ public class animationScript_IA_Version : MonoBehaviour
 {
     private int life;
     private float cur_health;
-    public bool probando = false;
-    private int frames = 60;
 
     Animator animator;
 
@@ -84,13 +82,30 @@ public class animationScript_IA_Version : MonoBehaviour
 
     void dealingDamage()
     {
-        GetComponentInChildren<Sword>().atacando = true;
-        Debug.Log("ATACANDO");
+        if (gameObject.layer == LayerMask.NameToLayer("whatIsEnemy"))
+        {
+            GetComponentInChildren<Enemy_Sword>().atacando = true;
+            Debug.Log("ENEMIGO ATACANDO");
+        }  else
+        {
+            GetComponentInChildren<Sword>().atacando = true;
+            Debug.Log("PAWN ATACANDO");
+        }
+        
     }
 
     void notDealingDamage()
     {
-        GetComponentInChildren<Sword>().atacando = false;
-        Debug.Log("NO ATACANDO");
+        if (gameObject.layer == LayerMask.NameToLayer("whatIsEnemy"))
+        {
+            GetComponentInChildren<Enemy_Sword>().atacando = false;
+            Debug.Log("ENEMIGO NO ATACANDO");
+        }
+        else
+        {
+            GetComponentInChildren<Sword>().atacando = false;
+            Debug.Log("PAWN NO ATACANDO");
+        }
+        
     }
 }
