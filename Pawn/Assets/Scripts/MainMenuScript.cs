@@ -131,6 +131,7 @@ public class MainMenuScript : MonoBehaviour
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+
     }
 
     public void AplicarVolumen()
@@ -169,7 +170,7 @@ public class MainMenuScript : MonoBehaviour
         }
         if (MenuType == "Graficos")
         {
-            //Resetear Brillo **FALTA VERLO**
+            //Resetear Brillo **FALTA VERLO** postprocesing
             brightnessSlider.value = defBrightness;
             brightnessField.text = (defBrightness * 100).ToString("0.0");
 

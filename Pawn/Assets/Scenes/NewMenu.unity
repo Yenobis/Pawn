@@ -5602,7 +5602,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1175110202}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1280401475}
+        m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
+        m_MethodName: ResetButtom
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Graficos
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1175110202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6052,7 +6064,7 @@ MonoBehaviour:
   - {fileID: 699314972}
   confirmationPrompt: {fileID: 1618723661}
   defVolumen: 1
-  fullscreenToggle: {fileID: 0}
+  fullscreenToggle: {fileID: 863777524}
   brightnessSlider: {fileID: 1589092259}
   brightnessField: {fileID: 1215228673}
   defBrightness: 0.5
