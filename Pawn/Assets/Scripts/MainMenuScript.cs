@@ -62,6 +62,7 @@ public class MainMenuScript : MonoBehaviour
         resolutionDropdown.AddOptions(opciones);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
+
         //Volumen
         firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
         if (firstPlayInt == 0 )
@@ -126,6 +127,7 @@ public class MainMenuScript : MonoBehaviour
     public void SetFullScreen(bool fullscreen)
     {
         _isFullScreen = fullscreen;
+        Screen.fullScreen = fullscreen;
     }
     public void SetResolution(int resolutionIndex)
     {
