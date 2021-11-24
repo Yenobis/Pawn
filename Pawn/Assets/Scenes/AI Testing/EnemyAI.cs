@@ -172,6 +172,6 @@ public class EnemyAI : MonoBehaviour
     void notDealingDamage()
     {
         GetComponentInChildren<Enemy_Sword>().atacando = false;
-        Debug.Log("NO ATACANDO");
+        //Debug.Log("NO ATACANDO");
     }
 }

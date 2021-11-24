@@ -25,7 +25,7 @@ public class animationScript_IA_Version : MonoBehaviour
         bool isAttacking = animator.GetBool("isAttacking");
         bool runPressed = Input.GetKey("left shift");
         //life = GameObject.Find("Pawn").GetComponent<PawnHealthScript>().life;
-        cur_health = GameObject.Find("Pawn").GetComponent<HealthScript>().cur_health;
+        cur_health = GameObject.Find("Pawn").GetComponent<Pawn_Health>().cur_health;
         bool attackPressed = Input.GetMouseButtonDown(0);
 
         if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d"))
@@ -85,11 +85,11 @@ public class animationScript_IA_Version : MonoBehaviour
         if (gameObject.layer == LayerMask.NameToLayer("whatIsEnemy"))
         {
             GetComponentInChildren<Enemy_Sword>().atacando = true;
-            Debug.Log("ENEMIGO ATACANDO");
+            //Debug.Log("ENEMIGO ATACANDO");
         }  else
         {
             GetComponentInChildren<Sword>().atacando = true;
-            Debug.Log("PAWN ATACANDO");
+            //Debug.Log("PAWN ATACANDO");
         }
         
     }
@@ -99,12 +99,12 @@ public class animationScript_IA_Version : MonoBehaviour
         if (gameObject.layer == LayerMask.NameToLayer("whatIsEnemy"))
         {
             GetComponentInChildren<Enemy_Sword>().atacando = false;
-            Debug.Log("ENEMIGO NO ATACANDO");
+            //Debug.Log("ENEMIGO NO ATACANDO");
         }
         else
         {
             GetComponentInChildren<Sword>().atacando = false;
-            Debug.Log("PAWN NO ATACANDO");
+            //Debug.Log("PAWN NO ATACANDO");
         }
         
     }
