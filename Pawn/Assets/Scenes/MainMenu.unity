@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1805,6 +1805,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e974c73f3663ce4dbf03acf835e3539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  noGameSaved: {fileID: 0}
+  newGame: {fileID: 0}
+  _escenaAcargar: 
+  masterTextField: {fileID: 0}
+  masterSlider: {fileID: 0}
+  musicTextField: {fileID: 0}
+  musicSlider: {fileID: 0}
+  sfxTextField: {fileID: 0}
+  sfxSlider: {fileID: 0}
+  audioBackground: {fileID: 0}
+  audioSFX: []
+  confirmationPrompt: {fileID: 0}
+  defVolumen: 1
+  fullscreenToggle: {fileID: 0}
+  brightnessSlider: {fileID: 0}
+  brightnessField: {fileID: 0}
+  defBrightness: 0.5
+  resolutionDropdown: {fileID: 0}
 --- !u!1 &1351717076
 GameObject:
   m_ObjectHideFlags: 0
@@ -2505,8 +2523,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.8018, y: 126.4}
-  m_SizeDelta: {x: 200, y: 100}
+  m_AnchoredPosition: {x: 11.1325, y: 113.03}
+  m_SizeDelta: {x: 238.3018, y: 85.437}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1779660392
 MonoBehaviour:
