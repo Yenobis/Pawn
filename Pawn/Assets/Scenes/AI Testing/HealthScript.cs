@@ -16,7 +16,10 @@ public class HealthScript : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        cur_health -= amount;
+        if (cur_health > 0)
+        {
+            cur_health -= amount;
+        }
     }
 
     // Update is called once per frame

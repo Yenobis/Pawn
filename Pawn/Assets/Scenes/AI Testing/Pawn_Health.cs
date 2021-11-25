@@ -19,10 +19,18 @@ public class Pawn_Health : MonoBehaviour
     {
         if (cur_health > 0)
         {
-            cur_health -= amount;
-            int vida = (int)cur_health / 20;
-            //Debug.Log(vida);
-            vidas[vida].gameObject.GetComponent<Image>().color = Color.white;
+            if (cur_health - amount >= 0)
+            {
+                cur_health -= amount;
+                int vida = (int)cur_health / 20;
+                //Debug.Log(vida);
+                vidas[vida].gameObject.GetComponent<Image>().color = Color.white;
+            }
+            else
+            {
+                cur_health = 0;
+                vidas[0].gameObject.GetComponent<Image>().color = Color.white;
+            }
         }
     }
 

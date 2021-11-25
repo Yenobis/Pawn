@@ -72,12 +72,8 @@ public class animationScript_IA_Version : MonoBehaviour
         if (cur_health <= 0)
         {
             animator.SetTrigger("Die");
+            //Destroy(gameObject, 3f);
         }
-
-        /* if (life <= 0) {
-             animator.SetTrigger("Die");
-
-         }*/
     }
 
     void dealingDamage()

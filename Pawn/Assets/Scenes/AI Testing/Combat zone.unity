@@ -1170,7 +1170,7 @@ MonoBehaviour:
   - {fileID: 250344535}
   - {fileID: 1994394125}
   - {fileID: 1399235757}
-  max_health: 100
+  max_health: 1000
   cur_health: 0
 --- !u!1 &1626335869
 GameObject:
@@ -1332,7 +1332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73e85a15688020e499dba3956d96eb78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max_health: 1000
+  max_health: 100
   cur_health: 0
 --- !u!195 &1629930417
 NavMeshAgent:

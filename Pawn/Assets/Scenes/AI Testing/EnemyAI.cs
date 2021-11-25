@@ -58,7 +58,13 @@ public class EnemyAI : MonoBehaviour
 
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
-        if (health <= 0) animator.SetTrigger("Die");
+        if (health <= 0)
+        {
+            animator.SetTrigger("Die");
+            Destroy(gameObject, 3f);
+            playerInSightRange = false;
+            playerInAttackRange = true;
+        }
         if (!playerInSightRange && !playerInAttackRange) Patroling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInSightRange && playerInAttackRange) AttackPlayer();
@@ -146,7 +152,7 @@ public class EnemyAI : MonoBehaviour
     {
         health -= damage;
 
-        if (health <= 0) Destroy(gameObject, .5f);
+        
     }
 
     private void DestroyEnemy()
