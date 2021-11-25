@@ -108,6 +108,7 @@ public class EnemyAI : MonoBehaviour
     private void ChasePlayer()
     {
         GetComponent<NavMeshAgent>().speed = speed + 1;
+
         animator.SetBool("isAttacking", false);
         animator.SetBool("isWalking", true);
         animator.SetBool("isRunning", true);
