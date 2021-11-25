@@ -9,6 +9,7 @@ public class MainMenuScript : MonoBehaviour
     private static readonly string FirstPlay = "FirstPlay";
     private static readonly string BackgroundMusic = "BackgroundMusic";
     private static readonly string SfxMusic = "SfxMusic";
+    private static readonly string MasterMusic = "MasterMusic";
     int firstPlayInt = 0;
 
     // Start is called before the first frame update
@@ -19,10 +20,15 @@ public class MainMenuScript : MonoBehaviour
     public string _escenaAcargar;
 
     [Header("Volumen")]
+    [SerializeField] private TMP_Text masterTextField = null;
+    [SerializeField] private Slider masterSlider = null;
+
     [SerializeField] private TMP_Text musicTextField = null;
     [SerializeField] private Slider musicSlider = null;
+
     [SerializeField] private TMP_Text sfxTextField = null;
     [SerializeField] private Slider sfxSlider = null;
+
     [SerializeField] private AudioSource audioBackground = null;
     [SerializeField] private AudioSource[] audioSFX = null;
     [SerializeField] private GameObject confirmationPrompt = null;
@@ -67,6 +73,9 @@ public class MainMenuScript : MonoBehaviour
         firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
         if (firstPlayInt == 0 )
         {
+
+            masterSlider.value = defVolumen;
+            masterTextField.text = (defVolumen * 100).ToString("0.0");
             musicSlider.value = defVolumen;
             musicTextField.text = (defVolumen * 100).ToString("0.0");
             sfxSlider.value = defVolumen;
@@ -75,9 +84,11 @@ public class MainMenuScript : MonoBehaviour
             PlayerPrefs.SetInt(FirstPlay, -1);
         }
         else {
+            masterSlider.value = PlayerPrefs.GetFloat(MasterMusic);
+            masterTextField.text = (musicSlider.value * 100).ToString("0.0");
             musicSlider.value =  PlayerPrefs.GetFloat(BackgroundMusic);
-            sfxSlider.value = PlayerPrefs.GetFloat(SfxMusic);
             musicTextField.text = (musicSlider.value * 100).ToString("0.0");
+            sfxSlider.value = PlayerPrefs.GetFloat(SfxMusic);
             sfxTextField.text = (sfxSlider.value * 100).ToString("0.0");
             AplicarVolumen();
         }
@@ -111,6 +122,11 @@ public class MainMenuScript : MonoBehaviour
         audioBackground.volume = volume;
         musicTextField.text = (volume*100).ToString("0.0");
     }
+    public void SetMasterVolumen(float volume)
+    {
+        AudioListener.volume = volume;
+        masterTextField.text = (volume * 100).ToString("0.0");
+    }
     public void SetSfxVolumen(float volume)
     {
         for (int i=0; i < audioSFX.Length; ++i)
@@ -138,6 +154,7 @@ public class MainMenuScript : MonoBehaviour
 
     public void AplicarVolumen()
     {
+        PlayerPrefs.SetFloat(MasterMusic, musicSlider.value);
         PlayerPrefs.SetFloat(BackgroundMusic, musicSlider.value);
         PlayerPrefs.SetFloat(SfxMusic, sfxSlider.value);
         StartCoroutine(ConfirmationBox());
@@ -162,6 +179,8 @@ public class MainMenuScript : MonoBehaviour
             {
                 audioSFX[i].volume = defVolumen;
             }
+            masterSlider.value = defVolumen;
+            masterTextField.text = (defVolumen * 100).ToString("0.0");
 
             musicSlider.value = defVolumen;
             musicTextField.text = (defVolumen*100).ToString("0.0");
