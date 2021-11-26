@@ -18,8 +18,9 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] private GameObject noGameSaved = null;
     [SerializeField] private GameObject newGame = null;
     public string _escenaAcargar;
+    public string _menuACargar;
 
-    [Header("Volumen")]
+[Header("Volumen")]
     [SerializeField] private TMP_Text masterTextField = null;
     [SerializeField] private Slider masterSlider = null;
 
@@ -96,7 +97,11 @@ public class MainMenuScript : MonoBehaviour
     public void PlayGame(){
         SceneManager.LoadScene(_escenaAcargar);
     }
-
+    public void GotoMainMenu()
+    {
+        //Podemos guardar el Estado de la partida 
+        SceneManager.LoadScene(_menuACargar);
+    }
     public void QuitGame()
     {
 

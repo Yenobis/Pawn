@@ -7,7 +7,7 @@ public class PawnHealthScript : MonoBehaviour
 {
     public GameObject[] vidas;
     public int life = 100;
-    
+    [SerializeField] Slider vidaSlider;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +37,7 @@ public class PawnHealthScript : MonoBehaviour
         {
             vidas[0].gameObject.GetComponent<Image>().color = Color.white;
         }
+        vidaSlider.value = life;
     }
     public void TakeDamage(int amount)
     {

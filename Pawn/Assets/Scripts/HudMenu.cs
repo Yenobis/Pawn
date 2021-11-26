@@ -5,6 +5,7 @@ using UnityEngine;
 public class HudMenu : MonoBehaviour
 {
     [SerializeField] GameObject opciones;
+    [SerializeField] GameObject muerte;
     // Start is called before the first frame update
     void Start()
     {
