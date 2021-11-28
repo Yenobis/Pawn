@@ -6473,6 +6473,7 @@ MonoBehaviour:
   noGameSaved: {fileID: 208139312}
   newGame: {fileID: 2062963442}
   _escenaAcargar: Level1
+  _menuACargar: 
   masterTextField: {fileID: 814250233}
   masterSlider: {fileID: 1949332259}
   musicTextField: {fileID: 1290464988}
@@ -10394,8 +10395,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Nueva Partida
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 05d5a675cb4cdf1448c78196afd3ba5f, type: 2}
+  m_sharedMaterial: {fileID: 6013382656742598867, guid: 05d5a675cb4cdf1448c78196afd3ba5f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
