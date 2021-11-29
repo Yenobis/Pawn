@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5124707905097247289
+--- !u!1 &5086246658907655079
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,10 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5500388404455895171}
-  - component: {fileID: 8933617229846183718}
-  - component: {fileID: 6637851478140292076}
-  - component: {fileID: 7539769224581198983}
+  - component: {fileID: 5610969258499838237}
+  - component: {fileID: 8823098517008031416}
+  - component: {fileID: 6743302697184324210}
+  - component: {fileID: 5553019820880756078}
   m_Layer: 0
   m_Name: barriles2
   m_TagString: Untagged
@@ -19,37 +19,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5500388404455895171
+--- !u!4 &5610969258499838237
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5124707905097247289}
+  m_GameObject: {fileID: 5086246658907655079}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.3908339, y: -0.77246094, z: 18.919662}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 5384588080204602486}
-  - {fileID: 7667950963297121587}
+  m_LocalPosition: {x: -8.26, y: -27.06, z: 79.26}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8933617229846183718
+--- !u!33 &8823098517008031416
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5124707905097247289}
+  m_GameObject: {fileID: 5086246658907655079}
   m_Mesh: {fileID: 6547687771115300451, guid: f974f93a5dbbac340a1bef426deec3f0, type: 3}
---- !u!23 &6637851478140292076
+--- !u!23 &6743302697184324210
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5124707905097247289}
+  m_GameObject: {fileID: 5086246658907655079}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -90,118 +88,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7539769224581198983
+--- !u!65 &5553019820880756078
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5124707905097247289}
+  m_GameObject: {fileID: 5086246658907655079}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.0139158, y: 2.205856, z: 1.9962432}
-  m_Center: {x: -0.00057685375, y: 1.102928, z: -0.008119106}
---- !u!1 &6298655134408050693
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5384588080204602486}
-  - component: {fileID: 4728773528875360599}
-  - component: {fileID: 3190193900830498007}
-  m_Layer: 0
-  m_Name: hacha
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5384588080204602486
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6298655134408050693}
-  m_LocalRotation: {x: -0.012547736, y: -0.035355255, z: 0.33422944, w: 0.94174486}
-  m_LocalPosition: {x: 1.436, y: 1.473, z: 0.5854683}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5500388404455895171}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -4.3, z: 39.08}
---- !u!65 &4728773528875360599
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6298655134408050693}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.13644947, y: 2.240961, z: 0.1302898}
-  m_Center: {x: -0.0009861916, y: 0.14867258, z: -0.4787643}
---- !u!65 &3190193900830498007
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6298655134408050693}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.9481324, y: 0.84804726, z: 0.15588847}
-  m_Center: {x: -0.025934538, y: 0.8577616, z: -0.4764291}
---- !u!1 &7112335626533829524
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7667950963297121587}
-  - component: {fileID: 1280024468310555479}
-  m_Layer: 0
-  m_Name: espada
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7667950963297121587
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7112335626533829524}
-  m_LocalRotation: {x: 0.21337137, y: 0, z: 0, w: 0.9769712}
-  m_LocalPosition: {x: -0.028, y: 2.4056463, z: 0.429}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5500388404455895171}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 24.64, y: 0, z: 0}
---- !u!65 &1280024468310555479
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7112335626533829524}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5456016, y: 1.7641666, z: 0.12923335}
-  m_Center: {x: 0.06393802, y: 0.20330037, z: -0.0000000010363888}
+  m_Size: {x: 3.0928638, y: 3.389218, z: 1.9962431}
+  m_Center: {x: 0.53889716, y: 1.694609, z: -0.008119076}
