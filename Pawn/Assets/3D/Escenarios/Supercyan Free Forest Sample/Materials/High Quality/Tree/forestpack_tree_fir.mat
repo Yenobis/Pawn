@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: forestpack_tree_fir
-  m_Shader: {fileID: 4800000, guid: d56c3230b6db1c6499606e09fe9f60d4, type: 3}
+  m_Shader: {fileID: 4800000, guid: 0f4122b9a743b744abe2fb6a0a88868b, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -36,6 +36,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -69,6 +73,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
+    - _Cull: 2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -94,6 +99,7 @@ Material:
     - _SwayStartingPoint: -1.8
     - _SwayStrength: 0.6
     - _UVSec: 0
+    - _WindQuality: 0
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
@@ -102,7 +108,22 @@ Material:
     - _ColorOverride: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HColor: {r: 0.6506951, g: 0.6544118, b: 0.58704585, a: 1}
+    - _HueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}
     - _RimColor: {r: 0, g: 0, b: 0, a: 0}
     - _SColor: {r: 0.16243884, g: 0.1401384, b: 0.17647058, a: 1}
     - _SpecColor: {r: 0, g: 0, b: 0, a: 1}
     - _SwayDir: {r: 0.01, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
+--- !u!114 &6708788491784403194
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 4
