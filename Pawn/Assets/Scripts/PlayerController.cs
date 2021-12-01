@@ -81,6 +81,7 @@ public class PlayerController : MonoBehaviour
     //Función para realizar las habilidades del jugador 
     void HabilidadesJugador() 
     {
+        Debug.Log(player.isGrounded);
         if (player.isGrounded && Input.GetButtonDown("Jump")) {
 
             fallVelocity = fuerzaSalto;
