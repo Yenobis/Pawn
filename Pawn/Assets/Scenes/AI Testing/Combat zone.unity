@@ -843,8 +843,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80908e1493994bd43ad30990265f986e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fovRadius: 6
-  angle: 190
   agent: {fileID: 511807197}
   waypoints:
   - {fileID: 1137348881}
@@ -868,6 +866,8 @@ MonoBehaviour:
   walkPointRange: 10
   timeBetweenAttacks: 2
   projectile: {fileID: 0}
+  fovRadius: 6
+  angle: 190
   sightRange: 10
   attackRange: 1.5
   tooCloseRange: 4
@@ -2647,8 +2647,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80908e1493994bd43ad30990265f986e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fovRadius: 0
-  angle: 190
   agent: {fileID: 1629930417}
   waypoints:
   - {fileID: 631665415}
@@ -2672,23 +2670,11 @@ MonoBehaviour:
   walkPointRange: 10
   timeBetweenAttacks: 2
   projectile: {fileID: 0}
-  sightRange: 5
+  fovRadius: 6
+  angle: 190
+  sightRange: 8
   attackRange: 1.5
-  tooCloseRange: 0
---- !u!114 &1629930416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1629930413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73e85a15688020e499dba3956d96eb78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  max_health: 100
-  cur_health: 0
+  tooCloseRange: 3
 --- !u!195 &1629930417
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2711,18 +2697,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1629930418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1629930413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8218ba16bd8936347aef95d1db4e06e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!136 &1629930419
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3082,7 +3056,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1790140175}
-  m_LocalRotation: {x: 0.080400676, y: -0.7402216, z: 0.089975946, w: 0.6614469}
+  m_LocalRotation: {x: 0.0804007, y: -0.7402216, z: 0.08997593, w: 0.6614469}
   m_LocalPosition: {x: 17.335922, y: 5.94, z: 22.05433}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -3643,15 +3617,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 256071270102882978, guid: a050a867ad71ece45a9a91556341d59b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.12066455
+      value: 0.12066454
       objectReference: {fileID: 0}
     - target: {fileID: 256071270102882978, guid: a050a867ad71ece45a9a91556341d59b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000001490116
+      value: -0.000000119209275
       objectReference: {fileID: 0}
     - target: {fileID: 256071270102882978, guid: a050a867ad71ece45a9a91556341d59b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00000002235174
+      value: 0.00000001117587
       objectReference: {fileID: 0}
     - target: {fileID: 256071271154333129, guid: a050a867ad71ece45a9a91556341d59b, type: 3}
       propertyPath: m_RootOrder
