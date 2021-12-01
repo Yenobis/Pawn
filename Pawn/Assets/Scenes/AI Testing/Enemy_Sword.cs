@@ -20,13 +20,10 @@ public class Enemy_Sword : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("primera");
         if (other.gameObject.layer == LayerMask.NameToLayer("whatIsPlayer"))
         {
-            Debug.Log("segunda");
             if (atacando)
             {
-                Debug.Log("DAÑOOOOOOOOOOOOOO");
                 other.gameObject.GetComponent<Pawn_Health>().TakeDamage(damage);
                 atacando = false;
             }

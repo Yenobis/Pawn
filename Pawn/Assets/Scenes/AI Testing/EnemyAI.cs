@@ -8,13 +8,25 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    public NavMeshAgent agent;
+    public float radius;
+    [Range(0, 360)]
+    public float angle;
 
+    public NavMeshAgent agent;
+    bool alreadyPatrolling = false;
+    public Transform[] waypoints;
+    int waypointIndex;
+    Vector3 target;
     public Transform player;
+
+    public GameObject playerRef;
+
+
+    public bool canSeePlayer;
 
     Animator animator;
 
-    public LayerMask whatIsGround, whatIsPlayer;
+    public LayerMask obstructionMask, whatIsGround, whatIsPlayer;
 
     public float speed;
     public float health;
@@ -46,6 +58,7 @@ public class EnemyAI : MonoBehaviour
     {
         speed = GetComponent<NavMeshAgent>().speed;
         animator = GetComponent<Animator>();
+        UpdateDestination();
     }
 
 
@@ -54,32 +67,85 @@ public class EnemyAI : MonoBehaviour
         bool isWalking = animator.GetBool("isWalking");
         bool isRunning = animator.GetBool("isRunning");
         bool isAttacking = animator.GetBool("isAttacking");
-        health = GameObject.Find("Enemigo").GetComponent<HealthScript>().cur_health;
+        health = gameObject.GetComponent<HealthScript>().cur_health;
 
-        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+        if (canSeePlayer)
+        {
+            playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+            canSeePlayer = playerInSightRange;
+        } else
+        {
+            FieldOfViewCheck();
+            playerInSightRange = canSeePlayer;
+        }
+        //FieldOfViewCheck();
+        //Physics.CheckSphere(transform.position, sightRange, whatIsPlayer)
+        //playerInSightRange = canSeePlayer;
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
         if (health <= 0)
         {
-            animator.SetTrigger("Die");
-            Destroy(gameObject, 3f);
+            agent.SetDestination(transform.position);
             playerInSightRange = false;
             playerInAttackRange = true;
+            animator.SetTrigger("Die");
+            Destroy(gameObject, 3f);
+            
         }
         if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-        if (playerInSightRange && playerInAttackRange) AttackPlayer();
+        if (playerInSightRange && !playerInAttackRange) { alreadyPatrolling = false; ChasePlayer(); }
+        if (playerInSightRange && playerInAttackRange) { alreadyPatrolling = false; AttackPlayer(); }
 
     }
 
+    private void FieldOfViewCheck()
+    {
+        Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, whatIsPlayer);
 
+        if (rangeChecks.Length != 0)
+        {
+            Transform target = rangeChecks[0].transform;
+            Vector3 directionToTarget = (target.position - transform.position).normalized;
+
+            if (Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
+            {
+                float distanceToTarget = Vector3.Distance(transform.position, target.position);
+
+                if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
+                {
+                    canSeePlayer = true;
+                }
+                else
+                    canSeePlayer = false;
+            }
+            else
+                canSeePlayer = false;
+        }
+        else if (canSeePlayer)
+            canSeePlayer = false;
+    }
+
+    void UpdateDestination()
+    {
+        target = waypoints[waypointIndex].position;
+        agent.SetDestination(target);
+    }
+
+    void IterateWaypointIndex()
+    {
+        waypointIndex++;
+        if(waypointIndex == waypoints.Length)
+        {
+            waypointIndex = 0;
+        }
+    }
     private void Patroling()
     {
         GetComponent<NavMeshAgent>().speed = speed;
         animator.SetBool("isAttacking", false);
         animator.SetBool("isRunning", false);
         animator.SetBool("isWalking", true);
-        
 
+        /*
         if (!walkPointSet) SearchWalkPoint();
 
         if (walkPointSet)
@@ -90,6 +156,14 @@ public class EnemyAI : MonoBehaviour
         //Walkpoint reached
         if (distanceToWalkPoint.magnitude < 1f)
             walkPointSet = false;
+        */
+
+        if (Vector3.Distance(transform.position, target) < 1 || !alreadyPatrolling)
+        {
+            IterateWaypointIndex();
+            UpdateDestination();
+            alreadyPatrolling = true;
+        }
     }
 
     private void SearchWalkPoint()
@@ -112,7 +186,7 @@ public class EnemyAI : MonoBehaviour
         animator.SetBool("isAttacking", false);
         animator.SetBool("isWalking", true);
         animator.SetBool("isRunning", true);
-        pos_player = new Vector3(player.position.x, 0.5f, player.position.z);
+        pos_player = new Vector3(player.position.x, transform.position.y, player.position.z);
         agent.SetDestination(player.position);
         //transform.LookAt(pos_player);
     }
@@ -123,8 +197,8 @@ public class EnemyAI : MonoBehaviour
         animator.SetBool("isRunning", false);
         //Make sure enemy doesn't move
         agent.SetDestination(transform.position);
-        pos_player = new Vector3(player.position.x, 0.5f, player.position.z);
-        //transform.LookAt(pos_player);
+        pos_player = new Vector3(player.position.x, transform.position.y, player.position.z);
+        transform.LookAt(pos_player);
 
         if (!alreadyAttacked)
         {
@@ -152,8 +226,6 @@ public class EnemyAI : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-
-        
     }
 
     private void DestroyEnemy()
@@ -168,12 +240,11 @@ public class EnemyAI : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
     }
-    // Start is called before the first frame update
     
     void dealingDamage()
     {
         GetComponentInChildren<Enemy_Sword>().atacando = true;
-        Debug.Log("ATACANDO");
+        //Debug.Log("ATACANDO");
     }
 
     void notDealingDamage()
