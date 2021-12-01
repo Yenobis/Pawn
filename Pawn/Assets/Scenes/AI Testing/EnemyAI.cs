@@ -8,32 +8,31 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    public float radius;
-    [Range(0, 360)]
-    public float angle;
-
     public NavMeshAgent agent;
     bool alreadyPatrolling = false;
     public Transform[] waypoints;
     int waypointIndex;
     Vector3 target;
-    public Transform player;
+    //public Transform player;
 
     public GameObject playerRef;
 
-
+    [HideInInspector]
     public bool canSeePlayer;
 
     Animator animator;
 
     public LayerMask obstructionMask, whatIsGround, whatIsPlayer;
-
+    [HideInInspector]
     public float speed;
-    public float health;
+    public float max_health = 100f;
+    public float cur_health = 0f;
     float damage = 5f;
 
     //Patroling
+    [HideInInspector]
     public Vector3 walkPoint;
+    [HideInInspector]
     public Vector3 pos_player;
     bool walkPointSet;
     public float walkPointRange;
@@ -44,18 +43,22 @@ public class EnemyAI : MonoBehaviour
     public GameObject projectile;
 
     //States
-    public float sightRange, attackRange;
-    public bool playerInSightRange, playerInAttackRange;
+    public float fovRadius;
+    [Range(0, 360)]
+    public float angle;
+    public float sightRange, attackRange, tooCloseRange;
+    private bool playerInSightRange, playerInAttackRange, playerTooClose;
 
     private void Awake()
     {
-        player = GameObject.Find("Pawn").transform;
+        //player = GameObject.Find("Pawn").transform;
         agent = GetComponent<NavMeshAgent>();
         
     }
 
     void Start()
     {
+        cur_health = max_health;
         speed = GetComponent<NavMeshAgent>().speed;
         animator = GetComponent<Animator>();
         UpdateDestination();
@@ -67,7 +70,6 @@ public class EnemyAI : MonoBehaviour
         bool isWalking = animator.GetBool("isWalking");
         bool isRunning = animator.GetBool("isRunning");
         bool isAttacking = animator.GetBool("isAttacking");
-        health = gameObject.GetComponent<HealthScript>().cur_health;
 
         if (canSeePlayer)
         {
@@ -78,11 +80,9 @@ public class EnemyAI : MonoBehaviour
             FieldOfViewCheck();
             playerInSightRange = canSeePlayer;
         }
-        //FieldOfViewCheck();
-        //Physics.CheckSphere(transform.position, sightRange, whatIsPlayer)
-        //playerInSightRange = canSeePlayer;
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
-        if (health <= 0)
+        playerTooClose = Physics.CheckSphere(transform.position, tooCloseRange, whatIsPlayer);
+        if (cur_health <= 0)
         {
             agent.SetDestination(transform.position);
             playerInSightRange = false;
@@ -92,14 +92,14 @@ public class EnemyAI : MonoBehaviour
             
         }
         if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (playerInSightRange && !playerInAttackRange) { alreadyPatrolling = false; ChasePlayer(); }
+        if ((playerInSightRange || playerTooClose) && !playerInAttackRange) { alreadyPatrolling = false; ChasePlayer(); }
         if (playerInSightRange && playerInAttackRange) { alreadyPatrolling = false; AttackPlayer(); }
 
     }
 
     private void FieldOfViewCheck()
     {
-        Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, whatIsPlayer);
+        Collider[] rangeChecks = Physics.OverlapSphere(transform.position, fovRadius, whatIsPlayer);
 
         if (rangeChecks.Length != 0)
         {
@@ -146,6 +146,7 @@ public class EnemyAI : MonoBehaviour
         animator.SetBool("isWalking", true);
 
         /*
+        //CASO PARA PATRULLAR POR UNA ZONA, NO BORRAR
         if (!walkPointSet) SearchWalkPoint();
 
         if (walkPointSet)
@@ -186,8 +187,8 @@ public class EnemyAI : MonoBehaviour
         animator.SetBool("isAttacking", false);
         animator.SetBool("isWalking", true);
         animator.SetBool("isRunning", true);
-        pos_player = new Vector3(player.position.x, transform.position.y, player.position.z);
-        agent.SetDestination(player.position);
+        pos_player = new Vector3(playerRef.transform.position.x, transform.position.y, playerRef.transform.position.z);
+        agent.SetDestination(playerRef.transform.position);
         //transform.LookAt(pos_player);
     }
 
@@ -195,21 +196,13 @@ public class EnemyAI : MonoBehaviour
     {
         animator.SetBool("isWalking", false);
         animator.SetBool("isRunning", false);
-        //Make sure enemy doesn't move
+        //Para que el enemigo no se mueva
         agent.SetDestination(transform.position);
-        pos_player = new Vector3(player.position.x, transform.position.y, player.position.z);
+        pos_player = new Vector3(playerRef.transform.position.x, transform.position.y, playerRef.transform.position.z);
         transform.LookAt(pos_player);
 
         if (!alreadyAttacked)
         {
-            ///Attack code here
-            /* Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-
-            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-            rb.AddForce(transform.up * 8f, ForceMode.Impulse);
-            */
-
-            ///
             animator.SetBool("isAttacking", true);
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
@@ -223,9 +216,12 @@ public class EnemyAI : MonoBehaviour
     }
 
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float amount)
     {
-        health -= damage;
+        if (cur_health > 0)
+        {
+            cur_health -= amount;
+        }
     }
 
     private void DestroyEnemy()
@@ -237,19 +233,19 @@ public class EnemyAI : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
-        Gizmos.color = Color.yellow;
+        Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, sightRange);
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, tooCloseRange);
     }
-    
+
     void dealingDamage()
     {
-        GetComponentInChildren<Enemy_Sword>().atacando = true;
-        //Debug.Log("ATACANDO");
+        GetComponentInChildren<Sword>().atacando = true;
     }
 
     void notDealingDamage()
     {
-        GetComponentInChildren<Enemy_Sword>().atacando = false;
-        //Debug.Log("NO ATACANDO");
+        GetComponentInChildren<Sword>().atacando = false;
     }
 }

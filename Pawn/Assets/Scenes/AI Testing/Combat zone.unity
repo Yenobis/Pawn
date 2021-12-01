@@ -831,20 +831,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &511807198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 511807195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73e85a15688020e499dba3956d96eb78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  max_health: 100
-  cur_health: 0
 --- !u!114 &511807199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -857,13 +843,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80908e1493994bd43ad30990265f986e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
+  fovRadius: 6
   angle: 190
   agent: {fileID: 511807197}
   waypoints:
   - {fileID: 1137348881}
   - {fileID: 1130303025}
-  player: {fileID: 2570444976725219595}
   playerRef: {fileID: 2570444976725219591}
   canSeePlayer: 0
   obstructionMask:
@@ -876,16 +861,16 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   speed: 0
-  health: 120
+  max_health: 100
+  cur_health: 0
   walkPoint: {x: 0, y: 0, z: 0}
   pos_player: {x: 0, y: 0, z: 0}
   walkPointRange: 10
   timeBetweenAttacks: 2
   projectile: {fileID: 0}
-  sightRange: 5
+  sightRange: 10
   attackRange: 1.5
-  playerInSightRange: 0
-  playerInAttackRange: 0
+  tooCloseRange: 4
 --- !u!95 &511807200
 Animator:
   serializedVersion: 3
@@ -1300,7 +1285,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4383659424656531016, guid: 8e7a33d603823944ca668b9018342296, type: 3}
   m_PrefabInstance: {fileID: 2099668420}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &857523022
+--- !u!114 &857523021
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1309,9 +1294,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 857523020}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6edb52baaab115c419ef442cf0a30c52, type: 3}
+  m_Script: {fileID: 11500000, guid: 1700ab06c9fe4974c931a117466b3918, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soyPawn: 0
   stay: 0
   atacando: 0
 --- !u!1 &872849791 stripped
@@ -1785,7 +1771,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4383659424656531016, guid: 8e7a33d603823944ca668b9018342296, type: 3}
   m_PrefabInstance: {fileID: 1211986263}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1211986265
+--- !u!114 &1211986270
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1794,9 +1780,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1211986264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6edb52baaab115c419ef442cf0a30c52, type: 3}
+  m_Script: {fileID: 11500000, guid: 1700ab06c9fe4974c931a117466b3918, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soyPawn: 0
   stay: 0
   atacando: 0
 --- !u!1001 &1252908457
@@ -2660,13 +2647,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80908e1493994bd43ad30990265f986e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
+  fovRadius: 0
   angle: 190
   agent: {fileID: 1629930417}
   waypoints:
   - {fileID: 631665415}
   - {fileID: 209093697}
-  player: {fileID: 2570444976725219595}
   playerRef: {fileID: 2570444976725219591}
   canSeePlayer: 0
   obstructionMask:
@@ -2679,7 +2665,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   speed: 0
-  health: 120
+  max_health: 100
+  cur_health: 0
   walkPoint: {x: 0, y: 0, z: 0}
   pos_player: {x: 0, y: 0, z: 0}
   walkPointRange: 10
@@ -2687,8 +2674,7 @@ MonoBehaviour:
   projectile: {fileID: 0}
   sightRange: 5
   attackRange: 1.5
-  playerInSightRange: 0
-  playerInAttackRange: 0
+  tooCloseRange: 0
 --- !u!114 &1629930416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2737,14 +2723,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8218ba16bd8936347aef95d1db4e06e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 10
-  angle: 69
-  playerRef: {fileID: 2570444976725219591}
-  targetMask:
-    m_Bits: 128
-  obstructionMask:
-    m_Bits: 64
-  canSeePlayer: 0
 --- !u!136 &1629930419
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3735,6 +3713,30 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1790140179}
+    - target: {fileID: 256071271154333134, guid: a050a867ad71ece45a9a91556341d59b, type: 3}
+      propertyPath: vidas.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 256071271154333134, guid: a050a867ad71ece45a9a91556341d59b, type: 3}
+      propertyPath: vidas.Array.data[0]
+      value: 
+      objectReference: {fileID: 1434100214}
+    - target: {fileID: 256071271154333134, guid: a050a867ad71ece45a9a91556341d59b, type: 3}
+      propertyPath: vidas.Array.data[1]
+      value: 
+      objectReference: {fileID: 520541856}
+    - target: {fileID: 256071271154333134, guid: a050a867ad71ece45a9a91556341d59b, type: 3}
+      propertyPath: vidas.Array.data[2]
+      value: 
+      objectReference: {fileID: 250344535}
+    - target: {fileID: 256071271154333134, guid: a050a867ad71ece45a9a91556341d59b, type: 3}
+      propertyPath: vidas.Array.data[3]
+      value: 
+      objectReference: {fileID: 1994394125}
+    - target: {fileID: 256071271154333134, guid: a050a867ad71ece45a9a91556341d59b, type: 3}
+      propertyPath: vidas.Array.data[4]
+      value: 
+      objectReference: {fileID: 1399235757}
     - target: {fileID: 256071271172071935, guid: a050a867ad71ece45a9a91556341d59b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.00000047683716
@@ -3788,6 +3790,10 @@ PrefabInstance:
       value: 0.000000014901161
       objectReference: {fileID: 0}
     - target: {fileID: 2570444976011579713, guid: a050a867ad71ece45a9a91556341d59b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570444976011579713, guid: a050a867ad71ece45a9a91556341d59b, type: 3}
       propertyPath: vidas.Array.data[0]
       value: 
       objectReference: {fileID: 1434100214}
@@ -3807,15 +3813,14 @@ PrefabInstance:
       propertyPath: vidas.Array.data[4]
       value: 
       objectReference: {fileID: 1399235757}
+    - target: {fileID: 2570444976319655120, guid: a050a867ad71ece45a9a91556341d59b, type: 3}
+      propertyPath: soyPawn
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a050a867ad71ece45a9a91556341d59b, type: 3}
 --- !u!1 &2570444976725219591 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 256071271154333131, guid: a050a867ad71ece45a9a91556341d59b, type: 3}
-  m_PrefabInstance: {fileID: 2570444976725219590}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &2570444976725219595 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 256071271154333129, guid: a050a867ad71ece45a9a91556341d59b, type: 3}
   m_PrefabInstance: {fileID: 2570444976725219590}
   m_PrefabAsset: {fileID: 0}

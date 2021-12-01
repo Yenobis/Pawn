@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject[] vidas;
     private float horizontalMove;
     private float verticalMove;
     private Vector3 playerInput;
@@ -19,12 +21,15 @@ public class PlayerController : MonoBehaviour
     private Vector3 camForward;
     private Vector3 camRight;
     private float defaultSpeed;
+    public float max_health = 100f;
+    public float cur_health = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
         player.GetComponent<CharacterController>();
         defaultSpeed = playerSpeed;
+        cur_health = max_health;
     }
 
     // Update is called once per frame
@@ -97,5 +102,22 @@ public class PlayerController : MonoBehaviour
         }
         
     }
-   
+    public void TakeDamage(float amount)
+    {
+        if (cur_health > 0)
+        {
+            if (cur_health - amount >= 0)
+            {
+                cur_health -= amount;
+                int vida = (int)cur_health / 20;
+                //Debug.Log(vida);
+                vidas[vida].gameObject.GetComponent<Image>().color = Color.white;
+            }
+            else
+            {
+                cur_health = 0;
+                vidas[0].gameObject.GetComponent<Image>().color = Color.white;
+            }
+        }
+    }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Sword : MonoBehaviour
 {
+    [SerializeField] private bool soyPawn;
     public bool stay = false;
     public bool atacando = false;
     float damage = 20f;
@@ -21,16 +22,32 @@ public class Sword : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("whatIsEnemy"))
+        if (soyPawn)
         {
-            if (atacando)
+            if (other.gameObject.layer == LayerMask.NameToLayer("whatIsEnemy"))
             {
-                //Debug.Log("DAÑOOOOOOOOOOOOOO");
-                other.gameObject.GetComponent<HealthScript>().TakeDamage(damage);
-                atacando = false;
-                
+                if (atacando)
+                {
+                    //Debug.Log("DAÑOOOOOOOOOOOOOO");
+                    other.gameObject.GetComponent<EnemyAI>().TakeDamage(damage);
+                    atacando = false;
+
+                }
+                stay = true;
             }
-            stay = true;
+        } else
+        {
+            if (other.gameObject.layer == LayerMask.NameToLayer("whatIsPlayer"))
+            {
+                if (atacando)
+                {
+                    //Debug.Log("DAÑOOOOOOOOOOOOOO");
+                    other.gameObject.GetComponent<PlayerController>().TakeDamage(damage);
+                    atacando = false;
+
+                }
+                stay = true;
+            }
         }
     }
     private void OnTriggerExit(Collider other)
@@ -40,14 +57,29 @@ public class Sword : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("whatIsEnemy"))
+        if (soyPawn)
         {
-            if (atacando && stay)
+            if (other.gameObject.layer == LayerMask.NameToLayer("whatIsEnemy"))
             {
-                other.gameObject.GetComponent<HealthScript>().TakeDamage(damage);
-                stay = false;
-                Invoke(nameof(stayToFalse), 1.5f);
-                
+                if (atacando && stay)
+                {
+                    other.gameObject.GetComponent<EnemyAI>().TakeDamage(damage);
+                    stay = false;
+                    Invoke(nameof(stayToFalse), 1.5f);
+
+                }
+            }
+        } else
+        {
+            if (other.gameObject.layer == LayerMask.NameToLayer("whatIsPlayer"))
+            {
+                if (atacando && stay)
+                {
+                    other.gameObject.GetComponent<PlayerController>().TakeDamage(damage);
+                    stay = false;
+                    Invoke(nameof(stayToFalse), 1.5f);
+
+                }
             }
         }
     }
