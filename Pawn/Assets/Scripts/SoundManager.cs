@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    [SerializeField] private AudioClip[] audioClips;
+    public AudioClip moverEspadaSound;
+    public AudioClip choqueEspadaSound;
 
-    private AudioSource audio;
+    AudioSource audio;
 
     //Reconocer el componente AudioSource
-    private void Awake()
+    void Start()
     {
         audio = GetComponent<AudioSource>();
     }
 
-    public void GestionAudios(int ind, float vol)
+    void Update()
     {
-        audio.PlayOneShot(audioClips[ind], vol);
+        if (Input.GetMouseButtonDown(0))
+        {
+            audio.clip = moverEspadaSound;
+            audio.Play();
+        }
     }
 }
