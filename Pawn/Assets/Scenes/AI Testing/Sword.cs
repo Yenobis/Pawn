@@ -5,9 +5,10 @@ using UnityEngine;
 public class Sword : MonoBehaviour
 {
     [SerializeField] private bool soyPawn;
-    public bool stay = false;
-    public bool atacando = false;
-    float damage = 20f;
+    [SerializeField] private float damage = 20f;
+    [HideInInspector] public bool stay = false;
+    [HideInInspector] public bool atacando = false;
+    
     Collider m_ObjectCollider;
     // Start is called before the first frame update
     void Start()
