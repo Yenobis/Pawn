@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Linq;
+
 public class MainMenuScript : MonoBehaviour
 {
     private static readonly string FirstPlay = "FirstPlay";
@@ -18,8 +20,9 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] private GameObject noGameSaved = null;
     [SerializeField] private GameObject newGame = null;
     public string _escenaAcargar;
+    public string _menuACargar;
 
-    [Header("Volumen")]
+[Header("Volumen")]
     [SerializeField] private TMP_Text masterTextField = null;
     [SerializeField] private Slider masterSlider = null;
 
@@ -52,7 +55,7 @@ public class MainMenuScript : MonoBehaviour
 
    void Start(){
         //Resoluciones
-        resolutions = Screen.resolutions;
+        resolutions = Screen.resolutions.Select(resolution => new Resolution { width = resolution.width, height = resolution.height }).Distinct().ToArray(); 
         resolutionDropdown.ClearOptions();
         List<string> opciones = new List<string>();
         int currentResolutionIndex = 0;
@@ -85,7 +88,7 @@ public class MainMenuScript : MonoBehaviour
         }
         else {
             masterSlider.value = PlayerPrefs.GetFloat(MasterMusic);
-            masterTextField.text = (musicSlider.value * 100).ToString("0.0");
+            masterTextField.text = (masterSlider.value * 100).ToString("0.0");
             musicSlider.value =  PlayerPrefs.GetFloat(BackgroundMusic);
             musicTextField.text = (musicSlider.value * 100).ToString("0.0");
             sfxSlider.value = PlayerPrefs.GetFloat(SfxMusic);
@@ -96,7 +99,11 @@ public class MainMenuScript : MonoBehaviour
     public void PlayGame(){
         SceneManager.LoadScene(_escenaAcargar);
     }
-
+    public void GotoMainMenu()
+    {
+        //Podemos guardar el Estado de la partida 
+        SceneManager.LoadScene(_menuACargar);
+    }
     public void QuitGame()
     {
 
@@ -154,7 +161,7 @@ public class MainMenuScript : MonoBehaviour
 
     public void AplicarVolumen()
     {
-        PlayerPrefs.SetFloat(MasterMusic, musicSlider.value);
+        PlayerPrefs.SetFloat(MasterMusic, masterSlider.value);
         PlayerPrefs.SetFloat(BackgroundMusic, musicSlider.value);
         PlayerPrefs.SetFloat(SfxMusic, sfxSlider.value);
         StartCoroutine(ConfirmationBox());
