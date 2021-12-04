@@ -48,6 +48,14 @@ public class SoundManager : MonoBehaviour
                 audios[(int)Sonidos.CAMINAR].Pause();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (!audios[(int)Sonidos.SALTOTIERRA].isPlaying)
+            {
+                audios[(int)Sonidos.SALTOTIERRA].Play();
+            }
+        }
     }
 
 }
