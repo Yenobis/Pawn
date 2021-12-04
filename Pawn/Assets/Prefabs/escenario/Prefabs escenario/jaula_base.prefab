@@ -14,6 +14,9 @@ GameObject:
   - component: {fileID: 6953950325711141749}
   - component: {fileID: 3807658374459159544}
   - component: {fileID: 8291986972341470182}
+  - component: {fileID: 7782459825872495731}
+  - component: {fileID: 4665518920338691985}
+  - component: {fileID: 3231008118921181703}
   m_Layer: 0
   m_Name: jaula_base
   m_TagString: Untagged
@@ -125,3 +128,42 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.8914604, y: 0.3923645, z: 0.55555344}
   m_Center: {x: -6.3237314, y: -0.42068672, z: 0.49699974}
+--- !u!65 &7782459825872495731
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824024660807796812}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.182816, y: 5.5428405, z: 0.52059555}
+  m_Center: {x: 0.23509479, y: 2.8363578, z: 5.345827}
+--- !u!65 &4665518920338691985
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824024660807796812}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.242253, y: 5.5428405, z: 0.38685608}
+  m_Center: {x: 0.2350955, y: 2.8363578, z: -0.07053757}
+--- !u!65 &3231008118921181703
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824024660807796812}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.59830093, y: 5.1416283, z: 5.6323395}
+  m_Center: {x: 5.1462297, y: 2.576313, z: 2.6859436}
