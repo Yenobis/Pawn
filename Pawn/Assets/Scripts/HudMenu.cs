@@ -34,6 +34,7 @@ public class HudMenu : MonoBehaviour
     public void Resume()
     {
         Time.timeScale = 1f;
+
     }
     void Pause()
     {
