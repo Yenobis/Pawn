@@ -82,12 +82,20 @@ public class EnemyAI : MonoBehaviour
         }
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
         playerTooClose = Physics.CheckSphere(transform.position, tooCloseRange, whatIsPlayer);
+
+        if (Input.GetKeyDown("f"))
+        {
+            StartCoroutine(Fade());
+            Debug.Log("pulsando f");
+        }
+
         if (cur_health <= 0)
         {
             agent.SetDestination(transform.position);
             playerInSightRange = false;
             playerInAttackRange = true;
             animator.SetTrigger("Die");
+            StartCoroutine(Fade());
             Destroy(gameObject, 3f);
             
         }
@@ -96,6 +104,26 @@ public class EnemyAI : MonoBehaviour
         if (playerInSightRange && playerInAttackRange) { alreadyPatrolling = false; AttackPlayer(); }
 
     }
+
+    IEnumerator Fade()
+    {
+        Color c = gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material.color;
+        Material[] m = gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials;
+        for (float j = 0; j < 180; j++)
+        {
+            for (int i = 0; i < m.Length; i++)
+            {
+                Color c1 = m[i].color;
+                c1.a -= j/180f;
+                Debug.Log("En corrutina");
+                //c.a = alpha;
+                gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials[i].color = c1;
+
+            }
+            yield return null;
+        }
+    }
+
 
     private void FieldOfViewCheck()
     {
