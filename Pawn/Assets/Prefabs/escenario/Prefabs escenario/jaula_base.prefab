@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 2716858022323232083}
   - component: {fileID: 166845065131452825}
   - component: {fileID: 6953950325711141749}
+  - component: {fileID: 3807658374459159544}
+  - component: {fileID: 8291986972341470182}
   m_Layer: 0
   m_Name: jaula_base
   m_TagString: Untagged
@@ -27,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1824024660807796812}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.810959, y: 24.032816, z: 35.96941}
+  m_LocalPosition: {x: -13.03, y: 24.032816, z: 35.96941}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -95,5 +97,31 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 13.243917, y: 1.7782483, z: 7.920731}
-  m_Center: {x: -1.176578, y: -0.8291037, z: 2.7305205}
+  m_Size: {x: 10.367541, y: 1.7782483, z: 7.920731}
+  m_Center: {x: 0.2616105, y: -0.8291037, z: 2.7305205}
+--- !u!65 &3807658374459159544
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824024660807796812}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.920535, y: 0.4142475, z: 0.5404968}
+  m_Center: {x: -6.3382688, y: -0.40974522, z: 4.941593}
+--- !u!65 &8291986972341470182
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824024660807796812}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.8914604, y: 0.3923645, z: 0.55555344}
+  m_Center: {x: -6.3237314, y: -0.42068672, z: 0.49699974}
