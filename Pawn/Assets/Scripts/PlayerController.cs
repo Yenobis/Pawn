@@ -15,12 +15,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField]private float fallVelocity;
     [SerializeField]private float fuerzaSalto;
     private Vector3 movePlayer;
+    private float defaultSpeed;
 
     public float gravity = 9.8f;
+
     public Camera mainCamera;
     private Vector3 camForward;
     private Vector3 camRight;
-    private float defaultSpeed;
+
+    private bool isOnSlope = false;
+    private Vector3 hitNormal;
+    [SerializeField]private float slideVelocity;
+    [SerializeField] private float slopeForceDown;
+
     public float max_health = 100f;
     public float cur_health = 0f;
 
@@ -81,7 +88,20 @@ public class PlayerController : MonoBehaviour
             fallVelocity -= gravity * Time.deltaTime;
             movePlayer.y = fallVelocity;
         }
-        
+
+        DeslizaAbajo();
+    }
+    //Función que detecta la pendiente donde se encuentra el jugador
+    public void DeslizaAbajo()
+    {
+        isOnSlope = Vector3.Angle(Vector3.up, hitNormal) >= player.slopeLimit;
+
+        if (isOnSlope)
+        {
+            movePlayer.x += ((1f - hitNormal.y)* hitNormal.x) * slideVelocity;
+            movePlayer.z += ((1f - hitNormal.y) * hitNormal.z) * slideVelocity;
+            movePlayer.y += slopeForceDown;
+        }
     }
     //Función para realizar las habilidades del jugador 
     void HabilidadesJugador() 
@@ -115,5 +135,10 @@ public class PlayerController : MonoBehaviour
                 cur_health = 0;
             }
         }
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        hitNormal = hit.normal;
     }
 }

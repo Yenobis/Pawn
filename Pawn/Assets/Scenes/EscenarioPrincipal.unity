@@ -25505,9 +25505,21 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1096352596}
+    - target: {fileID: 1640001938028263544, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
+      propertyPath: slideVelocity
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1640001938028263544, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
+      propertyPath: slopeForceDown
+      value: -14
+      objectReference: {fileID: 0}
     - target: {fileID: 1640001938028263549, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_Name
-      value: Pawn EscenaPrincipal
+      value: Pawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 1640001938028263550, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
+      propertyPath: m_SlopeLimit
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938028263551, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_RootOrder
