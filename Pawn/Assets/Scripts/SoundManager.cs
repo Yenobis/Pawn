@@ -26,15 +26,12 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    void Update()
+    /*void moverEspada ()
     {
-        if (Input.GetMouseButtonDown(0))  //Detecta la pulsacion del clic izquierdo
-        {
-            if (!audios[(int)Sonidos.MOVERESPADA].isPlaying) {
-                audios[(int)Sonidos.MOVERESPADA].Play();
-            }
-        }
+        audios[(int)Sonidos.MOVERESPADA].Play();*/
 
+    private void Update()
+    {
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
             if (!audios[(int)Sonidos.CAMINAR].isPlaying)
@@ -57,5 +54,10 @@ public class SoundManager : MonoBehaviour
             }
         }
     }
-
+    
 }
+
+/*public void Correr ()
+{
+    audios[(int)Sonidos.CAMINAR].Play();
+}*/

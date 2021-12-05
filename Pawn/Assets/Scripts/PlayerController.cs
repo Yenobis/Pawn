@@ -111,6 +111,8 @@ public class PlayerController : MonoBehaviour
 
             fallVelocity = fuerzaSalto;
             movePlayer.y = fallVelocity;
+            //SoundManager x = SoundManager;
+            //x.Correr();
         }
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
