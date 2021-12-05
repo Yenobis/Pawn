@@ -14,11 +14,13 @@ public class SoundManager : MonoBehaviour
         TOTAL_SONIDOS
     }
     public AudioSource[] audios;
+    GameObject opciones;
 
     string[] nombreSonidos = { "MoverEspada", "SaltoTierra", "Caminar" };
 
     void Start()
     {
+        opciones = GameObject.Find("OpcionesMenu");
         audios = GetComponents<AudioSource>();
 
         for (int i = (int)Sonidos.MOVERESPADA; i < (int)Sonidos.TOTAL_SONIDOS; i++)
@@ -29,30 +31,30 @@ public class SoundManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
-        { 
-            if (!audios[(int)Sonidos.CAMINAR].isPlaying)
-            {
-                audios[(int)Sonidos.CAMINAR].Play();
-            }
-        } else
+        if (Time.timeScale == 1f)
         {
-            if (audios[(int)Sonidos.CAMINAR].isPlaying)
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
             {
-                audios[(int)Sonidos.CAMINAR].Pause();
+                if (!audios[(int)Sonidos.CAMINAR].isPlaying)
+                {
+                    audios[(int)Sonidos.CAMINAR].Play();
+                }
             }
-        }
+            else
+            {
+                if (audios[(int)Sonidos.CAMINAR].isPlaying)
+                {
+                    audios[(int)Sonidos.CAMINAR].Pause();
+                }
+            }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (!audios[(int)Sonidos.SALTOTIERRA].isPlaying)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                audios[(int)Sonidos.SALTOTIERRA].Play();
+                if (!audios[(int)Sonidos.SALTOTIERRA].isPlaying)
+                {
+                    audios[(int)Sonidos.SALTOTIERRA].Play();
+                }
             }
         }
-    }
-    public void Correr ()
-    {
-        audios[(int)Sonidos.CAMINAR].Play();
     }
 }
