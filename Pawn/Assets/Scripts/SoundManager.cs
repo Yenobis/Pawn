@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
+
     public enum Sonidos { 
         MOVERESPADA,
         SALTOTIERRA,
@@ -26,14 +27,10 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    /*void moverEspada ()
-    {
-        audios[(int)Sonidos.MOVERESPADA].Play();*/
-
     private void Update()
     {
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
-        {
+        { 
             if (!audios[(int)Sonidos.CAMINAR].isPlaying)
             {
                 audios[(int)Sonidos.CAMINAR].Play();
@@ -54,10 +51,8 @@ public class SoundManager : MonoBehaviour
             }
         }
     }
-    
+    public void Correr ()
+    {
+        audios[(int)Sonidos.CAMINAR].Play();
+    }
 }
-
-/*public void Correr ()
-{
-    audios[(int)Sonidos.CAMINAR].Play();
-}*/
