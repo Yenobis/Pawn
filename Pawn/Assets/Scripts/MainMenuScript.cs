@@ -11,6 +11,7 @@ public class MainMenuScript : MonoBehaviour
     private static readonly string FirstPlay = "FirstPlay";
     private static readonly string BackgroundMusic = "BackgroundMusic";
     private static readonly string SfxMusic = "SfxMusic";
+    private static readonly string AmbientalMusic = "AmbientalMusic";
     private static readonly string MasterMusic = "MasterMusic";
     int firstPlayInt = 0;
 
@@ -32,13 +33,16 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] private TMP_Text sfxTextField = null;
     [SerializeField] private Slider sfxSlider = null;
 
+    [SerializeField] private TMP_Text ambientalTextField = null;
+    [SerializeField] private Slider ambientalSlider = null;
+
     [SerializeField] private AudioSource audioBackground = null;
     [SerializeField] private AudioSource[] audioSFX = null;
+    [SerializeField] private AudioSource[] audioAmbiental = null;
     [SerializeField] private GameObject confirmationPrompt = null;
     [SerializeField] private float defVolumen = 1.0f;
 
-    [Space(10)]
-    [SerializeField] private Toggle fullscreenToggle ;
+
 
     [Header("Graficos")]
     [SerializeField] private Slider brightnessSlider = null;
@@ -46,7 +50,8 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] private float defBrightness = 0.5f;
     private float _brightnessLevel;
     private bool _isFullScreen;
-
+    [Space(10)]
+    [SerializeField] private Toggle fullscreenToggle;
     [Header("Resoluciones")]
     public TMP_Dropdown resolutionDropdown = null;
     private Resolution[] resolutions;
@@ -83,6 +88,8 @@ public class MainMenuScript : MonoBehaviour
             musicTextField.text = (defVolumen * 100).ToString("0.0");
             sfxSlider.value = defVolumen;
             sfxTextField.text = (defVolumen * 100).ToString("0.0");
+            ambientalSlider.value = defVolumen;
+            ambientalTextField.text = (defVolumen * 100).ToString("0.0");
             AplicarVolumen();
             PlayerPrefs.SetInt(FirstPlay, -1);
         }
@@ -93,6 +100,8 @@ public class MainMenuScript : MonoBehaviour
             musicTextField.text = (musicSlider.value * 100).ToString("0.0");
             sfxSlider.value = PlayerPrefs.GetFloat(SfxMusic);
             sfxTextField.text = (sfxSlider.value * 100).ToString("0.0");
+            ambientalSlider.value = PlayerPrefs.GetFloat(AmbientalMusic);
+            ambientalTextField.text = (ambientalSlider.value * 100).ToString("0.0");
             AplicarVolumen();
         }
     }
@@ -142,6 +151,15 @@ public class MainMenuScript : MonoBehaviour
         }
         sfxTextField.text = (volume * 100).ToString("0.0");
     }
+    public void SetAmbientalVolumen(float volume)
+    {
+        for (int i = 0; i < audioAmbiental.Length; ++i)
+        {
+            audioAmbiental[i].volume = volume;
+        }
+        ambientalTextField.text = (volume * 100).ToString("0.0");
+    }
+
     public void SetBrightness(float brightness)
     {
         _brightnessLevel = brightness;
@@ -164,6 +182,7 @@ public class MainMenuScript : MonoBehaviour
         PlayerPrefs.SetFloat(MasterMusic, masterSlider.value);
         PlayerPrefs.SetFloat(BackgroundMusic, musicSlider.value);
         PlayerPrefs.SetFloat(SfxMusic, sfxSlider.value);
+        PlayerPrefs.SetFloat(AmbientalMusic, ambientalSlider.value);
         StartCoroutine(ConfirmationBox());
     }
 
