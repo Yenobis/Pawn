@@ -48,6 +48,7 @@ public class EnemyAI : MonoBehaviour
     public float angle;
     public float sightRange, attackRange, tooCloseRange;
     private bool playerInSightRange, playerInAttackRange, playerTooClose;
+    private bool desaparecido = false;
 
     private void Awake()
     {
@@ -83,20 +84,15 @@ public class EnemyAI : MonoBehaviour
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
         playerTooClose = Physics.CheckSphere(transform.position, tooCloseRange, whatIsPlayer);
 
-        if (Input.GetKeyDown("f"))
-        {
-            StartCoroutine(Fade());
-            Debug.Log("pulsando f");
-        }
-
         if (cur_health <= 0)
         {
             agent.SetDestination(transform.position);
             playerInSightRange = false;
             playerInAttackRange = true;
             animator.SetTrigger("Die");
-            StartCoroutine(Fade());
-            Destroy(gameObject, 3f);
+            if (!desaparecido) Invoke(nameof(Desaparecer), 2f);
+            if (desaparecido) { StartCoroutine(Fade()); }
+            Destroy(gameObject, 4.2f);
             
         }
         if (!playerInSightRange && !playerInAttackRange) Patroling();
@@ -105,21 +101,26 @@ public class EnemyAI : MonoBehaviour
 
     }
 
+    private void Desaparecer()
+    {
+        desaparecido = true;
+    }
     IEnumerator Fade()
     {
-        Color c = gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material.color;
-        Material[] m = gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials;
-        for (float j = 0; j < 180; j++)
+        gameObject.GetComponent<CapsuleCollider>().isTrigger = true;
+        for (float alpha = 1f; alpha >= 0; alpha -= 0.5f * Time.deltaTime)
         {
-            for (int i = 0; i < m.Length; i++)
+            Material[] m = gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials;
+            //Debug.Log(alpha);
+            for (int i = 0; i < 3; i++)
             {
                 Color c1 = m[i].color;
-                c1.a -= j/180f;
-                Debug.Log("En corrutina");
-                //c.a = alpha;
-                gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials[i].color = c1;
+                c1.a = alpha;
+                m[i] = m[i + 3];
+                m[i].color = c1;
 
             }
+            gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials = m;
             yield return null;
         }
     }
