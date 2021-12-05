@@ -35,6 +35,16 @@ public class Sword : MonoBehaviour
 
                 }
                 stay = true;
+            } else if (other.gameObject.layer == LayerMask.NameToLayer("breakable"))
+            {
+                if (atacando)
+                {
+                    //Debug.Log("DAÑOOOOOOOOOOOOOO");
+                    other.gameObject.GetComponent<HealthScript>().TakeDamage(damage);
+                    atacando = false;
+
+                }
+                stay = true;
             }
         } else
         {
@@ -69,6 +79,16 @@ public class Sword : MonoBehaviour
                     Invoke(nameof(stayToFalse), 1.5f);
 
                 }
+            } else if (other.gameObject.layer == LayerMask.NameToLayer("breakable"))
+            {
+                if (atacando)
+                {
+                    //Debug.Log("DAÑOOOOOOOOOOOOOO");
+                    other.gameObject.GetComponent<HealthScript>().TakeDamage(damage);
+                    atacando = false;
+
+                }
+                stay = true;
             }
         } else
         {
