@@ -44,7 +44,7 @@ public class MainMenuScript : MonoBehaviour
 
 
 
-    [Header("Graficos")]
+    [Header("Gráficos")]
     [SerializeField] private Slider brightnessSlider = null;
     [SerializeField] private TMP_Text brightnessField = null;
     [SerializeField] private float defBrightness = 0.5f;
@@ -215,7 +215,7 @@ public class MainMenuScript : MonoBehaviour
             sfxTextField.text = (defVolumen * 100).ToString("0.0");
             AplicarVolumen();
         }
-        if (MenuType == "Graficos")
+        if (MenuType == "Gráficos")
         {
             //Resetear Brillo **FALTA VERLO** postprocesing
             brightnessSlider.value = defBrightness;
