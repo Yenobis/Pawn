@@ -25,6 +25,7 @@ public class EnemyAI : MonoBehaviour
     public LayerMask obstructionMask, whatIsGround, whatIsPlayer;
     [HideInInspector]
     public float speed;
+    public float rotationSpeed;
     public float max_health = 100f;
     public float cur_health = 0f;
     float damage = 5f;
@@ -216,9 +217,12 @@ public class EnemyAI : MonoBehaviour
         animator.SetBool("isAttacking", false);
         animator.SetBool("isWalking", true);
         animator.SetBool("isRunning", true);
-        pos_player = new Vector3(playerRef.transform.position.x, transform.position.y, playerRef.transform.position.z);
-        agent.SetDestination(playerRef.transform.position);
+        Quaternion targetRotation = Quaternion.LookRotation(playerRef.transform.position - transform.position);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        //pos_player = new Vector3(playerRef.transform.position.x, transform.position.y, playerRef.transform.position.z);
         //transform.LookAt(pos_player);
+        agent.SetDestination(playerRef.transform.position);
+        
     }
 
     private void AttackPlayer()
