@@ -13,6 +13,10 @@ public class MainMenuScript : MonoBehaviour
     private static readonly string SfxMusic = "SfxMusic";
     private static readonly string AmbientalMusic = "AmbientalMusic";
     private static readonly string MasterMusic = "MasterMusic";
+
+    private static readonly string MasterFullScreen = "MasterFullScreen";
+    private static readonly string MasterBrillo = "MasterBrillo";
+
     int firstPlayInt = 0;
 
     // Start is called before the first frame update
@@ -59,7 +63,7 @@ public class MainMenuScript : MonoBehaviour
 
 
    void Start(){
-        //Resoluciones
+        //Graficos
         resolutions = Screen.resolutions.Select(resolution => new Resolution { width = resolution.width, height = resolution.height }).Distinct().ToArray(); 
         resolutionDropdown.ClearOptions();
         List<string> opciones = new List<string>();
@@ -76,7 +80,16 @@ public class MainMenuScript : MonoBehaviour
         resolutionDropdown.AddOptions(opciones);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
-
+        //Resolución
+        if (PlayerPrefs.GetInt(MasterFullScreen) == 1) {
+            fullscreenToggle.isOn = true;
+            Screen.fullScreen = true;
+        }else
+        {
+            fullscreenToggle.isOn = false;
+            Screen.fullScreen = false;
+        }
+       
         //Volumen
         firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
         if (firstPlayInt == 0 )
@@ -188,10 +201,10 @@ public class MainMenuScript : MonoBehaviour
 
     public void AplicarGraficos()
     {
-        PlayerPrefs.SetFloat("masterBrillo", _brightnessLevel);
+        PlayerPrefs.SetFloat(MasterBrillo, _brightnessLevel);
         //Cambiar brillo del postprocesado **FALTA VERLO**
 
-        PlayerPrefs.SetInt("masterFullScreen", _isFullScreen ? 1:0);
+        PlayerPrefs.SetInt(MasterFullScreen, _isFullScreen ? 1:0);
         Screen.fullScreen = _isFullScreen;
         StartCoroutine(ConfirmationBox());
     }
@@ -213,6 +226,8 @@ public class MainMenuScript : MonoBehaviour
 
             sfxSlider.value = defVolumen;
             sfxTextField.text = (defVolumen * 100).ToString("0.0");
+            ambientalSlider.value = defVolumen;
+            ambientalTextField.text = (defVolumen * 100).ToString("0.0");
             AplicarVolumen();
         }
         if (MenuType == "Gráficos")
