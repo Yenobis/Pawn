@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
@@ -40,9 +41,7 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] private TMP_Text ambientalTextField = null;
     [SerializeField] private Slider ambientalSlider = null;
 
-    [SerializeField] private AudioSource audioBackground = null;
-    [SerializeField] private AudioSource[] audioSFX = null;
-    [SerializeField] private AudioSource[] audioAmbiental = null;
+    [SerializeField] private AudioMixer auxioMixer = null;
     [SerializeField] private GameObject confirmationPrompt = null;
     [SerializeField] private float defVolumen = 1.0f;
 
@@ -148,28 +147,24 @@ public class MainMenuScript : MonoBehaviour
     }
     public void SetMusicVolumen(float volume)
     {
-        audioBackground.volume = volume;
+        auxioMixer.SetFloat("musicVolume", Mathf.Log10(volume) * 20);
         musicTextField.text = (volume*100).ToString("0.0");
     }
     public void SetMasterVolumen(float volume)
     {
-        AudioListener.volume = volume;
+        auxioMixer.SetFloat("masterVolume", Mathf.Log10(volume) * 20);
         masterTextField.text = (volume * 100).ToString("0.0");
     }
     public void SetSfxVolumen(float volume)
     {
-        for (int i=0; i < audioSFX.Length; ++i)
-        {
-            audioSFX[i].volume = volume;
-        }
+
+        auxioMixer.SetFloat("sfxVolume", Mathf.Log10(volume) * 20);
         sfxTextField.text = (volume * 100).ToString("0.0");
     }
     public void SetAmbientalVolumen(float volume)
     {
-        for (int i = 0; i < audioAmbiental.Length; ++i)
-        {
-            audioAmbiental[i].volume = volume;
-        }
+
+        auxioMixer.SetFloat("ambientalVolume", Mathf.Log10(volume) * 20);
         ambientalTextField.text = (volume * 100).ToString("0.0");
     }
 
@@ -213,11 +208,6 @@ public class MainMenuScript : MonoBehaviour
 
         if(MenuType == "Audio")
         {
-            audioBackground.volume = defVolumen;
-            for (int i = 0; i < audioSFX.Length; ++i)
-            {
-                audioSFX[i].volume = defVolumen;
-            }
             masterSlider.value = defVolumen;
             masterTextField.text = (defVolumen * 100).ToString("0.0");
 
@@ -226,8 +216,10 @@ public class MainMenuScript : MonoBehaviour
 
             sfxSlider.value = defVolumen;
             sfxTextField.text = (defVolumen * 100).ToString("0.0");
+
             ambientalSlider.value = defVolumen;
             ambientalTextField.text = (defVolumen * 100).ToString("0.0");
+
             AplicarVolumen();
         }
         if (MenuType == "Gráficos")
