@@ -59,7 +59,7 @@ public class animationState : MonoBehaviour
 
 
         }
-
+/*
     void dealingDamage()
     {
         GetComponentInChildren<Sword>().atacando = true;
@@ -71,4 +71,5 @@ public class animationState : MonoBehaviour
         GetComponentInChildren<Sword>().atacando = false;
 
     }
+    */
 }

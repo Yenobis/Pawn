@@ -233,7 +233,7 @@ public class EnemyAI : MonoBehaviour
         agent.SetDestination(transform.position);
         pos_player = new Vector3(playerRef.transform.position.x, transform.position.y, playerRef.transform.position.z);
         transform.LookAt(pos_player);
-        GameObject.Find("EnemigoSound").GetComponent<EnemigoSoundManager>().Caminar();
+        //GameObject.Find("EnemigoSound").GetComponent<EnemigoSoundManager>().Caminar();
 
         if (!alreadyAttacked)
         {
