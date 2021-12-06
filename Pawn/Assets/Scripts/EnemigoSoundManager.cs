@@ -26,35 +26,15 @@ public class EnemigoSoundManager : MonoBehaviour
 
     private void Update()
     {
-        /*if (Time.timeScale == 1f)
-        {
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
-            {
-                if (!audios[(int)Sonidos.CAMINAR].isPlaying)
-                {
-                    audios[(int)Sonidos.CAMINAR].Play();
-                }
-            }
-            else
-            {
-                if (audios[(int)Sonidos.CAMINAR].isPlaying)
-                {
-                    audios[(int)Sonidos.CAMINAR].Pause();
-                }
-            }
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                if (!audios[(int)Sonidos.MOVERESPADA].isPlaying)
-                {
-                    audios[(int)Sonidos.MOVERESPADA].Play();
-                }
-            }
-        }*/
+        
     }
 
-    public void Caminar()
+    public void CaminarPlay()
     {
         audios[(int)Sonidos.CAMINAR].Play();
+    }
+    public void CaminarPause()
+    {
+        audios[(int)Sonidos.CAMINAR].Pause();
     }
 }
