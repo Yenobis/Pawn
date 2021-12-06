@@ -2945,10 +2945,7 @@ MonoBehaviour:
   sfxSlider: {fileID: 743453774}
   ambientalTextField: {fileID: 0}
   ambientalSlider: {fileID: 0}
-  audioBackground: {fileID: 0}
-  audioSFX:
-  - {fileID: 0}
-  audioAmbiental: []
+  auxioMixer: {fileID: 24100000, guid: f1aabb519c5334b498eb22396df00d1c, type: 2}
   confirmationPrompt: {fileID: 1799757101}
   defVolumen: 1
   brightnessSlider: {fileID: 7829907}
@@ -12811,7 +12808,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096352594}
-  m_LocalRotation: {x: 0.15125316, y: -0.10120608, z: 0.015569664, w: 0.9831772}
+  m_LocalRotation: {x: 0.15125316, y: -0.10120607, z: 0.015569662, w: 0.9831772}
   m_LocalPosition: {x: -14.083429, y: 28.558441, z: 15.134246}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -33136,11 +33133,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938010582089, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.015630819
+      value: 0.015630849
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938010582089, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0019482095
+      value: -0.0019482132
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938028263544, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: mainCamera
@@ -33228,7 +33225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938236349301, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.015493111
+      value: 0.015493126
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938236349301, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.z
