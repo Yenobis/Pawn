@@ -194,7 +194,6 @@ public class EnemyAI : MonoBehaviour
             IterateWaypointIndex();
             UpdateDestination();
             alreadyPatrolling = true;
-            //GameObject.Find("EnemigoSound").GetComponent<EnemigoSoundManager>().Caminar();
         }
     }
 
@@ -234,6 +233,7 @@ public class EnemyAI : MonoBehaviour
         agent.SetDestination(transform.position);
         pos_player = new Vector3(playerRef.transform.position.x, transform.position.y, playerRef.transform.position.z);
         transform.LookAt(pos_player);
+        GameObject.Find("EnemigoSound").GetComponent<EnemigoSoundManager>().Caminar();
 
         if (!alreadyAttacked)
         {

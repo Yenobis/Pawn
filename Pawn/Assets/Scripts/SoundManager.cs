@@ -61,6 +61,11 @@ public class SoundManager : MonoBehaviour
                     audios[(int)Sonidos.MOVERESPADA].Play();
                 }
             }
+        } else
+        {
+            audios[(int)Sonidos.CAMINAR].Pause();
+            audios[(int)Sonidos.SALTOTIERRA].Pause();
+            audios[(int)Sonidos.MOVERESPADA].Pause();
         }
     }
 }
