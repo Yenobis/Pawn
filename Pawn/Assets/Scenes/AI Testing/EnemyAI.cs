@@ -49,6 +49,8 @@ public class EnemyAI : MonoBehaviour
     public float angle;
     public float sightRange, attackRange, tooCloseRange;
     private bool playerInSightRange, playerInAttackRange, playerTooClose;
+    [HideInInspector]
+    public bool isWalking, isRunning, isAttacking;
     private bool desaparecido = false;
 
     private void Awake()
@@ -69,9 +71,9 @@ public class EnemyAI : MonoBehaviour
 
     private void Update()
     {
-        bool isWalking = animator.GetBool("isWalking");
-        bool isRunning = animator.GetBool("isRunning");
-        bool isAttacking = animator.GetBool("isAttacking");
+        isWalking = animator.GetBool("isWalking");
+        isRunning = animator.GetBool("isRunning");
+        isAttacking = animator.GetBool("isAttacking");
 
         if (canSeePlayer)
         {
