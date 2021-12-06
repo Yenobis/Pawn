@@ -14,13 +14,11 @@ public class SoundManager : MonoBehaviour
         TOTAL_SONIDOS
     }
     public AudioSource[] audios;
-    GameObject opciones;
 
     string[] nombreSonidos = { "MoverEspada", "SaltoTierra", "Caminar" };
 
     void Start()
     {
-        opciones = GameObject.Find("OpcionesMenu");
         audios = GetComponents<AudioSource>();
 
         for (int i = (int)Sonidos.MOVERESPADA; i < (int)Sonidos.TOTAL_SONIDOS; i++)
@@ -53,6 +51,14 @@ public class SoundManager : MonoBehaviour
                 if (!audios[(int)Sonidos.SALTOTIERRA].isPlaying)
                 {
                     audios[(int)Sonidos.SALTOTIERRA].Play();
+                }
+            }
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (!audios[(int)Sonidos.MOVERESPADA].isPlaying)
+                {
+                    audios[(int)Sonidos.MOVERESPADA].Play();
                 }
             }
         }

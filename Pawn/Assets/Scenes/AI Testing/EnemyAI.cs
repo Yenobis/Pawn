@@ -194,6 +194,7 @@ public class EnemyAI : MonoBehaviour
             IterateWaypointIndex();
             UpdateDestination();
             alreadyPatrolling = true;
+            //GameObject.Find("EnemigoSound").GetComponent<EnemigoSoundManager>().Caminar();
         }
     }
 
