@@ -147,18 +147,40 @@ public class MainMenuScript : MonoBehaviour
     }
     public void SetMusicVolumen(float volume)
     {
-        auxioMixer.SetFloat("musicVolume", Mathf.Log10(volume) * 20);
+        if (volume == 0)
+        {
+            auxioMixer.SetFloat("musicVolume", -80);
+        }
+        else
+        {
+            auxioMixer.SetFloat("musicVolume", Mathf.Log10(volume) * 20);
+        }
         musicTextField.text = (volume*100).ToString("0.0");
     }
     public void SetMasterVolumen(float volume)
     {
-        auxioMixer.SetFloat("masterVolume", Mathf.Log10(volume) * 20);
+        if (volume == 0)
+        {
+            auxioMixer.SetFloat("masterVolume", -80);
+        }
+        else
+        {
+            auxioMixer.SetFloat("masterVolume", Mathf.Log10(volume) * 20);
+        }
+        
         masterTextField.text = (volume * 100).ToString("0.0");
     }
     public void SetSfxVolumen(float volume)
     {
-
-        auxioMixer.SetFloat("sfxVolume", Mathf.Log10(volume) * 20);
+        if (volume == 0)
+        {
+            auxioMixer.SetFloat("sfxVolume", -80);
+        }
+        else
+        {
+            auxioMixer.SetFloat("sfxVolume", Mathf.Log10(volume) * 20);
+        }
+        
         sfxTextField.text = (volume * 100).ToString("0.0");
     }
     public void SetAmbientalVolumen(float volume)
