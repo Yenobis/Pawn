@@ -219,8 +219,12 @@ public class EnemyAI : MonoBehaviour
         animator.SetBool("isAttacking", false);
         animator.SetBool("isWalking", true);
         animator.SetBool("isRunning", true);
-        Quaternion targetRotation = Quaternion.LookRotation(playerRef.transform.position - transform.position);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        float distanceToTarget = Vector3.Distance(transform.position, playerRef.transform.position);
+        if (distanceToTarget <= tooCloseRange)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(playerRef.transform.position - transform.position);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }
         //pos_player = new Vector3(playerRef.transform.position.x, transform.position.y, playerRef.transform.position.z);
         //transform.LookAt(pos_player);
         agent.SetDestination(playerRef.transform.position);
