@@ -1,8 +1,11 @@
 fileFormatVersion: 2
-guid: 63d59b8e5b7e5db45995cec19392a4df
+guid: 8278a50c6f6bad04b84419750f5127ae
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 570212138455285346
+    second: FLECHA|cajon.001Action
   externalObjects: {}
   materials:
     materialImportMode: 2
