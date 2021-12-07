@@ -910,7 +910,7 @@ MonoBehaviour:
     m_Bits: 128
   speed: 0
   rotationSpeed: 10
-  max_health: 100
+  max_health: 1
   cur_health: 0
   walkPoint: {x: 0, y: 0, z: 0}
   pos_player: {x: 0, y: 0, z: 0}
@@ -1373,7 +1373,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 3388763688854031452, guid: 64ed2dbb4f29b1d4082b2cdce68e819b, type: 3}
+  - {fileID: 2100000, guid: e0f8c705ffabdf944a0687ead8293262, type: 2}
+  - {fileID: 2100000, guid: 73d73bab7c434824f967e5d2d98b5462, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1429,7 +1430,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b555c8b897375444eba72a84908d454a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 511807198}
+  target:
+  - {fileID: 1907929567}
+  - {fileID: 511807198}
 --- !u!1 &872849791 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 6946797669ae3724288407ceaee7fc18, type: 3}
@@ -3658,6 +3661,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audios: []
+--- !u!4 &1907929567 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 307998661736761935, guid: 2d7ec1140c4f5eb43afb7219213a9591, type: 3}
+  m_PrefabInstance: {fileID: 273737008652705175}
+  m_PrefabAsset: {fileID: 0}
 --- !u!82 &1907929568
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4050,6 +4058,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2570444976725219591}
     - target: {fileID: 273737007060590136, guid: 2d7ec1140c4f5eb43afb7219213a9591, type: 3}
+      propertyPath: max_health
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 273737007060590136, guid: 2d7ec1140c4f5eb43afb7219213a9591, type: 3}
       propertyPath: rotationSpeed
       value: 10
       objectReference: {fileID: 0}
@@ -4284,15 +4296,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 256071271172071935, guid: a050a867ad71ece45a9a91556341d59b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.10479151
+      value: 0.10479149
       objectReference: {fileID: 0}
     - target: {fileID: 256071271172071935, guid: a050a867ad71ece45a9a91556341d59b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0009213388
+      value: -0.0009213686
       objectReference: {fileID: 0}
     - target: {fileID: 256071271172071935, guid: a050a867ad71ece45a9a91556341d59b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000097088516
+      value: 0.000097081065
       objectReference: {fileID: 0}
     - target: {fileID: 256071271365859011, guid: a050a867ad71ece45a9a91556341d59b, type: 3}
       propertyPath: m_LocalPosition.x
