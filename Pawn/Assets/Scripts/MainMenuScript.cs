@@ -16,6 +16,7 @@ public class MainMenuScript : MonoBehaviour
     private static readonly string MasterMusic = "MasterMusic";
 
     private static readonly string MasterFullScreen = "MasterFullScreen";
+    private static readonly string MasterResolution = "MasterResolution";
     private static readonly string MasterBrillo = "MasterBrillo";
 
     int firstPlayInt = 0;
@@ -45,24 +46,30 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] private GameObject confirmationPrompt = null;
     [SerializeField] private float defVolumen = 1.0f;
 
-
+    private float masterVolumePreSave;
+    private float musicVolumePreSave;
+    private float sfxVolumePreSave;
+    private float ambientalVolumePreSave;
 
     [Header("Gráficos")]
     [SerializeField] private Slider brightnessSlider = null;
     [SerializeField] private TMP_Text brightnessField = null;
     [SerializeField] private float defBrightness = 0.5f;
+    [SerializeField] private Toggle fullscreenToggle;
     private float _brightnessLevel;
     private bool _isFullScreen;
-    [Space(10)]
-    [SerializeField] private Toggle fullscreenToggle;
+
     [Header("Resoluciones")]
     public TMP_Dropdown resolutionDropdown = null;
     private Resolution[] resolutions;
+    private int resolutionIndex;
 
+    private bool fullscreenPreSave;
+    private float brightnessPreSave;
+    private int resolutionIndexPreSave;
 
-
-   void Start(){
-        //Graficos
+    void Start(){
+        //Graficos Dropdown Resulución
         resolutions = Screen.resolutions.Select(resolution => new Resolution { width = resolution.width, height = resolution.height }).Distinct().ToArray(); 
         resolutionDropdown.ClearOptions();
         List<string> opciones = new List<string>();
@@ -79,7 +86,7 @@ public class MainMenuScript : MonoBehaviour
         resolutionDropdown.AddOptions(opciones);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
-        //Resolución
+        //Fullscreen
         if (PlayerPrefs.GetInt(MasterFullScreen) == 1) {
             fullscreenToggle.isOn = true;
             Screen.fullScreen = true;
@@ -89,11 +96,11 @@ public class MainMenuScript : MonoBehaviour
             Screen.fullScreen = false;
         }
        
-        //Volumen
+
         firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
         if (firstPlayInt == 0 )
         {
-
+            //Volumen
             masterSlider.value = defVolumen;
             masterTextField.text = (defVolumen * 100).ToString("0.0");
             musicSlider.value = defVolumen;
@@ -102,10 +109,10 @@ public class MainMenuScript : MonoBehaviour
             sfxTextField.text = (defVolumen * 100).ToString("0.0");
             ambientalSlider.value = defVolumen;
             ambientalTextField.text = (defVolumen * 100).ToString("0.0");
-            AplicarVolumen();
             PlayerPrefs.SetInt(FirstPlay, -1);
         }
         else {
+            //Volumen
             masterSlider.value = PlayerPrefs.GetFloat(MasterMusic);
             masterTextField.text = (masterSlider.value * 100).ToString("0.0");
             musicSlider.value =  PlayerPrefs.GetFloat(BackgroundMusic);
@@ -114,7 +121,9 @@ public class MainMenuScript : MonoBehaviour
             sfxTextField.text = (sfxSlider.value * 100).ToString("0.0");
             ambientalSlider.value = PlayerPrefs.GetFloat(AmbientalMusic);
             ambientalTextField.text = (ambientalSlider.value * 100).ToString("0.0");
-            AplicarVolumen();
+            //Resolución
+            resolutionDropdown.value = PlayerPrefs.GetInt(MasterResolution);
+            //Cambiar brillo del postprocesado **FALTA VERLO**
         }
     }
     public void PlayGame(){
@@ -200,9 +209,10 @@ public class MainMenuScript : MonoBehaviour
         _isFullScreen = fullscreen;
         Screen.fullScreen = fullscreen;
     }
-    public void SetResolution(int resolutionIndex)
+    public void SetResolution(int rIndex)
     {
-        Resolution resolution = resolutions[resolutionIndex];
+        resolutionIndex = rIndex;
+        Resolution resolution = resolutions[rIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
 
     }
@@ -215,16 +225,58 @@ public class MainMenuScript : MonoBehaviour
         PlayerPrefs.SetFloat(AmbientalMusic, ambientalSlider.value);
         StartCoroutine(ConfirmationBox());
     }
+    public void DescartarVolumen()
+    {
+        masterSlider.value = masterVolumePreSave;
+        SetMasterVolumen(masterVolumePreSave);
+        musicSlider.value = musicVolumePreSave;
+        SetMusicVolumen(musicVolumePreSave);
+        sfxSlider.value = sfxVolumePreSave;
+        SetSfxVolumen(sfxVolumePreSave);
+        ambientalSlider.value = ambientalVolumePreSave;
+        SetAmbientalVolumen(ambientalVolumePreSave);
+    }
 
+    public void DescartarGraficos()
+    {
+        SetFullScreen(fullscreenPreSave);
+        fullscreenToggle.isOn = fullscreenPreSave;
+        //Cambiar brillo del postprocesado **FALTA VERLO**
+        //brightnessPreSave;
+        //Debug.Log(fullscreenPreSave);
+        SetResolution(resolutionIndexPreSave);
+        resolutionDropdown.value = resolutionIndexPreSave;
+    }
+    public void SetPreSaves(string MenuType)
+    {
+        if(MenuType == "Audio")
+        {
+            musicVolumePreSave = musicSlider.value;
+            masterVolumePreSave= masterSlider.value;
+            sfxVolumePreSave= sfxSlider.value;
+            ambientalVolumePreSave = ambientalSlider.value;
+        }
+        if (MenuType == "Gráficos")
+        {
+            resolutionIndexPreSave = resolutionIndex;
+            fullscreenPreSave = _isFullScreen;
+            Debug.Log(resolutionIndexPreSave);
+            Debug.Log(fullscreenPreSave);
+        }
+
+    }
     public void AplicarGraficos()
     {
         PlayerPrefs.SetFloat(MasterBrillo, _brightnessLevel);
         //Cambiar brillo del postprocesado **FALTA VERLO**
-
+        PlayerPrefs.SetInt(MasterResolution, resolutionIndex);
         PlayerPrefs.SetInt(MasterFullScreen, _isFullScreen ? 1:0);
         Screen.fullScreen = _isFullScreen;
+
+
         StartCoroutine(ConfirmationBox());
     }
+
     public void ResetButtom(string MenuType)
     {
 
@@ -241,8 +293,6 @@ public class MainMenuScript : MonoBehaviour
 
             ambientalSlider.value = defVolumen;
             ambientalTextField.text = (defVolumen * 100).ToString("0.0");
-
-            AplicarVolumen();
         }
         if (MenuType == "Gráficos")
         {
@@ -263,7 +313,7 @@ public class MainMenuScript : MonoBehaviour
     public IEnumerator ConfirmationBox()
     {
         confirmationPrompt.SetActive(true);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         confirmationPrompt.SetActive(false);
     }
 }
