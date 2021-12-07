@@ -93,6 +93,7 @@ public class EnemyAI : MonoBehaviour
             playerInSightRange = false;
             playerInAttackRange = true;
             animator.SetTrigger("Die");
+            animator.SetBool("isAttacking", false);
             if (!desaparecido) Invoke(nameof(Desaparecer), 2f);
             if (desaparecido) { StartCoroutine(Fade()); }
             Destroy(gameObject, 4.2f);
