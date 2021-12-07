@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 7750588937850277642}
   - component: {fileID: 6638380644892950703}
   - component: {fileID: 8918450317016478821}
+  - component: {fileID: 1354159454532691881}
+  - component: {fileID: 2987963839164939275}
+  - component: {fileID: 4210597699685070573}
   m_Layer: 0
   m_Name: Tienda buena
   m_TagString: Untagged
@@ -82,3 +85,43 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1354159454532691881
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6972785257260193200}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3390558720134950976, guid: 1c954e5e1a294224492cda592c197e11, type: 3}
+--- !u!65 &2987963839164939275
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6972785257260193200}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.048202172, y: 0.007034651, z: 0.030818187}
+  m_Center: {x: -0.0010432433, y: -0.02155721, z: 0.015409095}
+--- !u!65 &4210597699685070573
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6972785257260193200}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.050340794, y: 0.0081436215, z: 0.024311757}
+  m_Center: {x: 0.00007897853, y: 0.028174464, z: 0.012155881}
