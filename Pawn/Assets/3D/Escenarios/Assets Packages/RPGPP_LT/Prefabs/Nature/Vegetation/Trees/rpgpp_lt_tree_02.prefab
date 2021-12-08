@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4202130902894980}
   - component: {fileID: 33313641749024866}
   - component: {fileID: 23205945808381882}
+  - component: {fileID: 8478554997568864660}
+  - component: {fileID: -7586628843114051929}
   m_Layer: 0
   m_Name: rpgpp_lt_tree_02
   m_TagString: Untagged
@@ -81,3 +83,31 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &8478554997568864660
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458573784885960}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.60951155
+  m_Height: 8.56191
+  m_Direction: 1
+  m_Center: {x: -0.04964763, y: 3.6106086, z: 0.1656344}
+--- !u!64 &-7586628843114051929
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458573784885960}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 7dca68918011bd644a4dc268eea79b44, type: 3}
