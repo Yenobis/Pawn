@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soyPawn: 0
-  damage: 10
+  damage: 20
   stay: 0
   atacando: 0
 --- !u!1 &2121208551469257200
