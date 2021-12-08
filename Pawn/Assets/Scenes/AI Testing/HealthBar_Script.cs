@@ -14,9 +14,13 @@ public class HealthBar_Script : MonoBehaviour
     Gradient gradient;
     GradientColorKey[] colorKey;
     GradientAlphaKey[] alphaKey;
+    [HideInInspector]
+    public GameObject Cristal;
 
     private void Start()
     {
+        Cristal = gameObject.transform.Find("Cristal").gameObject;
+        Cristal.SetActive(false);
         gradient = new Gradient();
         colorKey = new GradientColorKey[3];
         colorKey[0].color = new Color(0.8f, 0.3f, 0.3f);
@@ -48,6 +52,13 @@ public class HealthBar_Script : MonoBehaviour
         CurrentHealth = Player.cur_health;
         HealthBar.fillAmount = Mathf.Lerp(HealthBar.fillAmount, CurrentHealth / MaxHealth, lerpSpeed);
         HealthBar.color = gradient.Evaluate(CurrentHealth / MaxHealth);
+        if (CurrentHealth <= 20)
+        {
+            Cristal.SetActive(true);
+        } else
+        {
+            Cristal.SetActive(false);
+        }
         //HealthBar.color = Color.Lerp(new Color(0.8f, 0.3f, 0.3f), new Color(0.1f, 0.9f, 0.4f), CurrentHealth / MaxHealth);
         //HealthBar.fillAmount = Player.cur_health / Player.max_health;
     }

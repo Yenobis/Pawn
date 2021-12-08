@@ -53,9 +53,19 @@ public class DirectionalArrow : MonoBehaviour
         //targetPosition.y = player.position.y;
         try
         {
-            transform.LookAt(2 * player.position - target[puntero].transform.position);
-            gameObject.GetComponent<MeshRenderer>().material = m[0];
-        } catch (IndexOutOfRangeException)
+            //transform.LookAt(2 * player.position - target[puntero].transform.position);
+            Vector3 enemigo = target[puntero].transform.position;
+            enemigo.y = 0;
+            Vector3 enemigo2 = (enemigo - player.position);
+            enemigo2.y = 0;
+            transform.LookAt((transform.position + transform.forward), enemigo2);
+
+            //Vector2 dir = new Vector2(enemigo.position.x - player.position.x, enemigo.position.z - player.position.z);
+            //float angle = -Mathf.Atan2(dir.x, dir.y) * Mathf.Rad2Deg;
+            //gameObject.transform.eulerAngles = new Vector3(0, 0, (enemigo - player.position).y);
+            //gameObject.GetComponent<MeshRenderer>().material = m[0];
+        }
+        catch (IndexOutOfRangeException)
         {
             //gameObject.transform.localScale = new Vector3(0f, 0f, 0f);
             gameObject.GetComponent<MeshRenderer>().material = m[1];
