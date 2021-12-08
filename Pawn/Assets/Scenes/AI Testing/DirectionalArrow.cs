@@ -10,11 +10,9 @@ public class DirectionalArrow : MonoBehaviour
     private Transform player;
     private int puntero = 0;
     private float minima = 0;
-    private Material[] m;
     // Start is called before the first frame update
     void Start()
     {
-        m = gameObject.GetComponent<MeshRenderer>().materials;
         player = GameObject.Find("Pawn").transform;
         minima = Vector3.Distance(player.position, target[0].transform.position);
         puntero = 0;
@@ -68,7 +66,7 @@ public class DirectionalArrow : MonoBehaviour
         catch (IndexOutOfRangeException)
         {
             //gameObject.transform.localScale = new Vector3(0f, 0f, 0f);
-            gameObject.GetComponent<MeshRenderer>().material = m[1];
+            //gameObject.GetComponent<MeshRenderer>().material = m[1];
             //transform.LookAt(2 * player.position - new Vector3(0,10000,0));
         }
     }
