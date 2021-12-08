@@ -192,8 +192,15 @@ public class MainMenuScript : MonoBehaviour
     }
     public void SetAmbientalVolumen(float volume)
     {
+        if (volume == 0)
+        {
+            auxioMixer.SetFloat("ambientalVolume", -80);
+        }
+        else
+        {
+            auxioMixer.SetFloat("ambientalVolume", Mathf.Log10(volume) * 20);
+        }
 
-        auxioMixer.SetFloat("ambientalVolume", Mathf.Log10(volume) * 20);
         ambientalTextField.text = (volume * 100).ToString("0.0");
     }
 
