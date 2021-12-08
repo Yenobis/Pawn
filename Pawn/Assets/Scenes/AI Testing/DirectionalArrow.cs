@@ -26,7 +26,7 @@ public class DirectionalArrow : MonoBehaviour
         player = pawn.transform;
         try
         {
-            minima = Vector3.Distance(player.position, GameObject.Find(target[0].name).transform.position);
+            minima = Vector3.Distance(player.position, target[0].transform.position);
             puntero = 0;
         } catch (MissingReferenceException)
         {
@@ -37,7 +37,7 @@ public class DirectionalArrow : MonoBehaviour
         {
             try
             {
-                Vector3 targetPosition = GameObject.Find(target[i].name).transform.position;
+                Vector3 targetPosition = target[i].transform.position;
                 if (Vector3.Distance(player.position, targetPosition) < minima)
                 {
                     minima = Vector3.Distance(player.position, targetPosition);
