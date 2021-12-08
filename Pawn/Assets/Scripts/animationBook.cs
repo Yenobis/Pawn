@@ -20,11 +20,11 @@ public class animationBook : MonoBehaviour
     {
         bool isOpen = animator.GetBool("isOpen");
 
-        if (Input.GetKey("o")){
+        if (Input.GetKeyDown("o")){
             animator.SetBool("isOpen", true);
         }
         
-        if (Input.GetKey("c")){
+        if (Input.GetKeyDown("c")){
             animator.SetBool("isOpen", false);
         }
 

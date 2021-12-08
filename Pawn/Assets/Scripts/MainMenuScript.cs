@@ -125,6 +125,10 @@ public class MainMenuScript : MonoBehaviour
         }
     }
     public void LoadScene(string escena){
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1f;
+        }
         SceneManager.LoadScene(escena);
     }
     public void GotoMainMenu()
