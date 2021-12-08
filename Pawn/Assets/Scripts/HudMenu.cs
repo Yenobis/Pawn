@@ -59,11 +59,12 @@ public class HudMenu : MonoBehaviour
             }
         }
         if (player.GetComponent<PlayerController>().cur_health == 0 && !isOnDeathScreen)
-            {
+        {
                 player.GetComponent<PlayerController>().enabled=false;
                 isOnDeathScreen = true;
-                Debug.Log("Has muerto");
-                StartCoroutine(DeathMenu());
+                muerte.SetActive(true);
+                muerte.GetComponent<Animator>().SetBool("muerte", true);
+            StartCoroutine(DeathMenu());
 
         }
 
@@ -71,10 +72,10 @@ public class HudMenu : MonoBehaviour
 
     public IEnumerator DeathMenu()
     {
-        yield return new WaitForSeconds(2f);
-        Pause();
-        player.GetComponent<PlayerController>().enabled = true;
-        muerte.SetActive(true);
+
+        yield return new WaitForSeconds(3f);
+        MenuController.GetComponent<MainMenuScript>().LoadScene("EscenarioPrincipal");
+
 
     }
 
