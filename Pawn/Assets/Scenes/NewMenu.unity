@@ -998,7 +998,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225923117}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1063,6 +1063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a7ac2c9363a8e4db4602e51ce10fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 297491229}
 --- !u!95 &230514662
 Animator:
   serializedVersion: 3
@@ -1636,7 +1637,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &297491230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5683,6 +5684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a7ac2c9363a8e4db4602e51ce10fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 297491229}
 --- !u!95 &980824178
 Animator:
   serializedVersion: 3
@@ -7184,7 +7186,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318190775}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -8012,7 +8014,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 561, y: -10}
+  m_AnchoredPosition: {x: 600, y: -11}
   m_SizeDelta: {x: 724.6419, y: 1005.9617}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1601844525
@@ -8022,7 +8024,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1601844523}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -8215,7 +8217,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1677089399}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -9075,6 +9077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a7ac2c9363a8e4db4602e51ce10fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 297491229}
 --- !u!95 &1843128258
 Animator:
   serializedVersion: 3
