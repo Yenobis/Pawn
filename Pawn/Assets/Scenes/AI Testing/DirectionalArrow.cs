@@ -7,13 +7,15 @@ public class DirectionalArrow : MonoBehaviour
 {
     [SerializeField]
     private Transform[] target;
+    [SerializeField]
+    private GameObject pawn;
     private Transform player;
     private int puntero = 0;
     private float minima = 0;
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Pawn").transform;
+        player = pawn.transform;
         minima = Vector3.Distance(player.position, target[0].transform.position);
         puntero = 0;
     }
@@ -21,7 +23,7 @@ public class DirectionalArrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        player = GameObject.Find("Pawn").transform;
+        player = pawn.transform;
         try
         {
             minima = Vector3.Distance(player.position, GameObject.Find(target[0].name).transform.position);
