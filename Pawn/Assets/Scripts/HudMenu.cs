@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class HudMenu : MonoBehaviour
 {
+    [Header("Menús")]
     [SerializeField] GameObject hudPause;
     [SerializeField] GameObject opciones;
     [SerializeField] GameObject muerte;
@@ -13,9 +14,13 @@ public class HudMenu : MonoBehaviour
     [SerializeField] GameObject NoPartidaGuardada;
     [SerializeField] GameObject Volumen;
     [SerializeField] GameObject Graphics;
+    [Header("Pawn")]
+    [SerializeField] GameObject player;
+    private bool isOnDeathScreen;
     // Start is called before the first frame update
     void Start()
     {
+        isOnDeathScreen = false;
     }
 
     // Update is called once per frame
@@ -53,6 +58,14 @@ public class HudMenu : MonoBehaviour
                 
             }
         }
+        if (player.GetComponent<PlayerController>().cur_health == 0 && !isOnDeathScreen)
+            {
+                Pause();
+                muerte.SetActive(true);
+                isOnDeathScreen = true;
+                Debug.Log("Has muerto");
+           
+            }
 
     }
     public void Resume()

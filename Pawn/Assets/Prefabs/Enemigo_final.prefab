@@ -93,6 +93,22 @@ Transform:
   m_Father: {fileID: 1800244720792573901}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0.00001009232, y: 12.749316, z: 0.000009776036}
+--- !u!114 &2698839115319012330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846987006283633451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1700ab06c9fe4974c931a117466b3918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soyPawn: 0
+  damage: 10
+  stay: 0
+  atacando: 0
 --- !u!1 &2121208551469257200
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,22 +170,6 @@ Transform:
   m_Father: {fileID: 2128973214416266314}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50.604095, y: 7.051426, z: 4.1071715}
---- !u!114 &2698839115319012330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1846987006283633451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1700ab06c9fe4974c931a117466b3918, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soyPawn: 0
-  damage: 10
-  stay: 0
-  atacando: 0
 --- !u!1 &2748621824050575258
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,7 +365,7 @@ AudioSource:
   m_GameObject: {fileID: 3005407496021648837}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 3274138705213288377, guid: f1aabb519c5334b498eb22396df00d1c, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -461,7 +461,7 @@ AudioSource:
   m_GameObject: {fileID: 3005407496021648837}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 3274138705213288377, guid: f1aabb519c5334b498eb22396df00d1c, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1

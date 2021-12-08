@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    public GameObject[] vidas;
     private float horizontalMove;
     private float verticalMove;
     private Vector3 playerInput;
@@ -37,6 +36,10 @@ public class PlayerController : MonoBehaviour
         player.GetComponent<CharacterController>();
         defaultSpeed = playerSpeed;
         cur_health = max_health;
+    }
+    public bool isAtMaxHealth()
+    {
+        return (cur_health==max_health);
     }
 
     // Update is called once per frame
@@ -124,17 +127,13 @@ public class PlayerController : MonoBehaviour
     }
     public void TakeDamage(float amount)
     {
-        if (cur_health > 0)
-        {
-            if (cur_health - amount >= 0)
-            {
-                cur_health -= amount;
-            }
-            else
-            {
-                cur_health = 0;
-            }
-        }
+        
+        cur_health = Math.Max(cur_health - amount, 0);
+
+    }
+    public void HealDamage(float amount)
+    {
+        cur_health =Math.Min(cur_health + amount, max_health);
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
