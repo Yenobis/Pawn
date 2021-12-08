@@ -46,7 +46,8 @@ public class animationState : MonoBehaviour
         }
 
         
-        if (!isAttacking && attackPressed){
+        if (!isAttacking && attackPressed && cur_health > 0)
+        {
             animator.SetBool("isAttacking", true);
         } else if  (isAttacking && !attackPressed) {
             animator.SetBool("isAttacking", false);
