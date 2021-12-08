@@ -25,7 +25,6 @@ public class MainMenuScript : MonoBehaviour
     [Header("Niveles a Cargar")]
     private string partidaAcargar;
     [SerializeField] private GameObject noGameSaved = null;
-    [SerializeField] private GameObject newGame = null;
     public string _menuACargar;
 
 [Header("Volumen")]
