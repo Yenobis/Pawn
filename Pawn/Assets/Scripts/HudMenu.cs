@@ -5,13 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class HudMenu : MonoBehaviour
 {
+    [SerializeField] GameObject hudPause;
     [SerializeField] GameObject opciones;
     [SerializeField] GameObject muerte;
-
+    [SerializeField] GameObject MenuController;
+    [SerializeField] GameObject PauseMenu;
+    [SerializeField] GameObject NoPartidaGuardada;
+    [SerializeField] GameObject Volumen;
+    [SerializeField] GameObject Graphics;
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -19,14 +23,34 @@ public class HudMenu : MonoBehaviour
     {
         if (Input.GetKeyDown("escape"))
         {
-            opciones.SetActive(!opciones.activeSelf);
-            if(opciones.activeSelf == false)
+            hudPause.SetActive(!hudPause.activeSelf);
+
+
+            if (hudPause.activeSelf == false)
             {
                 Resume();
+
+                PauseMenu.SetActive(true);
+                opciones.SetActive(false);
+                NoPartidaGuardada.SetActive(false);
+                if (Volumen.activeSelf == true)
+                {
+                    MenuController.GetComponent<MainMenuScript>().DescartarVolumen();
+                    Volumen.SetActive(false);
+
+                }
+                if (Graphics.activeSelf == true)
+                {
+                    MenuController.GetComponent<MainMenuScript>().DescartarGraficos();
+                    Graphics.SetActive(false);
+
+                }
             }
             else
             {
                 Pause();
+
+                
             }
         }
 

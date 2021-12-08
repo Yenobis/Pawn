@@ -26,7 +26,6 @@ public class MainMenuScript : MonoBehaviour
     private string partidaAcargar;
     [SerializeField] private GameObject noGameSaved = null;
     [SerializeField] private GameObject newGame = null;
-    public string _escenaAcargar;
     public string _menuACargar;
 
 [Header("Volumen")]
@@ -126,8 +125,8 @@ public class MainMenuScript : MonoBehaviour
             //Cambiar brillo del postprocesado **FALTA VERLO**
         }
     }
-    public void PlayGame(){
-        SceneManager.LoadScene(_escenaAcargar);
+    public void LoadScene(string escena){
+        SceneManager.LoadScene(escena);
     }
     public void GotoMainMenu()
     {
