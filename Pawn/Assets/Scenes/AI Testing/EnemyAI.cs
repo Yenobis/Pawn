@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.IO;
 using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.AI;
-
+using UnityEngine.UIElements;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -160,7 +161,10 @@ public class EnemyAI : MonoBehaviour
     void UpdateDestination()
     {
         target = waypoints[waypointIndex].position;
-        agent.SetDestination(target);
+        NavMeshPath camino = new NavMeshPath();
+        NavMesh.CalculatePath(transform.position, target, NavMesh.AllAreas, camino);
+        agent.SetPath(camino);
+        //agent.SetDestination(target);
     }
 
     void IterateWaypointIndex()
@@ -228,7 +232,13 @@ public class EnemyAI : MonoBehaviour
         }
         //pos_player = new Vector3(playerRef.transform.position.x, transform.position.y, playerRef.transform.position.z);
         //transform.LookAt(pos_player);
-        agent.SetDestination(playerRef.transform.position);
+        NavMeshPath camino = new NavMeshPath();
+        NavMesh.CalculatePath(transform.position, playerRef.transform.position, NavMesh.AllAreas, camino);
+        agent.SetPath(camino);
+        //agent.SetDestination(playerRef.transform.position);
+        //Debug.Log(agent.Warp(transform.position));
+        //agent.Move(playerRef.transform.position - transform.position);
+        
         
     }
 
