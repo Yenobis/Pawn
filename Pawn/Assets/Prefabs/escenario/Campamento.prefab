@@ -6749,6 +6749,54 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1391064206125010968}
     m_Modifications:
+    - target: {fileID: 2987963839164939275, guid: b07a2a352495fa14cbc06331cbef2819, type: 3}
+      propertyPath: m_Size.x
+      value: 0.059642714
+      objectReference: {fileID: 0}
+    - target: {fileID: 2987963839164939275, guid: b07a2a352495fa14cbc06331cbef2819, type: 3}
+      propertyPath: m_Size.y
+      value: 0.0070346533
+      objectReference: {fileID: 0}
+    - target: {fileID: 2987963839164939275, guid: b07a2a352495fa14cbc06331cbef2819, type: 3}
+      propertyPath: m_Size.z
+      value: 0.059963066
+      objectReference: {fileID: 0}
+    - target: {fileID: 2987963839164939275, guid: b07a2a352495fa14cbc06331cbef2819, type: 3}
+      propertyPath: m_Center.x
+      value: 0.0009770258
+      objectReference: {fileID: 0}
+    - target: {fileID: 2987963839164939275, guid: b07a2a352495fa14cbc06331cbef2819, type: 3}
+      propertyPath: m_Center.y
+      value: -0.021557309
+      objectReference: {fileID: 0}
+    - target: {fileID: 2987963839164939275, guid: b07a2a352495fa14cbc06331cbef2819, type: 3}
+      propertyPath: m_Center.z
+      value: 0.029981524
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210597699685070573, guid: b07a2a352495fa14cbc06331cbef2819, type: 3}
+      propertyPath: m_Size.x
+      value: 0.062326875
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210597699685070573, guid: b07a2a352495fa14cbc06331cbef2819, type: 3}
+      propertyPath: m_Size.y
+      value: 0.008143623
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210597699685070573, guid: b07a2a352495fa14cbc06331cbef2819, type: 3}
+      propertyPath: m_Size.z
+      value: 0.05886668
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210597699685070573, guid: b07a2a352495fa14cbc06331cbef2819, type: 3}
+      propertyPath: m_Center.x
+      value: -0.00004234888
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210597699685070573, guid: b07a2a352495fa14cbc06331cbef2819, type: 3}
+      propertyPath: m_Center.y
+      value: 0.028174538
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210597699685070573, guid: b07a2a352495fa14cbc06331cbef2819, type: 3}
+      propertyPath: m_Center.z
+      value: 0.02943334
+      objectReference: {fileID: 0}
     - target: {fileID: 6972785257260193200, guid: b07a2a352495fa14cbc06331cbef2819, type: 3}
       propertyPath: m_Name
       value: Tienda buena (1)
@@ -6823,6 +6871,54 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3691574366994766460}
     m_Modifications:
+    - target: {fileID: 2987963839164939275, guid: b07a2a352495fa14cbc06331cbef2819, type: 3}
+      propertyPath: m_Size.x
+      value: 0.0617646
+      objectReference: {fileID: 0}
+    - target: {fileID: 2987963839164939275, guid: b07a2a352495fa14cbc06331cbef2819, type: 3}
+      propertyPath: m_Size.y
+      value: 0.007034649
+      objectReference: {fileID: 0}
+    - target: {fileID: 2987963839164939275, guid: b07a2a352495fa14cbc06331cbef2819, type: 3}
+      propertyPath: m_Size.z
+      value: 0.05897547
+      objectReference: {fileID: 0}
+    - target: {fileID: 2987963839164939275, guid: b07a2a352495fa14cbc06331cbef2819, type: 3}
+      propertyPath: m_Center.x
+      value: 0.0012092623
+      objectReference: {fileID: 0}
+    - target: {fileID: 2987963839164939275, guid: b07a2a352495fa14cbc06331cbef2819, type: 3}
+      propertyPath: m_Center.y
+      value: -0.021557203
+      objectReference: {fileID: 0}
+    - target: {fileID: 2987963839164939275, guid: b07a2a352495fa14cbc06331cbef2819, type: 3}
+      propertyPath: m_Center.z
+      value: 0.029487725
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210597699685070573, guid: b07a2a352495fa14cbc06331cbef2819, type: 3}
+      propertyPath: m_Size.x
+      value: 0.060504805
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210597699685070573, guid: b07a2a352495fa14cbc06331cbef2819, type: 3}
+      propertyPath: m_Size.y
+      value: 0.00814362
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210597699685070573, guid: b07a2a352495fa14cbc06331cbef2819, type: 3}
+      propertyPath: m_Size.z
+      value: 0.05123999
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210597699685070573, guid: b07a2a352495fa14cbc06331cbef2819, type: 3}
+      propertyPath: m_Center.x
+      value: 0.00024646366
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210597699685070573, guid: b07a2a352495fa14cbc06331cbef2819, type: 3}
+      propertyPath: m_Center.y
+      value: 0.028174464
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210597699685070573, guid: b07a2a352495fa14cbc06331cbef2819, type: 3}
+      propertyPath: m_Center.z
+      value: 0.025619993
+      objectReference: {fileID: 0}
     - target: {fileID: 6972785257260193200, guid: b07a2a352495fa14cbc06331cbef2819, type: 3}
       propertyPath: m_Name
       value: Tienda buena
