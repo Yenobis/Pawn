@@ -195,8 +195,8 @@ public class EnemyAI : MonoBehaviour
         if (distanceToWalkPoint.magnitude < 1f)
             walkPointSet = false;
         */
-
-        if (Vector3.Distance(transform.position, target) < 1.5 || !alreadyPatrolling)
+        Debug.Log(Vector3.Distance(transform.position, target));
+        if (Vector3.Distance(transform.position, target) < 1.9 || !alreadyPatrolling)
         {
             IterateWaypointIndex();
             UpdateDestination();
