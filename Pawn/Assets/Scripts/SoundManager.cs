@@ -11,11 +11,13 @@ public class SoundManager : MonoBehaviour
         MOVERESPADA,
         SALTOTIERRA,
         CAMINAR,
+        MUERTEPAWN,
         TOTAL_SONIDOS
     }
-    public AudioSource[] audios;
+    public AudioSource[] audios; 
+    private float cur_health;
 
-    string[] nombreSonidos = { "MoverEspada", "SaltoTierra", "Caminar" };
+    string[] nombreSonidos = { "MoverEspada", "SaltoTierra", "Caminar", "MuertePawn" };
 
     void Start()
     {
@@ -29,6 +31,8 @@ public class SoundManager : MonoBehaviour
 
     private void Update()
     {
+        cur_health = GameObject.Find("Pawn").GetComponent<PlayerController>().cur_health;
+
         if (Time.timeScale == 1f)
         {
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
@@ -61,11 +65,24 @@ public class SoundManager : MonoBehaviour
                     audios[(int)Sonidos.MOVERESPADA].Play();
                 }
             }
+
+            if (cur_health <= 0)
+            {
+                if (!audios[(int)Sonidos.MUERTEPAWN].isPlaying)
+                {
+                    audios[(int)Sonidos.MUERTEPAWN].Play();
+                } else
+                {
+
+                    audios[(int)Sonidos.MUERTEPAWN].Pause();
+                }
+            }
         } else
         {
             audios[(int)Sonidos.CAMINAR].Pause();
             audios[(int)Sonidos.SALTOTIERRA].Pause();
             audios[(int)Sonidos.MOVERESPADA].Pause();
+            audios[(int)Sonidos.MUERTEPAWN].Pause();
         }
     }
 }
