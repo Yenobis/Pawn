@@ -14,7 +14,6 @@ public class EnemyAI : MonoBehaviour
     public Transform[] waypoints;
     int waypointIndex;
     Vector3 target;
-    //public Transform player;
 
     public GameObject playerRef;
 
@@ -26,18 +25,24 @@ public class EnemyAI : MonoBehaviour
     public LayerMask obstructionMask, whatIsGround, whatIsPlayer;
     [HideInInspector]
     public float speed;
-    public float rotationSpeed;
+    [SerializeField]
+    private float chaseSpeedIncrease = 1;
+    [SerializeField]
+    private float rotationSpeed = 10;
     public float max_health = 100f;
     public float cur_health = 0f;
     float damage = 5f;
 
     //Patroling
     [HideInInspector]
-    public Vector3 walkPoint;
+    public Vector3 walkPoint; //Se usa para cuando quieres que un enemigo vaya por unos puntos aleatorios (de
+                              //momento el método SearchWalkPoint no se usa, pero podría en un futuro)
     [HideInInspector]
-    public Vector3 pos_player;
+    public Vector3 pos_player; //Se usa para la hora de atacar coger la posicion de playerRef y ponerle 0 en y.
     bool walkPointSet;
+    [HideInInspector]
     public float walkPointRange;
+    public float timeBetweenPoints;
 
     //Attacking
     public float timeBetweenAttacks;
@@ -53,6 +58,7 @@ public class EnemyAI : MonoBehaviour
     [HideInInspector]
     public bool isWalking, isRunning, isAttacking;
     private bool desaparecido = false;
+    private Quaternion rotacion_inicial;
 
     private void Awake()
     {
@@ -66,6 +72,9 @@ public class EnemyAI : MonoBehaviour
         cur_health = max_health;
         speed = GetComponent<NavMeshAgent>().speed;
         animator = GetComponent<Animator>();
+        rotacion_inicial = gameObject.transform.localRotation;
+        waypointIndex = 0;
+        IterateWaypointIndex();
         UpdateDestination();
     }
 
@@ -75,7 +84,7 @@ public class EnemyAI : MonoBehaviour
         isWalking = animator.GetBool("isWalking");
         isRunning = animator.GetBool("isRunning");
         isAttacking = animator.GetBool("isAttacking");
-
+        
         if (canSeePlayer)
         {
             playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
@@ -164,6 +173,7 @@ public class EnemyAI : MonoBehaviour
         NavMeshPath camino = new NavMeshPath();
         NavMesh.CalculatePath(transform.position, target, NavMesh.AllAreas, camino);
         agent.SetPath(camino);
+        if (timeBetweenPoints > 0.5) animator.SetBool("isWalking", true);
         //agent.SetDestination(target);
     }
 
@@ -195,13 +205,26 @@ public class EnemyAI : MonoBehaviour
         if (distanceToWalkPoint.magnitude < 1f)
             walkPointSet = false;
         */
-        Debug.Log(Vector3.Distance(transform.position, target));
-        if (Vector3.Distance(transform.position, target) < 1.9 || !alreadyPatrolling)
+        //Debug.Log(Vector3.Distance(transform.position, target));
+        if (Vector3.Distance(transform.position, target) < 1.5 || !alreadyPatrolling)
         {
             IterateWaypointIndex();
-            UpdateDestination();
+            //UpdateDestination();
             alreadyPatrolling = true;
+            if (waypoints.Length <= 1)
+            {
+                //Invoke(nameof(ResetWalking), 4);
+                animator.SetBool("isWalking", false);
+                //Quaternion targetRotation = Quaternion.LookRotation(playerRef.transform.position - transform.position);
+                transform.rotation = Quaternion.Slerp(transform.rotation, rotacion_inicial, 2 * Time.deltaTime);
+            }
+            else
+            {
+                if(timeBetweenPoints > 0.5) animator.SetBool("isWalking", false);
+                Invoke(nameof(UpdateDestination), timeBetweenPoints);
+            }
         }
+        
     }
 
     private void SearchWalkPoint()
@@ -219,7 +242,7 @@ public class EnemyAI : MonoBehaviour
 
     private void ChasePlayer()
     {
-        GetComponent<NavMeshAgent>().speed = speed + 1;
+        GetComponent<NavMeshAgent>().speed = speed + chaseSpeedIncrease;
 
         animator.SetBool("isAttacking", false);
         animator.SetBool("isWalking", true);
@@ -264,6 +287,11 @@ public class EnemyAI : MonoBehaviour
     {
         animator.SetBool("isAttacking", false);
         alreadyAttacked = false;
+    }
+
+    private void ResetWalking()
+    {
+        animator.SetBool("isWalking", false);
     }
 
 
