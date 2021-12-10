@@ -255,10 +255,10 @@ public class EnemyAI : MonoBehaviour
         }
         //pos_player = new Vector3(playerRef.transform.position.x, transform.position.y, playerRef.transform.position.z);
         //transform.LookAt(pos_player);
-        NavMeshPath camino = new NavMeshPath();
-        NavMesh.CalculatePath(transform.position, playerRef.transform.position, NavMesh.AllAreas, camino);
-        agent.SetPath(camino);
-        //agent.SetDestination(playerRef.transform.position);
+        //NavMeshPath camino = new NavMeshPath();
+        //NavMesh.CalculatePath(transform.position, playerRef.transform.position, NavMesh.AllAreas, camino);
+        //agent.SetPath(camino);
+        agent.SetDestination(playerRef.transform.position);
         //Debug.Log(agent.Warp(transform.position));
         //agent.Move(playerRef.transform.position - transform.position);
         
