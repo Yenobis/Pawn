@@ -6256,6 +6256,7 @@ GameObject:
   - component: {fileID: 5334966620688280643}
   - component: {fileID: 5334966620688280642}
   - component: {fileID: 8687502091636052259}
+  - component: {fileID: 1614980164295296050}
   m_Layer: 0
   m_Name: hoguera
   m_TagString: Untagged
@@ -6355,18 +6356,18 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -4596345738554783467, guid: f1aabb519c5334b498eb22396df00d1c, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 91a8101fc230f36439058fa5ba3e8df4, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 50
+  MaxDistance: 30
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -6441,6 +6442,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1614980164295296050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5334966620688280645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0f935d595958e44b9c104d3f28ea12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audios: {fileID: 0}
 --- !u!1 &5334966621024019906
 GameObject:
   m_ObjectHideFlags: 0
@@ -7152,14 +7166,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0795b29b0a48d6c44bd145d49593c245, type: 3}
---- !u!1 &5100592873954014089 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0795b29b0a48d6c44bd145d49593c245, type: 3}
-  m_PrefabInstance: {fileID: 5334966621044199128}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5585346021671217459 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0795b29b0a48d6c44bd145d49593c245, type: 3}
+  m_PrefabInstance: {fileID: 5334966621044199128}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5100592873954014089 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0795b29b0a48d6c44bd145d49593c245, type: 3}
   m_PrefabInstance: {fileID: 5334966621044199128}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5334966621103795951
