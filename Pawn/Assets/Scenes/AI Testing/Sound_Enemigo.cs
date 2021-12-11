@@ -14,6 +14,7 @@ public class Sound_Enemigo : MonoBehaviour
 
     private bool isWalking, isRunning, isAttacking;
     private float cur_health;
+    private bool alreadyDead = false;
 
     public AudioSource[] audios;
     string[] nombreSonidos = { "MoverEspada", "Caminar", "MuerteEnemigo" };
@@ -56,12 +57,10 @@ public class Sound_Enemigo : MonoBehaviour
                     audios[(int)Sonidos.MOVERESPADA].Play();
                 }
             }
-            if (cur_health <= 0)
+            if (cur_health <= 0 && !alreadyDead)
             {
-                if (!audios[(int)Sonidos.MUERTEENEMIGO].isPlaying)
-                {
-                    audios[(int)Sonidos.MUERTEENEMIGO].Play();
-                }
+                alreadyDead = true;
+                audios[(int)Sonidos.MUERTEENEMIGO].Play();
             }
         }else
         {
