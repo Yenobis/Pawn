@@ -36,7 +36,7 @@ public class EnemyAI : MonoBehaviour
     //Patroling
     [HideInInspector]
     public Vector3 walkPoint; //Se usa para cuando quieres que un enemigo vaya por unos puntos aleatorios (de
-                              //momento el método SearchWalkPoint no se usa, pero podría en un futuro)
+                              //momento el modo SearchWalkPoint no se usa, pero podria en un futuro)
     [HideInInspector]
     public Vector3 pos_player; //Se usa para la hora de atacar coger la posicion de playerRef y ponerle 0 en y.
     bool walkPointSet;
