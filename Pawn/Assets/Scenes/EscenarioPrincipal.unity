@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 16fdb4bd3d34ffe40a0af9ce20843e3b, type: 2}
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &3577277
 GameObject:
   m_ObjectHideFlags: 0
@@ -16817,7 +16817,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096352594}
-  m_LocalRotation: {x: 0.15686283, y: -0.112942204, z: 0.018060032, w: 0.98097503}
+  m_LocalRotation: {x: 0.15686283, y: -0.112942204, z: 0.018060025, w: 0.98097503}
   m_LocalPosition: {x: -10.732267, y: 28.214106, z: 15.61624}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -29363,7 +29363,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: c97751e49476d0a43b6566b51b3d2103, type: 2}
 --- !u!4 &1784910881
 Transform:
   m_ObjectHideFlags: 0
@@ -40305,19 +40305,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938010582089, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99156576
+      value: 0.9915658
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938010582089, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.12955165
+      value: 0.12955163
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938010582089, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0036698207
+      value: 0.0036698433
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938010582089, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00047947656
+      value: -0.00047947842
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938028263544, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: mainCamera

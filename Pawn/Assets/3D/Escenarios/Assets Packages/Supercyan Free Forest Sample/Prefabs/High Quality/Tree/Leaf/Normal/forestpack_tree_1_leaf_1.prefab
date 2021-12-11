@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 64351331449358260}
   - component: {fileID: 205548538367759612}
   - component: {fileID: 136328532474461060}
-  m_Layer: 0
+  - component: {fileID: 631657872045142375}
+  m_Layer: 6
   m_Name: forestpack_tree_1_leaf_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,3 +132,19 @@ CapsuleCollider:
   m_Height: 2.3331134
   m_Direction: 1
   m_Center: {x: 0.05, y: 1.0146283, z: -0.031410426}
+--- !u!208 &631657872045142375
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490343738201892}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.12, y: 1.167, z: 0.12}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.020000001, y: 1, z: -0.031000001}
+  m_TimeToStationary: 0.5

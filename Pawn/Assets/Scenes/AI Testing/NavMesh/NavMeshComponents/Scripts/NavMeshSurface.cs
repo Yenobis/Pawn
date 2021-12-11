@@ -339,7 +339,71 @@ namespace UnityEngine.AI
                     NavMeshBuilder.CollectSources(worldBounds, m_LayerMask, m_UseGeometry, m_DefaultArea, markups, sources);
                 }
             }
+            Terrain[] terrains = GameObject.FindObjectsOfType<Terrain>();
 
+            if (terrains.Length > 0)
+            {
+                foreach (Terrain item in terrains)
+                {
+                    Terrain terrain = item.GetComponent<Terrain>();
+                    TerrainData terrainData = terrain.terrainData;
+                    Vector3 size = Terrain.activeTerrain.terrainData.size;
+                    Vector3 terrainPos = terrain.GetPosition();
+                    //Debug.Log("terrainPos = " + terrainPos);
+                    int treesArea = NavMesh.GetAreaFromName("Not Walkable");
+                    if (treesArea < 0)
+                    {
+                        Debug.LogError("Unrecognized area name! The default area will be used instead.");
+                        treesArea = 0;
+                    }
+
+                    TreePrototype[] treePrototypes = terrainData.treePrototypes;
+                    TreeInstance[] treeInstances = terrainData.treeInstances;
+                    for (int i = 0; i < treeInstances.Length; i++)
+                    {
+                        //treeInstances[i] is the current ACTUAL tree we're going over.
+                        //the tree prototype is the "template" used by this tree.
+                        TreePrototype prototype = treePrototypes[treeInstances[i].prototypeIndex];
+                        GameObject prefab = prototype.prefab;
+                        NavMeshObstacle obstacle = prefab.GetComponent<NavMeshObstacle>();
+                        if (obstacle == null)
+                            continue;
+
+                        //Debug.Log("treeInstances[" + i + "] info:\n" + treeInstances[i].position + " " + treeInstances[i].rotation + " " + treeInstances[i].widthScale + " " + treeInstances[i].heightScale);
+                        Vector3 worldTreePos = terrainPos + Vector3.Scale(treeInstances[i].position, size)
+                            + obstacle.center;
+                        Quaternion worldTreeRot = Quaternion.Euler(0, treeInstances[i].rotation * Mathf.Rad2Deg, 0);
+                        Vector3 worldTreeScale = new Vector3(treeInstances[i].widthScale, treeInstances[i].heightScale, treeInstances[i].widthScale);
+                        //Debug.Log("CREATED MATRIX FOR TRS:\nworldTreePos = " + worldTreePos + "\nworldTreeRot = " + worldTreeRot + "\nworldTreeScale = " + worldTreeScale);
+
+                        NavMeshBuildSource src = new NavMeshBuildSource();
+                        src.transform = Matrix4x4.TRS(worldTreePos, worldTreeRot, worldTreeScale);
+
+                        switch (obstacle.shape)
+                        {
+                            case NavMeshObstacleShape.Capsule:
+                                src.shape = NavMeshBuildSourceShape.Capsule;
+
+                                //Unity 2019.2.0f1: BUG!! navMeshObstacle.height returns exactly HALF of the actual height of the obstacle.
+                                //Use the size property instead.
+                                src.size = obstacle.size;
+                                break;
+                            case NavMeshObstacleShape.Box:
+                                src.shape = NavMeshBuildSourceShape.Box;
+                                src.size = obstacle.size;
+                                break;
+                            default:
+                                Debug.LogError("Unsupported type of " + typeof(NavMeshObstacleShape).Name
+                                    + " for the building of the " + typeof(NavMeshSurface).Name + "! (" + obstacle.shape + ")");
+                                break;
+                        }
+                        src.size = Vector3.Scale(src.size, prefab.transform.localScale);
+                        //Debug.Log("src.size = " + src.size);
+                        src.area = treesArea;
+                        sources.Add(src);
+                    }
+                }
+            }
             if (m_IgnoreNavMeshAgent)
                 sources.RemoveAll((x) => (x.component != null && x.component.gameObject.GetComponent<NavMeshAgent>() != null));
 
