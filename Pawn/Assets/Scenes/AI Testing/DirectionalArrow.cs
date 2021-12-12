@@ -5,9 +5,7 @@ using UnityEngine;
 
 public class DirectionalArrow : MonoBehaviour
 {
-    [SerializeField]
-    private Transform[] target;
-    [SerializeField]
+    private List<GameObject> target = new List<GameObject>();
     private GameObject pawn;
     private Transform player;
     private int puntero = 0;
@@ -15,15 +13,24 @@ public class DirectionalArrow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = pawn.transform;
+        GameObject[] goArray = FindObjectsOfType(typeof(GameObject)) as GameObject[];
+        List<GameObject> goList = new List<GameObject>();
+        for (int i = 0; i < goArray.Length; i++)
+        {
+            if (goArray[i].layer == LayerMask.NameToLayer("whatIsEnemy")) { target.Add(goArray[i]); }
+        }
+        //if (goList.Count == 0) { Debug.Log("Array vacía"); }
+        //Debug.Log(goList.Count/*ToArray()*/);
+        player = GameObject.Find("Pawn").transform;
         minima = Vector3.Distance(player.position, target[0].transform.position);
         puntero = 0;
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        player = pawn.transform;
         try
         {
             minima = Vector3.Distance(player.position, target[0].transform.position);
@@ -33,7 +40,7 @@ public class DirectionalArrow : MonoBehaviour
             minima = float.MaxValue;
             puntero = -1;
         }
-        for (int i = 1; i < target.Length; i++)
+        for (int i = 1; i < target.Count; i++)
         {
             try
             {
@@ -70,6 +77,9 @@ public class DirectionalArrow : MonoBehaviour
             //gameObject.transform.localScale = new Vector3(0f, 0f, 0f);
             //gameObject.GetComponent<MeshRenderer>().material = m[1];
             //transform.LookAt(2 * player.position - new Vector3(0,10000,0));
+        } catch (ArgumentOutOfRangeException)
+        {
+            this.enabled = false;
         }
     }
 }

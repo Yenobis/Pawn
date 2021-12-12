@@ -9,29 +9,30 @@ using UnityEngine.UIElements;
 
 public class EnemyAI : MonoBehaviour
 {
+
+    [Header("Enemy References")]
     public NavMeshAgent agent;
-    bool alreadyPatrolling = false;
-    public Transform[] waypoints;
-    int waypointIndex;
-    Vector3 target;
-
     public GameObject playerRef;
+    public Transform[] waypoints;
+    public LayerMask obstructionMask, whatIsGround, whatIsPlayer;
 
+
+    int waypointIndex;
+    bool alreadyPatrolling = false;
+    Vector3 target;
     [HideInInspector]
     public bool canSeePlayer;
-
     Animator animator;
-
-    public LayerMask obstructionMask, whatIsGround, whatIsPlayer;
     [HideInInspector]
     public float speed;
-    [SerializeField]
-    private float chaseSpeedIncrease = 1;
-    [SerializeField]
-    private float rotationSpeed = 10;
+
+    [Header("Enemy Parameters")]
+    [Space(15)]
+    public float chaseSpeedIncrease = 1;
+    public float rotationSpeed = 10;
     public float max_health = 100f;
     public float cur_health = 0f;
-    float damage = 5f;
+    //float damage = 5f;
 
     //Patroling
     [HideInInspector]
@@ -39,7 +40,7 @@ public class EnemyAI : MonoBehaviour
                               //momento el modo SearchWalkPoint no se usa, pero podria en un futuro)
     [HideInInspector]
     public Vector3 pos_player; //Se usa para la hora de atacar coger la posicion de playerRef y ponerle 0 en y.
-    bool walkPointSet;
+    //bool walkPointSet;
     [HideInInspector]
     public float walkPointRange;
     public float timeBetweenPoints;
@@ -48,8 +49,10 @@ public class EnemyAI : MonoBehaviour
     public float timeBetweenAttacks;
     bool alreadyAttacked;
     public GameObject projectile;
-
+    
     //States
+    [Header("Enemy Sight")]
+    [Space(15)]
     public float fovRadius;
     [Range(0, 360)]
     public float angle;
@@ -58,6 +61,7 @@ public class EnemyAI : MonoBehaviour
     [HideInInspector]
     public bool isWalking, isRunning, isAttacking;
     private bool desaparecido = false;
+    private bool destruido = false;
     private Quaternion rotacion_inicial;
 
     private void Awake()
@@ -106,13 +110,22 @@ public class EnemyAI : MonoBehaviour
             animator.SetBool("isAttacking", false);
             if (!desaparecido) Invoke(nameof(Desaparecer), 2f);
             if (desaparecido) { StartCoroutine(Fade()); }
-            Destroy(gameObject, 4.2f);
+            Invoke(nameof(DestruirEnemigo), 4.2f);
+            //Destroy(gameObject, 4.2f);
             
         }
         if (!playerInSightRange && !playerInAttackRange) Patroling();
         if ((playerInSightRange || playerTooClose) && !playerInAttackRange) { alreadyPatrolling = false; ChasePlayer(); }
         if (playerInSightRange && playerInAttackRange) { alreadyPatrolling = false; AttackPlayer(); }
 
+    }
+
+    private void DestruirEnemigo()
+    {
+        if (!destruido) { GameObject.Find("Text").GetComponent<EnemyCounter>().UpdateEnemies(); }
+        destruido = true;
+        Destroy(gameObject);
+        
     }
 
     private void Desaparecer()
@@ -227,6 +240,8 @@ public class EnemyAI : MonoBehaviour
         
     }
 
+    //No borrar
+    /*
     private void SearchWalkPoint()
     {
         //Calculate random point in range
@@ -238,7 +253,7 @@ public class EnemyAI : MonoBehaviour
         if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
             walkPointSet = true;
         
-    }
+    } */
 
     private void ChasePlayer()
     {
