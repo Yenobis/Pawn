@@ -20,13 +20,13 @@ public class EnemyCounter : MonoBehaviour
         //Debug.Log(goList.Count/*ToArray()*/);
         NumberOfEnemies = goList.Count;
         ActiveEnemies = NumberOfEnemies;
-        gameObject.GetComponent<Text>().text = "Enemies" + "\n" + ActiveEnemies.ToString() + " / " + NumberOfEnemies;
+        gameObject.GetComponent<Text>().text = "Enemigo" + "\n" + ActiveEnemies.ToString() + " / " + NumberOfEnemies;
     }
 
     public void UpdateEnemies()
     {
         //FindGameObjectsWithLayer(LayerMask.NameToLayer("whatIsEnemy"));
         ActiveEnemies--;
-        gameObject.GetComponent<Text>().text = "Enemies" + "\n" + ActiveEnemies.ToString() + " / " + NumberOfEnemies;
+        gameObject.GetComponent<Text>().text = "Enemigos" + "\n" + ActiveEnemies.ToString() + " / " + NumberOfEnemies;
     }
 }
