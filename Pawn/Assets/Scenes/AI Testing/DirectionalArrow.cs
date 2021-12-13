@@ -35,7 +35,13 @@ public class DirectionalArrow : MonoBehaviour
         {
             minima = Vector3.Distance(player.position, target[0].transform.position);
             puntero = 0;
-        } catch (MissingReferenceException)
+        }
+        catch (NullReferenceException)
+        {
+            minima = float.MaxValue;
+            puntero = -1;
+        }
+        catch (MissingReferenceException)
         {
             minima = float.MaxValue;
             puntero = -1;
@@ -76,6 +82,14 @@ public class DirectionalArrow : MonoBehaviour
             //gameObject.transform.eulerAngles = new Vector3(0, 0, (enemigo - player.position).y);
             //gameObject.GetComponent<MeshRenderer>().material = m[0];
         }
+        catch (NullReferenceException)
+        {
+            // Está muerto
+        }
+        catch (MissingReferenceException)
+        {
+            // Está muerto
+        }
         catch (IndexOutOfRangeException)
         {
             //gameObject.transform.localScale = new Vector3(0f, 0f, 0f);
@@ -84,6 +98,10 @@ public class DirectionalArrow : MonoBehaviour
         } catch (ArgumentOutOfRangeException)
         {
             this.enabled = false;
+        }
+        catch (Exception)
+        {
+            //Nose que pot ser
         }
     }
 }
