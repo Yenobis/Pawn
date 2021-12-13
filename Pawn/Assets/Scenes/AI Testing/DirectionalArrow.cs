@@ -51,6 +51,10 @@ public class DirectionalArrow : MonoBehaviour
                     puntero = i;
                 }
             }
+            catch (NullReferenceException)
+            {
+                // Está muerto
+            }
             catch (MissingReferenceException)
             {
                 // Está muerto
