@@ -28,16 +28,9 @@ public class MainMenuScript : MonoBehaviour
     public string _menuACargar;
 
 [Header("Volumen")]
-    [SerializeField] private TMP_Text masterTextField = null;
     [SerializeField] private Slider masterSlider = null;
-
-    [SerializeField] private TMP_Text musicTextField = null;
     [SerializeField] private Slider musicSlider = null;
-
-    [SerializeField] private TMP_Text sfxTextField = null;
     [SerializeField] private Slider sfxSlider = null;
-
-    [SerializeField] private TMP_Text ambientalTextField = null;
     [SerializeField] private Slider ambientalSlider = null;
 
     [SerializeField] private AudioMixer auxioMixer = null;
@@ -100,25 +93,17 @@ public class MainMenuScript : MonoBehaviour
         {
             //Volumen
             masterSlider.value = defVolumen;
-            masterTextField.text = (defVolumen * 100).ToString("0.0");
             musicSlider.value = defVolumen;
-            musicTextField.text = (defVolumen * 100).ToString("0.0");
             sfxSlider.value = defVolumen;
-            sfxTextField.text = (defVolumen * 100).ToString("0.0");
             ambientalSlider.value = defVolumen;
-            ambientalTextField.text = (defVolumen * 100).ToString("0.0");
             PlayerPrefs.SetInt(FirstPlay, -1);
         }
         else {
             //Volumen
             masterSlider.value = PlayerPrefs.GetFloat(MasterMusic);
-            masterTextField.text = (masterSlider.value * 100).ToString("0.0");
             musicSlider.value =  PlayerPrefs.GetFloat(BackgroundMusic);
-            musicTextField.text = (musicSlider.value * 100).ToString("0.0");
             sfxSlider.value = PlayerPrefs.GetFloat(SfxMusic);
-            sfxTextField.text = (sfxSlider.value * 100).ToString("0.0");
             ambientalSlider.value = PlayerPrefs.GetFloat(AmbientalMusic);
-            ambientalTextField.text = (ambientalSlider.value * 100).ToString("0.0");
             //Resolución
             resolutionDropdown.value = PlayerPrefs.GetInt(MasterResolution);
             //Cambiar brillo del postprocesado **FALTA VERLO**
@@ -166,7 +151,6 @@ public class MainMenuScript : MonoBehaviour
         {
             auxioMixer.SetFloat("musicVolume", Mathf.Log10(volume) * 20);
         }
-        musicTextField.text = (volume*100).ToString("0.0");
     }
     public void SetMasterVolumen(float volume)
     {
@@ -179,7 +163,6 @@ public class MainMenuScript : MonoBehaviour
             auxioMixer.SetFloat("masterVolume", Mathf.Log10(volume) * 20);
         }
         
-        masterTextField.text = (volume * 100).ToString("0.0");
     }
     public void SetSfxVolumen(float volume)
     {
@@ -192,7 +175,6 @@ public class MainMenuScript : MonoBehaviour
             auxioMixer.SetFloat("sfxVolume", Mathf.Log10(volume) * 20);
         }
         
-        sfxTextField.text = (volume * 100).ToString("0.0");
     }
     public void SetAmbientalVolumen(float volume)
     {
@@ -205,7 +187,6 @@ public class MainMenuScript : MonoBehaviour
             auxioMixer.SetFloat("ambientalVolume", Mathf.Log10(volume) * 20);
         }
 
-        ambientalTextField.text = (volume * 100).ToString("0.0");
     }
 
     public void SetBrightness(float brightness)
@@ -292,16 +273,12 @@ public class MainMenuScript : MonoBehaviour
         if(MenuType == "Audio")
         {
             masterSlider.value = defVolumen;
-            masterTextField.text = (defVolumen * 100).ToString("0.0");
 
             musicSlider.value = defVolumen;
-            musicTextField.text = (defVolumen*100).ToString("0.0");
 
             sfxSlider.value = defVolumen;
-            sfxTextField.text = (defVolumen * 100).ToString("0.0");
 
             ambientalSlider.value = defVolumen;
-            ambientalTextField.text = (defVolumen * 100).ToString("0.0");
         }
         if (MenuType == "Gráficos")
         {
