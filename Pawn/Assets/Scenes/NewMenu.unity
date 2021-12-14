@@ -1832,7 +1832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &297491230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6655,13 +6655,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noGameSaved: {fileID: 208139312}
   _menuACargar: 
-  masterTextField: {fileID: 0}
   masterSlider: {fileID: 2013607882}
-  musicTextField: {fileID: 0}
   musicSlider: {fileID: 384481670}
-  sfxTextField: {fileID: 0}
   sfxSlider: {fileID: 1232408204}
-  ambientalTextField: {fileID: 0}
   ambientalSlider: {fileID: 980438825}
   auxioMixer: {fileID: 24100000, guid: f1aabb519c5334b498eb22396df00d1c, type: 2}
   confirmationPrompt: {fileID: 1618723661}
