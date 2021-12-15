@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 5731667688856056987}
   - component: {fileID: 787120806301804652}
   - component: {fileID: 1560415526577969665}
+  - component: {fileID: -3978467793883736905}
   m_Layer: 6
   m_Name: Arbol1
   m_TagString: Untagged
@@ -172,6 +173,19 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 4.46, z: 0}
   m_TimeToStationary: 0.5
+--- !u!65 &-3978467793883736905
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4806957471797432075}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 9.985052, z: 1}
+  m_Center: {x: 0, y: 4.492526, z: 0}
 --- !u!1 &5210311372381962845
 GameObject:
   m_ObjectHideFlags: 0
