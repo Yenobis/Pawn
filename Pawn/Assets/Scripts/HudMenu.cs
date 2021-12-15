@@ -23,6 +23,7 @@ public class HudMenu : MonoBehaviour
     void Start()
     {
         isOnDeathScreen = false;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -36,7 +37,6 @@ public class HudMenu : MonoBehaviour
             if (hudPause.activeSelf == false)
             {
                 Resume();
-
                 PauseMenu.SetActive(true);
                 opciones.SetActive(false);
                 NoPartidaGuardada.SetActive(false);
@@ -71,6 +71,7 @@ public class HudMenu : MonoBehaviour
         else
         {
             if (victory) {
+                Cursor.visible = true;
                 menuVictoria.SetActive(true);
                 //GameObject.Find("HUDContinuara").SetActive(true);
             }
@@ -93,11 +94,13 @@ public class HudMenu : MonoBehaviour
     }
     public void Resume()
     {
+        Cursor.visible = false;
         Time.timeScale = 1f;
 
     }
     void Pause()
     {
+        Cursor.visible = true;
         Time.timeScale = 0f;
     }
 }
