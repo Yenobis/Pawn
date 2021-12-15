@@ -28,5 +28,6 @@ public class EnemyCounter : MonoBehaviour
         //FindGameObjectsWithLayer(LayerMask.NameToLayer("whatIsEnemy"));
         ActiveEnemies--;
         gameObject.GetComponent<Text>().text = "Enemigos" + "\n" + ActiveEnemies.ToString() + " / " + NumberOfEnemies;
+        if(ActiveEnemies == 0) { GameObject.Find("HudEnabler").GetComponent<HudMenu>().EndDemo();}
     }
 }

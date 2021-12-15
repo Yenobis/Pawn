@@ -16,7 +16,9 @@ public class HudMenu : MonoBehaviour
     [SerializeField] GameObject Graphics;
     [Header("Pawn")]
     [SerializeField] GameObject player;
+    [SerializeField] GameObject menuVictoria;
     private bool isOnDeathScreen;
+    private bool victory = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -65,8 +67,15 @@ public class HudMenu : MonoBehaviour
                 muerte.SetActive(true);
                 muerte.GetComponent<Animator>().SetBool("muerte", true);
             StartCoroutine(DeathMenu());
-
         }
+        else
+        {
+            if (victory) {
+                menuVictoria.SetActive(true);
+                //GameObject.Find("HUDContinuara").SetActive(true);
+            }
+        }
+
 
     }
 
@@ -78,7 +87,10 @@ public class HudMenu : MonoBehaviour
 
 
     }
-
+    public void EndDemo()
+    {
+        victory = true;
+    }
     public void Resume()
     {
         Time.timeScale = 1f;
