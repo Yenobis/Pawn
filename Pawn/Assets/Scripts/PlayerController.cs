@@ -30,10 +30,15 @@ public class PlayerController : MonoBehaviour
     public float max_health = 100f;
     public float cur_health = 0f;
 
+    public Animator animator;
+    public bool isHit;
+
+
     // Start is called before the first frame update
     void Start()
     {
         player.GetComponent<CharacterController>();
+        animator = GetComponentInChildren<Animator>();
         defaultSpeed = playerSpeed;
         cur_health = max_health;
     }
@@ -45,6 +50,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bool isHit = animator.GetBool("isHit");
+
         horizontalMove = Input.GetAxis("Horizontal");
         verticalMove = Input.GetAxis("Vertical");
 
@@ -63,9 +70,9 @@ public class PlayerController : MonoBehaviour
         HabilidadesJugador();
 
         player.Move(movePlayer * Time.deltaTime);
-
     }
-    //Función para determinar la dirección a la que mira la cámara
+    
+    //Funciï¿½n para determinar la direcciï¿½n a la que mira la cï¿½mara
     void camDirection() 
     {
         camForward = mainCamera.transform.forward;
@@ -78,7 +85,7 @@ public class PlayerController : MonoBehaviour
         camRight = camRight.normalized;
 
     }
-    //Función para establecer la gravedad
+    //Funciï¿½n para establecer la gravedad
     void SetGravity() 
     {
         if (player.isGrounded) 
@@ -94,7 +101,7 @@ public class PlayerController : MonoBehaviour
 
         DeslizaAbajo();
     }
-    //Función que detecta la pendiente donde se encuentra el jugador
+    //Funciï¿½n que detecta la pendiente donde se encuentra el jugador
     public void DeslizaAbajo()
     {
         isOnSlope = Vector3.Angle(Vector3.up, hitNormal) >= player.slopeLimit;
@@ -106,7 +113,7 @@ public class PlayerController : MonoBehaviour
             movePlayer.y += slopeForceDown;
         }
     }
-    //Función para realizar las habilidades del jugador 
+    //Funciï¿½n para realizar las habilidades del jugador 
     void HabilidadesJugador() 
     {
         //Debug.Log(player.isGrounded);
@@ -125,10 +132,18 @@ public class PlayerController : MonoBehaviour
         }
         
     }
+
+    IEnumerator isHitFalse(float time){
+        yield return new WaitForSeconds(time);
+        animator.SetBool("isHit", false);
+
+    }
     public void TakeDamage(float amount)
     {
-        
+
+        animator.SetBool("isHit", true);
         cur_health = Math.Max(cur_health - amount, 0);
+        StartCoroutine(isHitFalse(1));
 
     }
     public void HealDamage(float amount)
