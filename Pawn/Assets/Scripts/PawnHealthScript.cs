@@ -8,10 +8,14 @@ public class PawnHealthScript : MonoBehaviour
     public GameObject[] vidas;
     public int life = 100;
     [SerializeField] Slider vidaSlider;
+
+    Animator animator;
+    public bool isHit;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -38,9 +42,11 @@ public class PawnHealthScript : MonoBehaviour
             vidas[0].gameObject.GetComponent<Image>().color = Color.white;
         }
         vidaSlider.value = life;
+        animator.SetBool("isHit", false);
     }
     public void TakeDamage(int amount)
     {
+        animator.SetBool("isHit", true);
         life -= amount;
     }
 }
