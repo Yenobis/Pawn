@@ -59,7 +59,7 @@ public class EnemyAI : MonoBehaviour
     public float sightRange, attackRange, tooCloseRange;
     private bool playerInSightRange, playerInAttackRange, playerTooClose;
     [HideInInspector]
-    public bool isWalking, isRunning, isAttacking;
+    public bool isWalking, isRunning, isAttacking, isHit;
     private bool desaparecido = false;
     private bool destruido = false;
     private Quaternion rotacion_inicial;
@@ -108,6 +108,7 @@ public class EnemyAI : MonoBehaviour
             playerInAttackRange = true;
             animator.SetTrigger("Die");
             animator.SetBool("isAttacking", false);
+            
             if (!desaparecido) Invoke(nameof(Desaparecer), 2f);
             if (desaparecido) { StartCoroutine(Fade()); }
             Invoke(nameof(DestruirEnemigo), 4.2f);
@@ -204,6 +205,7 @@ public class EnemyAI : MonoBehaviour
         animator.SetBool("isAttacking", false);
         animator.SetBool("isRunning", false);
         animator.SetBool("isWalking", true);
+        animator.SetBool("isHit", false);
 
         /*
         //CASO PARA PATRULLAR POR UNA ZONA, NO BORRAR
@@ -258,7 +260,7 @@ public class EnemyAI : MonoBehaviour
     private void ChasePlayer()
     {
         GetComponent<NavMeshAgent>().speed = speed + chaseSpeedIncrease;
-
+        
         animator.SetBool("isAttacking", false);
         animator.SetBool("isWalking", true);
         animator.SetBool("isRunning", true);
@@ -282,6 +284,7 @@ public class EnemyAI : MonoBehaviour
 
     private void AttackPlayer()
     {
+        
         animator.SetBool("isWalking", false);
         animator.SetBool("isRunning", false);
         //Para que el enemigo no se mueva
@@ -296,16 +299,20 @@ public class EnemyAI : MonoBehaviour
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
+        
     }
 
     private void ResetAttack()
     {
+        animator.SetBool("isHit", false);
         animator.SetBool("isAttacking", false);
         alreadyAttacked = false;
+        //animator.SetBool("isHit", false);
     }
 
     private void ResetWalking()
     {
+        animator.SetBool("isHit", false);
         animator.SetBool("isWalking", false);
     }
 
@@ -314,8 +321,10 @@ public class EnemyAI : MonoBehaviour
     {
         if (cur_health > 0)
         {
+            animator.SetBool("isHit", true);
             cur_health -= amount;
         }
+        
     }
 
     private void DestroyEnemy()
@@ -342,4 +351,5 @@ public class EnemyAI : MonoBehaviour
     {
         GetComponentInChildren<Sword>().atacando = false;
     }
+
 }

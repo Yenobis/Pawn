@@ -304,11 +304,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 2698839113947081494}
+  playerRef: {fileID: 0}
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
-  playerRef: {fileID: 0}
-  canSeePlayer: 0
   obstructionMask:
     serializedVersion: 2
     m_Bits: 64
@@ -318,13 +317,16 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128
+  canSeePlayer: 0
   speed: 0
+  chaseSpeedIncrease: 1
   rotationSpeed: 10
   max_health: 1
   cur_health: 0
   walkPoint: {x: 0, y: 0, z: 0}
   pos_player: {x: 0, y: 0, z: 0}
   walkPointRange: 10
+  timeBetweenPoints: 0
   timeBetweenAttacks: 1.5
   projectile: {fileID: 0}
   fovRadius: 6
@@ -335,6 +337,7 @@ MonoBehaviour:
   isWalking: 0
   isRunning: 0
   isAttacking: 0
+  isHit: 0
 --- !u!195 &2698839113947081494
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -561,7 +564,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7ebc66840620924eab06281b51fb76b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cur_health: 0
   audios: []
 --- !u!82 &6580904562404155010
 AudioSource:
