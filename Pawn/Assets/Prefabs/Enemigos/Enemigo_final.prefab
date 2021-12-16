@@ -321,7 +321,7 @@ MonoBehaviour:
   speed: 0
   chaseSpeedIncrease: 1
   rotationSpeed: 10
-  max_health: 1
+  max_health: 100
   cur_health: 0
   walkPoint: {x: 0, y: 0, z: 0}
   pos_player: {x: 0, y: 0, z: 0}

@@ -346,7 +346,7 @@ PrefabInstance:
       objectReference: {fileID: 1480584778}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: max_health
-      value: 100
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: whatIsGround.m_Bits
@@ -1927,7 +1927,7 @@ PrefabInstance:
       objectReference: {fileID: 1480584778}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: max_health
-      value: 100
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: whatIsGround.m_Bits
@@ -9890,7 +9890,7 @@ PrefabInstance:
       objectReference: {fileID: 1480584778}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: max_health
-      value: 100
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: whatIsGround.m_Bits
@@ -10057,7 +10057,7 @@ PrefabInstance:
       objectReference: {fileID: 1480584778}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: max_health
-      value: 100
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: whatIsGround.m_Bits
@@ -13851,7 +13851,7 @@ PrefabInstance:
       objectReference: {fileID: 1480584778}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: max_health
-      value: 100
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: whatIsGround.m_Bits
@@ -14084,7 +14084,7 @@ PrefabInstance:
       objectReference: {fileID: 1480584778}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: max_health
-      value: 100
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: whatIsGround.m_Bits
@@ -14765,7 +14765,7 @@ PrefabInstance:
       objectReference: {fileID: 1480584778}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: max_health
-      value: 100
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: whatIsGround.m_Bits
@@ -16179,7 +16179,11 @@ PrefabInstance:
       objectReference: {fileID: 1480584778}
     - target: {fileID: 2600581996101947476, guid: 7f4c4c14a7a61334782f704b761816c4, type: 3}
       propertyPath: max_health
-      value: 140
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600581996101947476, guid: 7f4c4c14a7a61334782f704b761816c4, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2600581996101947476, guid: 7f4c4c14a7a61334782f704b761816c4, type: 3}
       propertyPath: waypoints.Array.size
@@ -16536,7 +16540,7 @@ PrefabInstance:
       objectReference: {fileID: 1480584778}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: max_health
-      value: 100
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: whatIsGround.m_Bits
@@ -16633,7 +16637,7 @@ PrefabInstance:
       objectReference: {fileID: 1480584778}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: max_health
-      value: 100
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: chaseSpeedIncrease
@@ -16739,7 +16743,7 @@ PrefabInstance:
       objectReference: {fileID: 1480584778}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: max_health
-      value: 100
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: whatIsGround.m_Bits
@@ -16917,7 +16921,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096352594}
-  m_LocalRotation: {x: 0.15686283, y: -0.11294221, z: 0.018060027, w: 0.98097503}
+  m_LocalRotation: {x: 0.15686283, y: -0.112942204, z: 0.018060025, w: 0.98097503}
   m_LocalPosition: {x: -10.732267, y: 28.214106, z: 15.61624}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -17815,7 +17819,11 @@ PrefabInstance:
       objectReference: {fileID: 1480584778}
     - target: {fileID: 2600581996101947476, guid: 7f4c4c14a7a61334782f704b761816c4, type: 3}
       propertyPath: max_health
-      value: 140
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600581996101947476, guid: 7f4c4c14a7a61334782f704b761816c4, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2600581996101947476, guid: 7f4c4c14a7a61334782f704b761816c4, type: 3}
       propertyPath: waypoints.Array.size
@@ -18036,7 +18044,7 @@ PrefabInstance:
       objectReference: {fileID: 1480584778}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: max_health
-      value: 100
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: whatIsGround.m_Bits
@@ -19882,7 +19890,7 @@ PrefabInstance:
       objectReference: {fileID: 1480584778}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: max_health
-      value: 100
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: whatIsGround.m_Bits
@@ -26911,7 +26919,7 @@ PrefabInstance:
       objectReference: {fileID: 1480584778}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: max_health
-      value: 100
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: whatIsGround.m_Bits
@@ -27715,7 +27723,7 @@ PrefabInstance:
       objectReference: {fileID: 1480584778}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: max_health
-      value: 100
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: whatIsGround.m_Bits
@@ -29484,7 +29492,7 @@ PrefabInstance:
       objectReference: {fileID: 1480584778}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: max_health
-      value: 100
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: whatIsGround.m_Bits
@@ -30102,7 +30110,7 @@ PrefabInstance:
       objectReference: {fileID: 1480584778}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: max_health
-      value: 100
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: whatIsGround.m_Bits
@@ -30911,7 +30919,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -4485733257850317669, guid: f1aabb519c5334b498eb22396df00d1c, type: 2}
-  m_audioClip: {fileID: 8300000, guid: a3ca344a2ea1b7a4f898adb99100e239, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7353bb0d04da3c44da6dabeceb01fc8e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -37370,7 +37378,7 @@ PrefabInstance:
       objectReference: {fileID: 1480584778}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: max_health
-      value: 100
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2698839113947081480, guid: 1c36dd0c7873d1e4bbe5a974d2f36d11, type: 3}
       propertyPath: whatIsGround.m_Bits
@@ -40420,15 +40428,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1640001936950040340, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.15789796
+      value: 0.15789795
       objectReference: {fileID: 0}
     - target: {fileID: 1640001936950040340, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0036546066
+      value: 0.003654614
       objectReference: {fileID: 0}
     - target: {fileID: 1640001936950040340, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0005843919
+      value: -0.00058438815
       objectReference: {fileID: 0}
     - target: {fileID: 1640001937466779949, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -40452,19 +40460,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938010582089, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99156576
+      value: 0.9915658
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938010582089, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.12955165
+      value: 0.12955163
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938010582089, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0036698207
+      value: 0.0036698433
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938010582089, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00047947656
+      value: -0.00047947842
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938028263544, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: mainCamera

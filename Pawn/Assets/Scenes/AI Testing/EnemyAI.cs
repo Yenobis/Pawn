@@ -30,7 +30,7 @@ public class EnemyAI : MonoBehaviour
     [Space(15)]
     public float chaseSpeedIncrease = 1;
     public float rotationSpeed = 10;
-    public float max_health = 100f;
+    public float max_health;
     public float cur_health = 0f;
     //float damage = 5f;
 
