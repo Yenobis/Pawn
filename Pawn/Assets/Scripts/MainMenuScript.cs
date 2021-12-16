@@ -44,7 +44,6 @@ public class MainMenuScript : MonoBehaviour
 
     [Header("Gráficos")]
     [SerializeField] private Slider brightnessSlider = null;
-    [SerializeField] private TMP_Text brightnessField = null;
     [SerializeField] private float defBrightness = 0.5f;
     [SerializeField] private Toggle fullscreenToggle;
     private float _brightnessLevel;
@@ -192,7 +191,6 @@ public class MainMenuScript : MonoBehaviour
     public void SetBrightness(float brightness)
     {
         _brightnessLevel = brightness;
-        brightnessField.text = (brightness * 100).ToString("0.0");
     }
     public void SetFullScreen(bool fullscreen)
     {
@@ -284,7 +282,6 @@ public class MainMenuScript : MonoBehaviour
         {
             //Resetear Brillo **FALTA VERLO** postprocesing
             brightnessSlider.value = defBrightness;
-            brightnessField.text = (defBrightness * 100).ToString("0.0");
 
             fullscreenToggle.isOn = true;
             Screen.fullScreen = true;
