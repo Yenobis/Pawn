@@ -2108,6 +2108,82 @@ Transform:
   m_Father: {fileID: 1208560222}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &212170482
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 212170485}
+  - component: {fileID: 212170484}
+  - component: {fileID: 212170483}
+  m_Layer: 0
+  m_Name: Terrain_(226.0, -40.0, -124.0)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!154 &212170483
+TerrainCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212170482}
+  m_Material: {fileID: 0}
+  m_Enabled: 1
+  m_TerrainData: {fileID: 15600000, guid: d41e955dc787fb24a90c46dc88b812ef, type: 2}
+  m_EnableTreeColliders: 1
+--- !u!218 &212170484
+Terrain:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212170482}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_TerrainData: {fileID: 15600000, guid: d41e955dc787fb24a90c46dc88b812ef, type: 2}
+  m_TreeDistance: 1000
+  m_TreeBillboardDistance: 637
+  m_TreeCrossFadeLength: 84
+  m_TreeMaximumFullLODCount: 1347
+  m_DetailObjectDistance: 78
+  m_DetailObjectDensity: 0.7
+  m_HeightmapPixelError: 5
+  m_SplatMapDistance: 1000
+  m_HeightmapMaximumLOD: 0
+  m_ShadowCastingMode: 2
+  m_DrawHeightmap: 1
+  m_DrawInstanced: 0
+  m_DrawTreesAndFoliage: 1
+  m_ReflectionProbeUsage: 1
+  m_MaterialTemplate: {fileID: 2100000, guid: 594ea882c5a793440b60ff72d896021e, type: 2}
+  m_BakeLightProbesForTrees: 1
+  m_PreserveTreePrototypeLayers: 0
+  m_DeringLightProbesForTrees: 1
+  m_ScaleInLightmap: 0.033049457
+  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
+  m_GroupingID: 0
+  m_RenderingLayerMask: 1
+  m_AllowAutoConnect: 1
+--- !u!4 &212170485
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212170482}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 226, y: -40, z: -124}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &224935967 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 407526, guid: d4f06407f06d8cf41b643015132cafca, type: 3}
@@ -9194,6 +9270,68 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1001 &362412804
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1719466171}
+    m_Modifications:
+    - target: {fileID: 8806053595349075533, guid: e2ce7badae6190149889cff0acb9e954, type: 3}
+      propertyPath: m_Name
+      value: Paquete de Vida (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806053595349075537, guid: e2ce7badae6190149889cff0acb9e954, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806053595349075537, guid: e2ce7badae6190149889cff0acb9e954, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806053595349075537, guid: e2ce7badae6190149889cff0acb9e954, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -21.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806053595349075537, guid: e2ce7badae6190149889cff0acb9e954, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 716.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806053595349075537, guid: e2ce7badae6190149889cff0acb9e954, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806053595349075537, guid: e2ce7badae6190149889cff0acb9e954, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806053595349075537, guid: e2ce7badae6190149889cff0acb9e954, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806053595349075537, guid: e2ce7badae6190149889cff0acb9e954, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806053595349075537, guid: e2ce7badae6190149889cff0acb9e954, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806053595349075537, guid: e2ce7badae6190149889cff0acb9e954, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806053595349075537, guid: e2ce7badae6190149889cff0acb9e954, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e2ce7badae6190149889cff0acb9e954, type: 3}
+--- !u!4 &362412805 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8806053595349075537, guid: e2ce7badae6190149889cff0acb9e954, type: 3}
+  m_PrefabInstance: {fileID: 362412804}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &376526260 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1586908177632093588, guid: 4ad43d99521a7b64d9b886b88a42d022, type: 3}
@@ -11398,6 +11536,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3523b167a262d14ab460d27dd55f8ba, type: 3}
+--- !u!4 &557844883 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4176035905103265177, guid: f3523b167a262d14ab460d27dd55f8ba, type: 3}
+  m_PrefabInstance: {fileID: 557844882}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &558246552
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16352,6 +16495,93 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 966743283}
   m_CullTransparentMesh: 1
+--- !u!1001 &971842042
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 557844883}
+    m_Modifications:
+    - target: {fileID: 1678841851965742, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_Name
+      value: rpgpp_lt_box_wood_01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.7118
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5719
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -12.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -25.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.86597925
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.50008005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -60.011
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+--- !u!1 &971842043 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1678841851965742, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+  m_PrefabInstance: {fileID: 971842042}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &971842044
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971842043}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.92379564, y: 0.8136058, z: 1.1716423}
+  m_Center: {x: -0.0026062727, y: -0.0029441565, z: 0.00088205934}
 --- !u!1001 &985675182
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17987,7 +18217,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096352594}
-  m_LocalRotation: {x: 0.15686283, y: -0.112942204, z: 0.018060029, w: 0.98097503}
+  m_LocalRotation: {x: 0.15686283, y: -0.11294221, z: 0.01806002, w: 0.98097503}
   m_LocalPosition: {x: -10.732267, y: 28.214106, z: 15.61624}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -18303,11 +18533,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5520655740593158837, guid: 3897544d6c3ffd04999bd78908c8a5a2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 12.388187
+      value: 3.619085
       objectReference: {fileID: 0}
     - target: {fileID: 5520655740593158837, guid: 3897544d6c3ffd04999bd78908c8a5a2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 90.7
+      value: 91.3
       objectReference: {fileID: 0}
     - target: {fileID: 5520655740593158837, guid: 3897544d6c3ffd04999bd78908c8a5a2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18315,7 +18545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5520655740593158837, guid: 3897544d6c3ffd04999bd78908c8a5a2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 315.7
+      value: 207.9
       objectReference: {fileID: 0}
     - target: {fileID: 5520655740593158837, guid: 3897544d6c3ffd04999bd78908c8a5a2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19116,6 +19346,96 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2834256456820959323, guid: 7f4c4c14a7a61334782f704b761816c4, type: 3}
   m_PrefabInstance: {fileID: 1166116568}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1166386652
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1862836067}
+    m_Modifications:
+    - target: {fileID: 5520655740593158833, guid: 3897544d6c3ffd04999bd78908c8a5a2, type: 3}
+      propertyPath: m_Name
+      value: Barrera (41)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520655740593158834, guid: 3897544d6c3ffd04999bd78908c8a5a2, type: 3}
+      propertyPath: m_Size.x
+      value: 29.675327
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520655740593158834, guid: 3897544d6c3ffd04999bd78908c8a5a2, type: 3}
+      propertyPath: m_Size.y
+      value: 8.546233
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520655740593158834, guid: 3897544d6c3ffd04999bd78908c8a5a2, type: 3}
+      propertyPath: m_Size.z
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520655740593158834, guid: 3897544d6c3ffd04999bd78908c8a5a2, type: 3}
+      propertyPath: m_Center.x
+      value: 0.4762695
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520655740593158834, guid: 3897544d6c3ffd04999bd78908c8a5a2, type: 3}
+      propertyPath: m_Center.y
+      value: 3.7731125
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520655740593158834, guid: 3897544d6c3ffd04999bd78908c8a5a2, type: 3}
+      propertyPath: m_Center.z
+      value: 0.00010998424
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520655740593158837, guid: 3897544d6c3ffd04999bd78908c8a5a2, type: 3}
+      propertyPath: m_RootOrder
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520655740593158837, guid: 3897544d6c3ffd04999bd78908c8a5a2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.619085
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520655740593158837, guid: 3897544d6c3ffd04999bd78908c8a5a2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 89.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520655740593158837, guid: 3897544d6c3ffd04999bd78908c8a5a2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -46.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520655740593158837, guid: 3897544d6c3ffd04999bd78908c8a5a2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 446
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520655740593158837, guid: 3897544d6c3ffd04999bd78908c8a5a2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.7091546
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520655740593158837, guid: 3897544d6c3ffd04999bd78908c8a5a2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520655740593158837, guid: 3897544d6c3ffd04999bd78908c8a5a2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.70505303
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520655740593158837, guid: 3897544d6c3ffd04999bd78908c8a5a2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520655740593158837, guid: 3897544d6c3ffd04999bd78908c8a5a2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520655740593158837, guid: 3897544d6c3ffd04999bd78908c8a5a2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -270.332
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520655740593158837, guid: 3897544d6c3ffd04999bd78908c8a5a2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3897544d6c3ffd04999bd78908c8a5a2, type: 3}
+--- !u!4 &1166386653 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5520655740593158837, guid: 3897544d6c3ffd04999bd78908c8a5a2, type: 3}
+  m_PrefabInstance: {fileID: 1166386652}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1167213931
 GameObject:
@@ -26736,6 +27056,7 @@ Transform:
   - {fileID: 2114875521}
   - {fileID: 308329107}
   - {fileID: 2055712853}
+  - {fileID: 1495240779}
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -27278,6 +27599,80 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7750588937850277642, guid: b07a2a352495fa14cbc06331cbef2819, type: 3}
   m_PrefabInstance: {fileID: 1494526593}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1495240778
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1451431395}
+    m_Modifications:
+    - target: {fileID: 134746, guid: d4f06407f06d8cf41b643015132cafca, type: 3}
+      propertyPath: m_Name
+      value: Fence Type1 02 (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 407526, guid: d4f06407f06d8cf41b643015132cafca, type: 3}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 407526, guid: d4f06407f06d8cf41b643015132cafca, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2924
+      objectReference: {fileID: 0}
+    - target: {fileID: 407526, guid: d4f06407f06d8cf41b643015132cafca, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2924
+      objectReference: {fileID: 0}
+    - target: {fileID: 407526, guid: d4f06407f06d8cf41b643015132cafca, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2924
+      objectReference: {fileID: 0}
+    - target: {fileID: 407526, guid: d4f06407f06d8cf41b643015132cafca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -82.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 407526, guid: d4f06407f06d8cf41b643015132cafca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 407526, guid: d4f06407f06d8cf41b643015132cafca, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 225.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 407526, guid: d4f06407f06d8cf41b643015132cafca, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.77877045
+      objectReference: {fileID: 0}
+    - target: {fileID: 407526, guid: d4f06407f06d8cf41b643015132cafca, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.09264848
+      objectReference: {fileID: 0}
+    - target: {fileID: 407526, guid: d4f06407f06d8cf41b643015132cafca, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.6126282
+      objectReference: {fileID: 0}
+    - target: {fileID: 407526, guid: d4f06407f06d8cf41b643015132cafca, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.09807946
+      objectReference: {fileID: 0}
+    - target: {fileID: 407526, guid: d4f06407f06d8cf41b643015132cafca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -1.383
+      objectReference: {fileID: 0}
+    - target: {fileID: 407526, guid: d4f06407f06d8cf41b643015132cafca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 76.569
+      objectReference: {fileID: 0}
+    - target: {fileID: 407526, guid: d4f06407f06d8cf41b643015132cafca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -15.448
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d4f06407f06d8cf41b643015132cafca, type: 3}
+--- !u!4 &1495240779 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 407526, guid: d4f06407f06d8cf41b643015132cafca, type: 3}
+  m_PrefabInstance: {fileID: 1495240778}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1496908851
 PrefabInstance:
@@ -28083,6 +28478,93 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d96771b3d6293048a9e9596a5ca7d6b, type: 3}
+--- !u!1001 &1545347064
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 557844883}
+    m_Modifications:
+    - target: {fileID: 1678841851965742, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_Name
+      value: rpgpp_lt_box_wood_01 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.7118
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.80565
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -26.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.964357
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.26460448
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -30.687
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+--- !u!1 &1545347065 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1678841851965742, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+  m_PrefabInstance: {fileID: 1545347064}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1545347066
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545347065}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.92379564, y: 0.8136058, z: 1.1716423}
+  m_Center: {x: -0.0026062727, y: -0.0029441565, z: 0.00088205934}
 --- !u!1 &1545796866
 GameObject:
   m_ObjectHideFlags: 0
@@ -30471,6 +30953,7 @@ Transform:
   - {fileID: 951441693}
   - {fileID: 1437321432}
   - {fileID: 831471441}
+  - {fileID: 362412805}
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -31566,6 +32049,93 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4f06407f06d8cf41b643015132cafca, type: 3}
+--- !u!1001 &1804269279
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 557844883}
+    m_Modifications:
+    - target: {fileID: 1678841851965742, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_Name
+      value: rpgpp_lt_box_wood_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -12.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.951
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -23.731
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9990485
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.043614667
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.0000000074505815
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -4.6566134e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 4.999
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202655646031778, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+--- !u!1 &1804269280 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1678841851965742, guid: 144403e0e442d2a448335e0c845d665b, type: 3}
+  m_PrefabInstance: {fileID: 1804269279}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1804269281
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804269280}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.92379564, y: 0.8136058, z: 1.1716423}
+  m_Center: {x: -0.0026062727, y: -0.0029441565, z: 0.00088205934}
 --- !u!1001 &1809316843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32255,6 +32825,7 @@ Transform:
   - {fileID: 49399189}
   - {fileID: 1782719952}
   - {fileID: 295089761}
+  - {fileID: 1166386653}
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -40171,7 +40742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 243062433968533604, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.g
-      value: 0.36410224
+      value: 0.36407351
       objectReference: {fileID: 0}
     - target: {fileID: 243062433968533604, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.r
@@ -40183,7 +40754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 243062433968533604, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreColor.b
-      value: 0.30106997
+      value: 0.30104122
       objectReference: {fileID: 0}
     - target: {fileID: 243062433968533604, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveVisuals.y
@@ -40195,7 +40766,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 243062433968533604, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: horizonColor.g
-      value: 0.19138026
+      value: 0.19135302
       objectReference: {fileID: 0}
     - target: {fileID: 243062433968533604, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveDirection1
@@ -40215,11 +40786,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 243062433968533604, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.g
-      value: 0.30891305
+      value: 0.30888432
       objectReference: {fileID: 0}
     - target: {fileID: 243062433968533604, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.r
-      value: 0.2030772
+      value: 0.20304996
       objectReference: {fileID: 0}
     - target: {fileID: 243062433968533604, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: reflectionStrength
@@ -40331,7 +40902,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1009201975538455053, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.g
-      value: 0.3641025
+      value: 0.36407378
       objectReference: {fileID: 0}
     - target: {fileID: 1009201975538455053, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.r
@@ -40347,7 +40918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1009201975538455053, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreColor.b
-      value: 0.30107024
+      value: 0.3010415
       objectReference: {fileID: 0}
     - target: {fileID: 1009201975538455053, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreColor.g
@@ -40375,7 +40946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1009201975538455053, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: horizonColor.g
-      value: 0.19138053
+      value: 0.19135329
       objectReference: {fileID: 0}
     - target: {fileID: 1009201975538455053, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreFoamSpeed
@@ -40423,11 +40994,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1009201975538455053, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.g
-      value: 0.30891335
+      value: 0.30888462
       objectReference: {fileID: 0}
     - target: {fileID: 1009201975538455053, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.r
-      value: 0.20307747
+      value: 0.20305023
       objectReference: {fileID: 0}
     - target: {fileID: 1009201975538455053, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: lightingSmoothness
@@ -40543,7 +41114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1029994143024956899, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.g
-      value: 0.36410242
+      value: 0.3640737
       objectReference: {fileID: 0}
     - target: {fileID: 1029994143024956899, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.r
@@ -40559,7 +41130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1029994143024956899, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreColor.b
-      value: 0.30107015
+      value: 0.30104142
       objectReference: {fileID: 0}
     - target: {fileID: 1029994143024956899, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreColor.g
@@ -40587,7 +41158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1029994143024956899, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: horizonColor.g
-      value: 0.19138044
+      value: 0.1913532
       objectReference: {fileID: 0}
     - target: {fileID: 1029994143024956899, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreFoamSpeed
@@ -40627,11 +41198,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1029994143024956899, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.g
-      value: 0.30891326
+      value: 0.30888453
       objectReference: {fileID: 0}
     - target: {fileID: 1029994143024956899, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.r
-      value: 0.20307738
+      value: 0.20305014
       objectReference: {fileID: 0}
     - target: {fileID: 1029994143024956899, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: lightingSmoothness
@@ -40717,9 +41288,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 212.08
       objectReference: {fileID: 0}
+    - target: {fileID: 1414875700411795012, guid: 3918561667e789b499339dd413f81259, type: 3}
+      propertyPath: deepColor.g
+      value: 0.36407337
+      objectReference: {fileID: 0}
+    - target: {fileID: 1414875700411795012, guid: 3918561667e789b499339dd413f81259, type: 3}
+      propertyPath: shoreColor.b
+      value: 0.3010411
+      objectReference: {fileID: 0}
+    - target: {fileID: 1414875700411795012, guid: 3918561667e789b499339dd413f81259, type: 3}
+      propertyPath: horizonColor.g
+      value: 0.1913529
+      objectReference: {fileID: 0}
+    - target: {fileID: 1414875700411795012, guid: 3918561667e789b499339dd413f81259, type: 3}
+      propertyPath: underwaterColor.g
+      value: 0.3088842
+      objectReference: {fileID: 0}
+    - target: {fileID: 1414875700411795012, guid: 3918561667e789b499339dd413f81259, type: 3}
+      propertyPath: underwaterColor.r
+      value: 0.20304984
+      objectReference: {fileID: 0}
     - target: {fileID: 1652216814924628083, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: m_Name
       value: Rio
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991450033493323035, guid: 3918561667e789b499339dd413f81259, type: 3}
+      propertyPath: deepColor.g
+      value: 0.36407343
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991450033493323035, guid: 3918561667e789b499339dd413f81259, type: 3}
+      propertyPath: shoreColor.b
+      value: 0.30104116
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991450033493323035, guid: 3918561667e789b499339dd413f81259, type: 3}
+      propertyPath: horizonColor.g
+      value: 0.19135296
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991450033493323035, guid: 3918561667e789b499339dd413f81259, type: 3}
+      propertyPath: underwaterColor.g
+      value: 0.30888426
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991450033493323035, guid: 3918561667e789b499339dd413f81259, type: 3}
+      propertyPath: underwaterColor.r
+      value: 0.2030499
       objectReference: {fileID: 0}
     - target: {fileID: 2265542322351945815, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveSpeed
@@ -40735,7 +41346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2265542322351945815, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.g
-      value: 0.3641024
+      value: 0.36407366
       objectReference: {fileID: 0}
     - target: {fileID: 2265542322351945815, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.r
@@ -40747,7 +41358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2265542322351945815, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreColor.b
-      value: 0.30107012
+      value: 0.3010414
       objectReference: {fileID: 0}
     - target: {fileID: 2265542322351945815, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveVisuals.y
@@ -40759,7 +41370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2265542322351945815, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: horizonColor.g
-      value: 0.19138041
+      value: 0.19135317
       objectReference: {fileID: 0}
     - target: {fileID: 2265542322351945815, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveDirection1
@@ -40779,11 +41390,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2265542322351945815, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.g
-      value: 0.30891323
+      value: 0.30888447
       objectReference: {fileID: 0}
     - target: {fileID: 2265542322351945815, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.r
-      value: 0.20307735
+      value: 0.2030501
       objectReference: {fileID: 0}
     - target: {fileID: 2265542322351945815, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: reflectionStrength
@@ -40815,7 +41426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2353450190277366441, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.g
-      value: 0.36410275
+      value: 0.364074
       objectReference: {fileID: 0}
     - target: {fileID: 2353450190277366441, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.r
@@ -40827,7 +41438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2353450190277366441, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreColor.b
-      value: 0.30107048
+      value: 0.30104172
       objectReference: {fileID: 0}
     - target: {fileID: 2353450190277366441, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveVisuals.y
@@ -40839,7 +41450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2353450190277366441, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: horizonColor.g
-      value: 0.19138074
+      value: 0.1913535
       objectReference: {fileID: 0}
     - target: {fileID: 2353450190277366441, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveDirection1
@@ -40859,11 +41470,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2353450190277366441, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.g
-      value: 0.30891356
+      value: 0.30888483
       objectReference: {fileID: 0}
     - target: {fileID: 2353450190277366441, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.r
-      value: 0.20307767
+      value: 0.20305043
       objectReference: {fileID: 0}
     - target: {fileID: 2353450190277366441, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: reflectionStrength
@@ -40889,6 +41500,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -1.31
       objectReference: {fileID: 0}
+    - target: {fileID: 2681502638040544882, guid: 3918561667e789b499339dd413f81259, type: 3}
+      propertyPath: deepColor.g
+      value: 0.3640735
+      objectReference: {fileID: 0}
+    - target: {fileID: 2681502638040544882, guid: 3918561667e789b499339dd413f81259, type: 3}
+      propertyPath: shoreColor.b
+      value: 0.3010412
+      objectReference: {fileID: 0}
+    - target: {fileID: 2681502638040544882, guid: 3918561667e789b499339dd413f81259, type: 3}
+      propertyPath: horizonColor.g
+      value: 0.191353
+      objectReference: {fileID: 0}
+    - target: {fileID: 2681502638040544882, guid: 3918561667e789b499339dd413f81259, type: 3}
+      propertyPath: underwaterColor.g
+      value: 0.3088843
+      objectReference: {fileID: 0}
+    - target: {fileID: 2681502638040544882, guid: 3918561667e789b499339dd413f81259, type: 3}
+      propertyPath: underwaterColor.r
+      value: 0.20304993
+      objectReference: {fileID: 0}
     - target: {fileID: 2954962059413277221, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveSpeed
       value: 1.63
@@ -40907,7 +41538,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2954962059413277221, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.g
-      value: 0.36410266
+      value: 0.3640739
       objectReference: {fileID: 0}
     - target: {fileID: 2954962059413277221, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.r
@@ -40919,7 +41550,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2954962059413277221, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreColor.b
-      value: 0.30107036
+      value: 0.30104163
       objectReference: {fileID: 0}
     - target: {fileID: 2954962059413277221, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveVisuals.y
@@ -40931,7 +41562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2954962059413277221, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: horizonColor.g
-      value: 0.19138065
+      value: 0.19135341
       objectReference: {fileID: 0}
     - target: {fileID: 2954962059413277221, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveDirection1
@@ -40951,11 +41582,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2954962059413277221, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.g
-      value: 0.30891347
+      value: 0.30888474
       objectReference: {fileID: 0}
     - target: {fileID: 2954962059413277221, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.r
-      value: 0.20307758
+      value: 0.20305035
       objectReference: {fileID: 0}
     - target: {fileID: 2954962059413277221, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: reflectionStrength
@@ -41003,7 +41634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3080670228337169227, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.g
-      value: 0.36410257
+      value: 0.36407384
       objectReference: {fileID: 0}
     - target: {fileID: 3080670228337169227, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.r
@@ -41019,7 +41650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3080670228337169227, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreColor.b
-      value: 0.3010703
+      value: 0.30104157
       objectReference: {fileID: 0}
     - target: {fileID: 3080670228337169227, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreColor.g
@@ -41047,7 +41678,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3080670228337169227, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: horizonColor.g
-      value: 0.19138059
+      value: 0.19135335
       objectReference: {fileID: 0}
     - target: {fileID: 3080670228337169227, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreFoamSpeed
@@ -41087,11 +41718,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3080670228337169227, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.g
-      value: 0.3089134
+      value: 0.30888468
       objectReference: {fileID: 0}
     - target: {fileID: 3080670228337169227, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.r
-      value: 0.20307752
+      value: 0.20305029
       objectReference: {fileID: 0}
     - target: {fileID: 3080670228337169227, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: lightingSmoothness
@@ -41161,6 +41792,26 @@ PrefabInstance:
       propertyPath: m_LightProbeUsage
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3641016899649514333, guid: 3918561667e789b499339dd413f81259, type: 3}
+      propertyPath: deepColor.g
+      value: 0.36407334
+      objectReference: {fileID: 0}
+    - target: {fileID: 3641016899649514333, guid: 3918561667e789b499339dd413f81259, type: 3}
+      propertyPath: shoreColor.b
+      value: 0.30104107
+      objectReference: {fileID: 0}
+    - target: {fileID: 3641016899649514333, guid: 3918561667e789b499339dd413f81259, type: 3}
+      propertyPath: horizonColor.g
+      value: 0.19135287
+      objectReference: {fileID: 0}
+    - target: {fileID: 3641016899649514333, guid: 3918561667e789b499339dd413f81259, type: 3}
+      propertyPath: underwaterColor.g
+      value: 0.30888417
+      objectReference: {fileID: 0}
+    - target: {fileID: 3641016899649514333, guid: 3918561667e789b499339dd413f81259, type: 3}
+      propertyPath: underwaterColor.r
+      value: 0.20304981
+      objectReference: {fileID: 0}
     - target: {fileID: 3728009379495049747, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18.16
@@ -41187,7 +41838,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3787064282479115182, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.g
-      value: 0.3641023
+      value: 0.36407357
       objectReference: {fileID: 0}
     - target: {fileID: 3787064282479115182, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.r
@@ -41199,7 +41850,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3787064282479115182, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreColor.b
-      value: 0.30107003
+      value: 0.30104128
       objectReference: {fileID: 0}
     - target: {fileID: 3787064282479115182, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveVisuals.y
@@ -41211,7 +41862,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3787064282479115182, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: horizonColor.g
-      value: 0.19138032
+      value: 0.19135308
       objectReference: {fileID: 0}
     - target: {fileID: 3787064282479115182, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveDirection1
@@ -41231,11 +41882,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3787064282479115182, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.g
-      value: 0.30891314
+      value: 0.30888438
       objectReference: {fileID: 0}
     - target: {fileID: 3787064282479115182, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.r
-      value: 0.20307726
+      value: 0.20305002
       objectReference: {fileID: 0}
     - target: {fileID: 3787064282479115182, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: reflectionStrength
@@ -41343,7 +41994,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4688240399800049583, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.g
-      value: 0.36410263
+      value: 0.36407387
       objectReference: {fileID: 0}
     - target: {fileID: 4688240399800049583, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.r
@@ -41355,7 +42006,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4688240399800049583, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreColor.b
-      value: 0.30107033
+      value: 0.3010416
       objectReference: {fileID: 0}
     - target: {fileID: 4688240399800049583, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveVisuals.y
@@ -41367,7 +42018,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4688240399800049583, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: horizonColor.g
-      value: 0.19138062
+      value: 0.19135338
       objectReference: {fileID: 0}
     - target: {fileID: 4688240399800049583, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveDirection1
@@ -41391,11 +42042,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4688240399800049583, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.g
-      value: 0.30891344
+      value: 0.3088847
       objectReference: {fileID: 0}
     - target: {fileID: 4688240399800049583, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.r
-      value: 0.20307755
+      value: 0.20305032
       objectReference: {fileID: 0}
     - target: {fileID: 4688240399800049583, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: reflectionStrength
@@ -41439,7 +42090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5329862900024607564, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.g
-      value: 0.36410245
+      value: 0.36407372
       objectReference: {fileID: 0}
     - target: {fileID: 5329862900024607564, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.r
@@ -41455,7 +42106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5329862900024607564, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreColor.b
-      value: 0.30107018
+      value: 0.30104145
       objectReference: {fileID: 0}
     - target: {fileID: 5329862900024607564, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreColor.g
@@ -41483,7 +42134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5329862900024607564, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: horizonColor.g
-      value: 0.19138047
+      value: 0.19135323
       objectReference: {fileID: 0}
     - target: {fileID: 5329862900024607564, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreFoamSpeed
@@ -41515,11 +42166,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5329862900024607564, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.g
-      value: 0.3089133
+      value: 0.30888456
       objectReference: {fileID: 0}
     - target: {fileID: 5329862900024607564, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.r
-      value: 0.2030774
+      value: 0.20305017
       objectReference: {fileID: 0}
     - target: {fileID: 5329862900024607564, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: lightingSmoothness
@@ -41571,7 +42222,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5790414318311395965, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.g
-      value: 0.36410272
+      value: 0.36407396
       objectReference: {fileID: 0}
     - target: {fileID: 5790414318311395965, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.r
@@ -41583,7 +42234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5790414318311395965, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreColor.b
-      value: 0.30107042
+      value: 0.3010417
       objectReference: {fileID: 0}
     - target: {fileID: 5790414318311395965, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveVisuals.y
@@ -41595,7 +42246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5790414318311395965, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: horizonColor.g
-      value: 0.19138071
+      value: 0.19135347
       objectReference: {fileID: 0}
     - target: {fileID: 5790414318311395965, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveDirection1
@@ -41615,11 +42266,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5790414318311395965, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.g
-      value: 0.30891353
+      value: 0.3088848
       objectReference: {fileID: 0}
     - target: {fileID: 5790414318311395965, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.r
-      value: 0.20307764
+      value: 0.2030504
       objectReference: {fileID: 0}
     - target: {fileID: 5790414318311395965, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: reflectionStrength
@@ -41651,7 +42302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5791667926702427820, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.g
-      value: 0.36410227
+      value: 0.36407354
       objectReference: {fileID: 0}
     - target: {fileID: 5791667926702427820, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.r
@@ -41663,7 +42314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5791667926702427820, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreColor.b
-      value: 0.30107
+      value: 0.30104125
       objectReference: {fileID: 0}
     - target: {fileID: 5791667926702427820, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveVisuals.y
@@ -41675,7 +42326,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5791667926702427820, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: horizonColor.g
-      value: 0.19138029
+      value: 0.19135305
       objectReference: {fileID: 0}
     - target: {fileID: 5791667926702427820, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveDirection1
@@ -41695,11 +42346,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5791667926702427820, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.g
-      value: 0.30891308
+      value: 0.30888435
       objectReference: {fileID: 0}
     - target: {fileID: 5791667926702427820, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.r
-      value: 0.20307723
+      value: 0.20304999
       objectReference: {fileID: 0}
     - target: {fileID: 5791667926702427820, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: reflectionStrength
@@ -41743,7 +42394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5852120465578017160, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.g
-      value: 0.36410248
+      value: 0.36407375
       objectReference: {fileID: 0}
     - target: {fileID: 5852120465578017160, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.r
@@ -41759,7 +42410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5852120465578017160, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreColor.b
-      value: 0.3010702
+      value: 0.30104148
       objectReference: {fileID: 0}
     - target: {fileID: 5852120465578017160, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreColor.g
@@ -41787,7 +42438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5852120465578017160, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: horizonColor.g
-      value: 0.1913805
+      value: 0.19135326
       objectReference: {fileID: 0}
     - target: {fileID: 5852120465578017160, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreFoamSpeed
@@ -41827,11 +42478,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5852120465578017160, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.g
-      value: 0.30891332
+      value: 0.3088846
       objectReference: {fileID: 0}
     - target: {fileID: 5852120465578017160, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.r
-      value: 0.20307744
+      value: 0.2030502
       objectReference: {fileID: 0}
     - target: {fileID: 5852120465578017160, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: lightingSmoothness
@@ -41883,7 +42534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5854769768442393086, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.g
-      value: 0.36410233
+      value: 0.3640736
       objectReference: {fileID: 0}
     - target: {fileID: 5854769768442393086, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.r
@@ -41895,7 +42546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5854769768442393086, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreColor.b
-      value: 0.30107006
+      value: 0.30104133
       objectReference: {fileID: 0}
     - target: {fileID: 5854769768442393086, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveVisuals.y
@@ -41907,7 +42558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5854769768442393086, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: horizonColor.g
-      value: 0.19138035
+      value: 0.19135311
       objectReference: {fileID: 0}
     - target: {fileID: 5854769768442393086, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveDirection1
@@ -41927,11 +42578,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5854769768442393086, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.g
-      value: 0.30891317
+      value: 0.3088844
       objectReference: {fileID: 0}
     - target: {fileID: 5854769768442393086, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.r
-      value: 0.20307729
+      value: 0.20305005
       objectReference: {fileID: 0}
     - target: {fileID: 5854769768442393086, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: reflectionStrength
@@ -42015,7 +42666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6077056780505130739, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.g
-      value: 0.36410236
+      value: 0.36407363
       objectReference: {fileID: 0}
     - target: {fileID: 6077056780505130739, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.r
@@ -42027,7 +42678,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6077056780505130739, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreColor.b
-      value: 0.3010701
+      value: 0.30104136
       objectReference: {fileID: 0}
     - target: {fileID: 6077056780505130739, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveVisuals.y
@@ -42039,7 +42690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6077056780505130739, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: horizonColor.g
-      value: 0.19138038
+      value: 0.19135314
       objectReference: {fileID: 0}
     - target: {fileID: 6077056780505130739, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveDirection1
@@ -42059,11 +42710,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6077056780505130739, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.g
-      value: 0.3089132
+      value: 0.30888444
       objectReference: {fileID: 0}
     - target: {fileID: 6077056780505130739, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.r
-      value: 0.20307732
+      value: 0.20305008
       objectReference: {fileID: 0}
     - target: {fileID: 6077056780505130739, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: reflectionStrength
@@ -42151,7 +42802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6468785902489581854, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.g
-      value: 0.3641027
+      value: 0.36407393
       objectReference: {fileID: 0}
     - target: {fileID: 6468785902489581854, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.r
@@ -42163,7 +42814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6468785902489581854, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreColor.b
-      value: 0.3010704
+      value: 0.30104166
       objectReference: {fileID: 0}
     - target: {fileID: 6468785902489581854, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveVisuals.y
@@ -42175,7 +42826,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6468785902489581854, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: horizonColor.g
-      value: 0.19138068
+      value: 0.19135344
       objectReference: {fileID: 0}
     - target: {fileID: 6468785902489581854, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveDirection1
@@ -42195,11 +42846,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6468785902489581854, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.g
-      value: 0.3089135
+      value: 0.30888477
       objectReference: {fileID: 0}
     - target: {fileID: 6468785902489581854, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.r
-      value: 0.20307761
+      value: 0.20305037
       objectReference: {fileID: 0}
     - target: {fileID: 6468785902489581854, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: reflectionStrength
@@ -42231,7 +42882,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6650782041754485848, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.g
-      value: 0.36410284
+      value: 0.3640741
       objectReference: {fileID: 0}
     - target: {fileID: 6650782041754485848, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.r
@@ -42243,7 +42894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6650782041754485848, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreColor.b
-      value: 0.30107057
+      value: 0.3010418
       objectReference: {fileID: 0}
     - target: {fileID: 6650782041754485848, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveVisuals.y
@@ -42255,7 +42906,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6650782041754485848, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: horizonColor.g
-      value: 0.19138083
+      value: 0.19135359
       objectReference: {fileID: 0}
     - target: {fileID: 6650782041754485848, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveDirection1
@@ -42275,11 +42926,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6650782041754485848, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.g
-      value: 0.30891365
+      value: 0.30888492
       objectReference: {fileID: 0}
     - target: {fileID: 6650782041754485848, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.r
-      value: 0.20307776
+      value: 0.20305052
       objectReference: {fileID: 0}
     - target: {fileID: 6650782041754485848, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: reflectionStrength
@@ -42463,7 +43114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7568435031402305138, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.g
-      value: 0.36410254
+      value: 0.3640738
       objectReference: {fileID: 0}
     - target: {fileID: 7568435031402305138, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.r
@@ -42479,7 +43130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7568435031402305138, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreColor.b
-      value: 0.30107027
+      value: 0.30104154
       objectReference: {fileID: 0}
     - target: {fileID: 7568435031402305138, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreColor.g
@@ -42507,7 +43158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7568435031402305138, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: horizonColor.g
-      value: 0.19138056
+      value: 0.19135332
       objectReference: {fileID: 0}
     - target: {fileID: 7568435031402305138, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreFoamSpeed
@@ -42547,11 +43198,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7568435031402305138, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.g
-      value: 0.30891338
+      value: 0.30888465
       objectReference: {fileID: 0}
     - target: {fileID: 7568435031402305138, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.r
-      value: 0.2030775
+      value: 0.20305026
       objectReference: {fileID: 0}
     - target: {fileID: 7568435031402305138, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: lightingSmoothness
@@ -42588,6 +43239,26 @@ PrefabInstance:
     - target: {fileID: 7568435031402305138, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreFoamBreakupStrength
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7723508731529063626, guid: 3918561667e789b499339dd413f81259, type: 3}
+      propertyPath: deepColor.g
+      value: 0.3640734
+      objectReference: {fileID: 0}
+    - target: {fileID: 7723508731529063626, guid: 3918561667e789b499339dd413f81259, type: 3}
+      propertyPath: shoreColor.b
+      value: 0.30104113
+      objectReference: {fileID: 0}
+    - target: {fileID: 7723508731529063626, guid: 3918561667e789b499339dd413f81259, type: 3}
+      propertyPath: horizonColor.g
+      value: 0.19135293
+      objectReference: {fileID: 0}
+    - target: {fileID: 7723508731529063626, guid: 3918561667e789b499339dd413f81259, type: 3}
+      propertyPath: underwaterColor.g
+      value: 0.30888423
+      objectReference: {fileID: 0}
+    - target: {fileID: 7723508731529063626, guid: 3918561667e789b499339dd413f81259, type: 3}
+      propertyPath: underwaterColor.r
+      value: 0.20304987
       objectReference: {fileID: 0}
     - target: {fileID: 7840379164882236138, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: m_LocalScale.x
@@ -42659,7 +43330,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8005787927171801503, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.g
-      value: 0.36410278
+      value: 0.36407405
       objectReference: {fileID: 0}
     - target: {fileID: 8005787927171801503, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.r
@@ -42671,7 +43342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8005787927171801503, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreColor.b
-      value: 0.3010705
+      value: 0.30104175
       objectReference: {fileID: 0}
     - target: {fileID: 8005787927171801503, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveVisuals.y
@@ -42683,7 +43354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8005787927171801503, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: horizonColor.g
-      value: 0.19138077
+      value: 0.19135353
       objectReference: {fileID: 0}
     - target: {fileID: 8005787927171801503, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveDirection1
@@ -42703,11 +43374,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8005787927171801503, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.g
-      value: 0.3089136
+      value: 0.30888486
       objectReference: {fileID: 0}
     - target: {fileID: 8005787927171801503, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.r
-      value: 0.2030777
+      value: 0.20305046
       objectReference: {fileID: 0}
     - target: {fileID: 8005787927171801503, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: reflectionStrength
@@ -42755,7 +43426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8837246372889445008, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.g
-      value: 0.3641028
+      value: 0.36407408
       objectReference: {fileID: 0}
     - target: {fileID: 8837246372889445008, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: deepColor.r
@@ -42767,7 +43438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8837246372889445008, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: shoreColor.b
-      value: 0.30107054
+      value: 0.30104178
       objectReference: {fileID: 0}
     - target: {fileID: 8837246372889445008, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveVisuals.y
@@ -42779,7 +43450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8837246372889445008, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: horizonColor.g
-      value: 0.1913808
+      value: 0.19135356
       objectReference: {fileID: 0}
     - target: {fileID: 8837246372889445008, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: waveDirection1
@@ -42799,11 +43470,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8837246372889445008, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.g
-      value: 0.30891362
+      value: 0.3088849
       objectReference: {fileID: 0}
     - target: {fileID: 8837246372889445008, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: underwaterColor.r
-      value: 0.20307773
+      value: 0.2030505
       objectReference: {fileID: 0}
     - target: {fileID: 8837246372889445008, guid: 3918561667e789b499339dd413f81259, type: 3}
       propertyPath: reflectionStrength
@@ -42937,15 +43608,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1640001936950040340, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.15789795
+      value: 0.15789796
       objectReference: {fileID: 0}
     - target: {fileID: 1640001936950040340, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.003654614
+      value: 0.0036546066
       objectReference: {fileID: 0}
     - target: {fileID: 1640001936950040340, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00058438815
+      value: -0.0005843919
       objectReference: {fileID: 0}
     - target: {fileID: 1640001937466779949, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -42973,7 +43644,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938010582089, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99156576
+      value: 0.9915658
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938010582089, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.x
@@ -42981,11 +43652,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938010582089, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0036698654
+      value: 0.0036698433
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938010582089, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0004794821
+      value: -0.00047947842
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938028263544, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: isHit
@@ -43423,15 +44094,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8806053595349075537, guid: e2ce7badae6190149889cff0acb9e954, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 41.561016
+      value: 49.56
       objectReference: {fileID: 0}
     - target: {fileID: 8806053595349075537, guid: e2ce7badae6190149889cff0acb9e954, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -38.087112
+      value: -32.57
       objectReference: {fileID: 0}
     - target: {fileID: 8806053595349075537, guid: e2ce7badae6190149889cff0acb9e954, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 610.94385
+      value: 461.75
       objectReference: {fileID: 0}
     - target: {fileID: 8806053595349075537, guid: e2ce7badae6190149889cff0acb9e954, type: 3}
       propertyPath: m_LocalRotation.w
