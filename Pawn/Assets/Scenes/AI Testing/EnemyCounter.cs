@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EnemyCounter : MonoBehaviour
 {
     private int NumberOfEnemies;
     private int ActiveEnemies;
+    public GameObject fadeEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +18,7 @@ public class EnemyCounter : MonoBehaviour
         {
             if (goArray[i].layer == LayerMask.NameToLayer("whatIsEnemy")) { goList.Add(goArray[i]); }
         }
-        //if (goList.Count == 0) { Debug.Log("Array vacía"); }
+        //if (goList.Count == 0) { Debug.Log("Array vacio"); }
         //Debug.Log(goList.Count/*ToArray()*/);
         NumberOfEnemies = goList.Count;
         ActiveEnemies = NumberOfEnemies;
@@ -28,6 +30,16 @@ public class EnemyCounter : MonoBehaviour
         //FindGameObjectsWithLayer(LayerMask.NameToLayer("whatIsEnemy"));
         ActiveEnemies--;
         gameObject.GetComponent<Text>().text = "Enemigos" + "\n" + ActiveEnemies.ToString() + " / " + NumberOfEnemies;
-        if(ActiveEnemies == 0) { GameObject.Find("HudEnabler").GetComponent<HudMenu>().EndDemo();}
+        if(ActiveEnemies == 0) {
+            //GameObject.Find("HudEnabler").GetComponent<HudMenu>().EndDemo();
+            fadeEffect.SetActive(true);
+            waitTime();
+            SceneManager.LoadScene("Boss");
+        }
+    }
+
+    IEnumerator waitTime()
+    {
+        yield return new WaitForSeconds(2);
     }
 }
