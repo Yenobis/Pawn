@@ -9,6 +9,7 @@ public class EnemyCounter : MonoBehaviour
     private int NumberOfEnemies;
     private int ActiveEnemies;
     public GameObject fadeEffect;
+    //private string boss;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,14 +33,8 @@ public class EnemyCounter : MonoBehaviour
         gameObject.GetComponent<Text>().text = "Enemigos" + "\n" + ActiveEnemies.ToString() + " / " + NumberOfEnemies;
         if(ActiveEnemies == 0) {
             //GameObject.Find("HudEnabler").GetComponent<HudMenu>().EndDemo();
-            fadeEffect.SetActive(true);
-            waitTime();
+            //boss = PlayerPrefs.GetString("Boss");
             SceneManager.LoadScene("Boss");
         }
-    }
-
-    IEnumerator waitTime()
-    {
-        yield return new WaitForSeconds(2);
     }
 }
