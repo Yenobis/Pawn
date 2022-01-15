@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,7 +31,18 @@ public class Sword : MonoBehaviour
                 if (atacando)
                 {
                     //Debug.Log("DAÑOOOOOOOOOOOOOO");
-                    other.gameObject.GetComponent<EnemyAI>().TakeDamage(damage);
+                    try
+                    {
+                        other.gameObject.GetComponent<EnemyAI>().TakeDamage(damage);
+                    }
+                    catch (NullReferenceException) { }
+
+                    try
+                    {
+                        other.gameObject.GetComponent<BossAI>().TakeDamage(damage);
+                    }
+                    catch (NullReferenceException) { }
+                    
                     atacando = false;
 
                 }
@@ -74,7 +86,17 @@ public class Sword : MonoBehaviour
             {
                 if (atacando && stay)
                 {
-                    other.gameObject.GetComponent<EnemyAI>().TakeDamage(damage);
+                    try
+                    {
+                        other.gameObject.GetComponent<EnemyAI>().TakeDamage(damage);
+                    }
+                    catch (NullReferenceException) { }
+
+                    try
+                    {
+                        other.gameObject.GetComponent<BossAI>().TakeDamage(damage);
+                    }
+                    catch (NullReferenceException) { }
                     stay = false;
                     Invoke(nameof(stayToFalse), 1.5f);
 

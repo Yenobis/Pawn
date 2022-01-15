@@ -47,6 +47,8 @@ public class BossAI : MonoBehaviour
     //Attacking
     public float timeBetweenAttacks;
     bool alreadyAttacked;
+    bool recuperandose;
+    bool estoyAtacando;
     public GameObject projectile;
 
     //States
@@ -85,8 +87,8 @@ public class BossAI : MonoBehaviour
     private void Update()
     {
         isWalking = animator.GetBool("isWalking");
-        isRunning = animator.GetBool("isRunning");
-        isAttacking = animator.GetBool("isAttacking");
+        //isRunning = animator.GetBool("isRunning");
+        //isAttacking = animator.GetBool("isAttacking");
 
         if (canSeePlayer)
         {
@@ -106,8 +108,8 @@ public class BossAI : MonoBehaviour
             agent.SetDestination(transform.position);
             playerInSightRange = false;
             playerInAttackRange = true;
-            animator.SetTrigger("Die");
-            animator.SetBool("isAttacking", false);
+            animator.SetTrigger("isDie");
+            //animator.SetBool("isAttacking", false);
 
             if (!desaparecido) Invoke(nameof(Desaparecer), 2f);
             if (desaparecido) { StartCoroutine(Fade()); }
@@ -115,10 +117,16 @@ public class BossAI : MonoBehaviour
             //Destroy(gameObject, 4.2f);
 
         }
-        if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if ((playerInSightRange || playerTooClose) && !playerInAttackRange) { alreadyPatrolling = false; ChasePlayer(); }
-        if (playerInSightRange && playerInAttackRange) { alreadyPatrolling = false; AttackPlayer(); }
-
+        if (recuperandose)
+        {
+            agent.SetDestination(transform.position);
+        }
+        else
+        {
+            if (!playerInSightRange && !playerInAttackRange && !estoyAtacando) Patroling();
+            if ((playerInSightRange || playerTooClose) && !playerInAttackRange && !estoyAtacando) { alreadyPatrolling = false; ChasePlayer(); }
+            if (playerInSightRange && playerInAttackRange) { alreadyPatrolling = false; AttackPlayer(); }
+        }
     }
 
     private void DestruirEnemigo()
@@ -202,10 +210,10 @@ public class BossAI : MonoBehaviour
     private void Patroling()
     {
         GetComponent<NavMeshAgent>().speed = speed;
-        animator.SetBool("isAttacking", false);
-        animator.SetBool("isRunning", false);
-        animator.SetBool("isWalking", true);
-        animator.SetBool("isHit", false);
+        //animator.SetBool("isAttacking", false);
+        //animator.SetBool("isRunning", false);
+        //animator.SetBool("isWalking", true);
+        //animator.SetBool("isHit", false);
 
         /*
         //CASO PARA PATRULLAR POR UNA ZONA, NO BORRAR
@@ -261,9 +269,9 @@ public class BossAI : MonoBehaviour
     {
         GetComponent<NavMeshAgent>().speed = speed + chaseSpeedIncrease;
 
-        animator.SetBool("isAttacking", false);
+        //animator.SetBool("isAttacking", false);
         animator.SetBool("isWalking", true);
-        animator.SetBool("isRunning", true);
+        //animator.SetBool("isRunning", true);
         float distanceToTarget = Vector3.Distance(transform.position, playerRef.transform.position);
         if (distanceToTarget <= tooCloseRange)
         {
@@ -284,8 +292,8 @@ public class BossAI : MonoBehaviour
 
     private void AttackPlayer()
     {
-        animator.SetTrigger("Boss_AttackHead");
-        //animator.SetBool("isWalking", false);
+        
+        animator.SetBool("isWalking", false);
         //animator.SetBool("isRunning", false);
         //Para que el enemigo no se mueva
         agent.SetDestination(transform.position);
@@ -295,7 +303,7 @@ public class BossAI : MonoBehaviour
 
         if (!alreadyAttacked)
         {
-            animator.SetBool("isAttacking", true);
+            animator.SetTrigger("isAttackingMaza");
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
@@ -312,8 +320,8 @@ public class BossAI : MonoBehaviour
 
     private void ResetWalking()
     {
-        animator.SetBool("isHit", false);
-        animator.SetBool("isWalking", false);
+       // animator.SetBool("isHit", false);
+       //animator.SetBool("isWalking", false);
     }
 
 
@@ -321,10 +329,18 @@ public class BossAI : MonoBehaviour
     {
         if (cur_health > 0)
         {
-            animator.SetBool("isHit", true);
+            animator.SetTrigger("isDamaged");
+            //animator.SetBool("isHit", true);
             cur_health -= amount;
+            estoyAtacando = false;
+            recuperandose = true;
+            Invoke(nameof(Recuperacion), 1f);
         }
+    }
 
+    private void Recuperacion()
+    {
+        recuperandose = false;
     }
 
     private void DestroyEnemy()
@@ -350,6 +366,16 @@ public class BossAI : MonoBehaviour
     void notDealingDamage()
     {
         GetComponentInChildren<Sword>().atacando = false;
+    }
+
+    void inicioAtaque()
+    {
+        estoyAtacando = true;
+    }
+
+    void finAtaque()
+    {
+        estoyAtacando = false;
     }
 
 }
