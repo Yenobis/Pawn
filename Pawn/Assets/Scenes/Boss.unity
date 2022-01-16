@@ -1247,7 +1247,7 @@ MonoBehaviour:
   fovRadius: 6
   angle: 143
   sightRange: 8
-  attackRange: 1.5
+  attackRange: 3
   tooCloseRange: 40
   isWalking: 0
   isRunning: 0
@@ -4714,43 +4714,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9b91a6b3292000d43b2033346e7e1db1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.411
+      value: 0.099
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9b91a6b3292000d43b2033346e7e1db1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.394
+      value: 1.095
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9b91a6b3292000d43b2033346e7e1db1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.034
+      value: -0.263
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9b91a6b3292000d43b2033346e7e1db1, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.37430182
+      value: 0.36547962
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9b91a6b3292000d43b2033346e7e1db1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.016790029
+      value: -0.23146349
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9b91a6b3292000d43b2033346e7e1db1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.6680101
+      value: -0.51108104
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9b91a6b3292000d43b2033346e7e1db1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.64294535
+      value: 0.7427284
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9b91a6b3292000d43b2033346e7e1db1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -240.64
+      value: -216.157
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9b91a6b3292000d43b2033346e7e1db1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 102.601
+      value: 117.31
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9b91a6b3292000d43b2033346e7e1db1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -110.62201
+      value: -74.892
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9b91a6b3292000d43b2033346e7e1db1, type: 3}
       propertyPath: m_Name
@@ -45435,11 +45435,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938010582089, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000230968
+      value: 0.00000027567148
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938010582089, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000027939677
+      value: -0.000000033527613
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938028263544, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: isHit
@@ -45539,15 +45539,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938236349301, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.17842436
+      value: 0.17842433
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938236349301, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000027567148
+      value: 0.000000230968
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938236349301, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00000005029142
+      value: -0.00000004284084
       objectReference: {fileID: 0}
     - target: {fileID: 3300303931862885999, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_UpdateMode

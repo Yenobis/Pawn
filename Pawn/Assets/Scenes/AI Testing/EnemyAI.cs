@@ -88,7 +88,7 @@ public class EnemyAI : MonoBehaviour
     {
         isWalking = animator.GetBool("isWalking");
         isRunning = animator.GetBool("isRunning");
-        isAttacking = animator.GetBool("isAttacking");
+        //isAttacking = animator.GetBool("isAttacking");
         
         if (canSeePlayer)
         {
@@ -293,10 +293,9 @@ public class EnemyAI : MonoBehaviour
         pos_player = new Vector3(playerRef.transform.position.x, transform.position.y, playerRef.transform.position.z);
         transform.LookAt(pos_player);
         //GameObject.Find("EnemigoSound").GetComponent<EnemigoSoundManager>().Caminar();
-
         if (!alreadyAttacked && !estoyAtacando)
         {
-            animator.SetBool("isAttacking", true);
+            animator.SetTrigger("isAttacking");
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
@@ -305,8 +304,8 @@ public class EnemyAI : MonoBehaviour
 
     private void ResetAttack()
     {
-        animator.SetBool("isHit", false);
-        animator.SetBool("isAttacking", false);
+        animator.ResetTrigger("isAttacking");
+        //animator.SetBool("isAttacking", false);
         alreadyAttacked = false;
         //animator.SetBool("isHit", false);
     }

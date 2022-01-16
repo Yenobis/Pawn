@@ -48,9 +48,9 @@ public class animationState : MonoBehaviour
         
         if (!isAttacking && attackPressed && cur_health > 0 && !estoyAtacando)
         {
-            animator.SetBool("isAttacking", true);
+            animator.SetTrigger("isAttacking");
         } else if  (isAttacking && !attackPressed) {
-            animator.SetBool("isAttacking", false);
+            //animator.SetBool("isAttacking", false);
         }
 
         if (cur_health <= 0)
@@ -81,7 +81,7 @@ public class animationState : MonoBehaviour
     void finAtaque()
     {
         estoyAtacando = false;
-        animator.SetBool("isAttacking", false);
+        
     }
 
 }

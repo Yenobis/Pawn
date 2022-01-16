@@ -10,11 +10,11 @@ public class Sword : MonoBehaviour
     [HideInInspector] public bool stay = false;
     [HideInInspector] public bool atacando = false;
     
-    Collider m_ObjectCollider;
+    //Collider m_ObjectCollider;
     // Start is called before the first frame update
     void Start()
     {
-        m_ObjectCollider = GetComponent<BoxCollider>();
+        //m_ObjectCollider = GetComponent<BoxCollider>();
     }
 
     // Update is called once per frame
