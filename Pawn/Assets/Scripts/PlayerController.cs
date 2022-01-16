@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour
     }
     public void TakeDamage(float amount)
     {
-
+        //GetComponentInChildren<animationState>().;
         animator.SetBool("isHit", true);
         cur_health = Math.Max(cur_health - amount, 0);
         StartCoroutine(isHitFalse(1));

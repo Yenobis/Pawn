@@ -47,7 +47,8 @@ public class EnemyAI : MonoBehaviour
 
     //Attacking
     public float timeBetweenAttacks;
-    bool alreadyAttacked;
+    bool alreadyAttacked = false;
+    bool estoyAtacando = false;
     public GameObject projectile;
     
     //States
@@ -293,7 +294,7 @@ public class EnemyAI : MonoBehaviour
         transform.LookAt(pos_player);
         //GameObject.Find("EnemigoSound").GetComponent<EnemigoSoundManager>().Caminar();
 
-        if (!alreadyAttacked)
+        if (!alreadyAttacked && !estoyAtacando)
         {
             animator.SetBool("isAttacking", true);
             alreadyAttacked = true;
@@ -351,5 +352,14 @@ public class EnemyAI : MonoBehaviour
     {
         GetComponentInChildren<Sword>().atacando = false;
     }
+    void inicioAtaque()
+    {
+        estoyAtacando = true;
+    }
 
+    void finAtaque()
+    {
+        estoyAtacando = false;
+        //animator.SetBool("isAttacking", false);
+    }
 }

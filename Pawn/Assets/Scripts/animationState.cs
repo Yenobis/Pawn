@@ -7,7 +7,7 @@ public class animationState : MonoBehaviour
     private int life;
     private float cur_health;
     Animator animator;
-
+    bool estoyAtacando;
 
     void Start()
     {
@@ -46,7 +46,7 @@ public class animationState : MonoBehaviour
         }
 
         
-        if (!isAttacking && attackPressed && cur_health > 0)
+        if (!isAttacking && attackPressed && cur_health > 0 && !estoyAtacando)
         {
             animator.SetBool("isAttacking", true);
         } else if  (isAttacking && !attackPressed) {
@@ -72,5 +72,16 @@ public class animationState : MonoBehaviour
         GetComponentInChildren<Sword>().atacando = false;
 
     }
-    
+
+    void inicioAtaque()
+    {
+        estoyAtacando = true;
+    }
+
+    void finAtaque()
+    {
+        estoyAtacando = false;
+        animator.SetBool("isAttacking", false);
+    }
+
 }
