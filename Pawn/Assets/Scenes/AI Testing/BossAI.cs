@@ -126,7 +126,7 @@ public class BossAI : MonoBehaviour
         {
             if (!playerInSightRange && !playerInAttackRange && !estoyAtacando && !destruido) Patroling();
             if ((playerInSightRange || playerTooClose) && !playerInAttackRange && !estoyAtacando && !destruido) { alreadyPatrolling = false; ChasePlayer(); }
-            if (playerInSightRange && playerInAttackRange && !destruido) { alreadyPatrolling = false; AttackPlayer(); }
+            if (playerInSightRange && playerInAttackRange && !destruido && !alreadyAttacked) { alreadyPatrolling = false; AttackPlayer(); }
         }
     }
 
@@ -268,7 +268,15 @@ public class BossAI : MonoBehaviour
 
     private void ChasePlayer()
     {
-        GetComponent<NavMeshAgent>().speed = speed + chaseSpeedIncrease;
+        if (cur_health / max_health >= 0.5)
+        {
+             GetComponent<NavMeshAgent>().speed = speed + chaseSpeedIncrease;
+        }
+        else
+        {
+            GetComponent<NavMeshAgent>().speed = speed + 2f * chaseSpeedIncrease;
+        }
+        
 
         //animator.SetBool("isAttacking", false);
         animator.SetBool("isWalking", true);
@@ -304,7 +312,15 @@ public class BossAI : MonoBehaviour
 
         if (!alreadyAttacked)
         {
-            animator.SetTrigger("isAttackingMaza");
+            if(cur_health/ max_health >= 0.5)
+            {
+                animator.SetTrigger("isAttackingMaza");
+            }
+            else
+            {
+                animator.SetTrigger("isAttackingHead");
+            }
+            
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
@@ -332,7 +348,12 @@ public class BossAI : MonoBehaviour
         {
             if(cur_health - amount > 0)
             {
-                animator.SetTrigger("isDamaged");
+                if (cur_health / max_health <= 0.5)
+                {
+                    animator.SetTrigger("isDamaged");
+                    estoyAtacando = false;
+                }
+                
             }
             else
             {
@@ -342,7 +363,6 @@ public class BossAI : MonoBehaviour
             }
             //animator.SetBool("isHit", true);
             cur_health -= amount;
-            estoyAtacando = false;
             recuperandose = true;
             Invoke(nameof(Recuperacion), 1f);
         }
@@ -370,12 +390,27 @@ public class BossAI : MonoBehaviour
 
     void dealingDamage()
     {
-        GetComponentInChildren<Sword>().atacando = true;
+        if (cur_health / max_health >= 0.5)
+        {
+            GetComponentInChildren<Sword>().atacando = true;
+        }
+        else
+        {
+            GetComponentInChildren<HeadAttack>().atacando = true;
+        }
+        
     }
 
     void notDealingDamage()
     {
-        GetComponentInChildren<Sword>().atacando = false;
+        if (cur_health / max_health >= 0.5)
+        {
+            GetComponentInChildren<Sword>().atacando = false;
+        }
+        else
+        {
+            GetComponentInChildren<HeadAttack>().atacando = false;
+        }
     }
 
     void inicioAtaque()
