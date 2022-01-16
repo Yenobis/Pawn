@@ -64,6 +64,7 @@ public class Sword : MonoBehaviour
             {
                 if (atacando)
                 {
+                    Debug.Log(gameObject.name);
                     //Debug.Log("DAÑOOOOOOOOOOOOOO");
                     other.gameObject.GetComponent<PlayerController>().TakeDamage(damage);
                     atacando = false;

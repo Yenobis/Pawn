@@ -102,37 +102,38 @@ public class BossAI : MonoBehaviour
         }
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
         playerTooClose = Physics.CheckSphere(transform.position, tooCloseRange, whatIsPlayer);
-
-        if (cur_health <= 0)
+        /*
+        if (cur_health <= 0 && !destruido)
         {
             agent.SetDestination(transform.position);
+            destruido = true;
             playerInSightRange = false;
             playerInAttackRange = true;
-            animator.SetTrigger("isDie");
+            animator.SetTrigger("isDead");
             //animator.SetBool("isAttacking", false);
 
-            if (!desaparecido) Invoke(nameof(Desaparecer), 2f);
-            if (desaparecido) { StartCoroutine(Fade()); }
+            //if (!desaparecido) Invoke(nameof(Desaparecer), 2f);
+            //if (desaparecido) { StartCoroutine(Fade()); }
             Invoke(nameof(DestruirEnemigo), 4.2f);
             //Destroy(gameObject, 4.2f);
 
-        }
-        if (recuperandose)
+        }*/
+        if (recuperandose || destruido)
         {
             agent.SetDestination(transform.position);
         }
         else
         {
-            if (!playerInSightRange && !playerInAttackRange && !estoyAtacando) Patroling();
-            if ((playerInSightRange || playerTooClose) && !playerInAttackRange && !estoyAtacando) { alreadyPatrolling = false; ChasePlayer(); }
-            if (playerInSightRange && playerInAttackRange) { alreadyPatrolling = false; AttackPlayer(); }
+            if (!playerInSightRange && !playerInAttackRange && !estoyAtacando && !destruido) Patroling();
+            if ((playerInSightRange || playerTooClose) && !playerInAttackRange && !estoyAtacando && !destruido) { alreadyPatrolling = false; ChasePlayer(); }
+            if (playerInSightRange && playerInAttackRange && !destruido) { alreadyPatrolling = false; AttackPlayer(); }
         }
     }
 
     private void DestruirEnemigo()
     {
-        if (!destruido) { GameObject.Find("Text").GetComponent<EnemyCounter>().UpdateEnemies(); }
-        destruido = true;
+        //if (!destruido) { GameObject.Find("Text").GetComponent<EnemyCounter>().UpdateEnemies(); }
+        //destruido = true;
         Destroy(gameObject);
 
     }
@@ -329,7 +330,16 @@ public class BossAI : MonoBehaviour
     {
         if (cur_health > 0)
         {
-            animator.SetTrigger("isDamaged");
+            if(cur_health - amount > 0)
+            {
+                animator.SetTrigger("isDamaged");
+            }
+            else
+            {
+                animator.SetTrigger("isDead");
+                Invoke(nameof(DestruirEnemigo), 4.2f);
+                destruido = true;
+            }
             //animator.SetBool("isHit", true);
             cur_health -= amount;
             estoyAtacando = false;
