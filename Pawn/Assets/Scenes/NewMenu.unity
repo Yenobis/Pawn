@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4044,11 +4044,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4140973860171543324, guid: 0f682d4b7622ba544ba3478c48241a29, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 3.118988
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4140973860171543324, guid: 0f682d4b7622ba544ba3478c48241a29, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -374.3
+      value: -421
       objectReference: {fileID: 0}
     - target: {fileID: 4140973860171543326, guid: 0f682d4b7622ba544ba3478c48241a29, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -7568,7 +7568,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3, y: 151}
+  m_AnchoredPosition: {x: -6, y: 241}
   m_SizeDelta: {x: -187.9347, y: -936.2626}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1343788539
@@ -7591,8 +7591,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Jennifer Canuto Soler\n\nSergio Mu\xF1oz Alejandre\n\nDiego Ramos Nebot\n\nLuis
-    Alberto \xC1lvarez Zavaleta\n\nDavid Arnal Garc\xEDa\n"
+  m_text: "Jennifer Canuto Soler\nSergio Mu\xF1oz Alejandre\nDiego Ramos Nebot\nLuis
+    Alberto \xC1lvarez Zavaleta\nDavid Arnal Garc\xEDa\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 05d5a675cb4cdf1448c78196afd3ba5f, type: 2}
   m_sharedMaterial: {fileID: -6931232786873480148, guid: 05d5a675cb4cdf1448c78196afd3ba5f, type: 2}
@@ -8132,7 +8132,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.5138855, y: 335.3156}
+  m_AnchoredPosition: {x: -1, y: 367}
   m_SizeDelta: {x: -187.9347, y: -891.4313}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1584965837
@@ -8675,7 +8675,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 1290, y: -23}
+  m_AnchoredPosition: {x: 1290, y: -15}
   m_SizeDelta: {x: 724.6419, y: 1005.9617}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1633687704
@@ -8750,7 +8750,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3, y: -14}
+  m_AnchoredPosition: {x: -5, y: -65}
   m_SizeDelta: {x: -187.9347, y: -936.2626}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1635659471
@@ -8773,7 +8773,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Pablo Moreno Mart\xEDnez\n\nSiboney Luis Mart\xEDn\n"
+  m_text: "Pablo Moreno Mart\xEDnez\nSiboney Luis Mart\xEDn\n\nElena Mar\xEDa Carrero
+    Le\xF3n\nPablo Martinez Alcaraz\nTamara Garc\xEDa Mu\xF1oz\nEnrique Gandia Soriano\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 05d5a675cb4cdf1448c78196afd3ba5f, type: 2}
   m_sharedMaterial: {fileID: -6931232786873480148, guid: 05d5a675cb4cdf1448c78196afd3ba5f, type: 2}
@@ -11146,7 +11147,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.5138855, y: 312.9}
+  m_AnchoredPosition: {x: -2, y: 315}
   m_SizeDelta: {x: -187.9347, y: -936.2626}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &282182023306454277
