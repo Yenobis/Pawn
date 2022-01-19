@@ -2799,6 +2799,7 @@ GameObject:
   m_Component:
   - component: {fileID: 209853335}
   - component: {fileID: 209853334}
+  - component: {fileID: 209853336}
   m_Layer: 0
   m_Name: HudEnabler
   m_TagString: Untagged
@@ -2813,7 +2814,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209853333}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc8463d88baeb42408a108c92db86a91, type: 3}
   m_Name: 
@@ -2842,6 +2843,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &209853336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209853333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb07d21eb2e91e4b8743176d099680b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hudPause: {fileID: 292882541}
+  opciones: {fileID: 1264353403}
+  muerte: {fileID: 480593031}
+  MenuController: {fileID: 279229924}
+  PauseMenu: {fileID: 693004635}
+  NoPartidaGuardada: {fileID: 1554629455}
+  Volumen: {fileID: 1506154534}
+  Graphics: {fileID: 1467631117}
+  player: {fileID: 1480584778}
+  menuVictoria: {fileID: 1370642458}
 --- !u!1 &212160477
 GameObject:
   m_ObjectHideFlags: 0
@@ -46461,15 +46484,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938010582089, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.121602714
+      value: 0.12160271
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938010582089, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000027567148
+      value: 0.0000002682209
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938010582089, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000033527613
+      value: -0.000000031664968
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938028263544, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: isHit
@@ -46569,15 +46592,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938236349301, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.17842433
+      value: 0.17842436
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938236349301, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000230968
+      value: 0.00000026077032
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938236349301, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00000004284084
+      value: -0.00000004656613
       objectReference: {fileID: 0}
     - target: {fileID: 3300303931862885999, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_UpdateMode
