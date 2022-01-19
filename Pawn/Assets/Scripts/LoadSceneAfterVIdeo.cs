@@ -12,7 +12,13 @@
      {
           VideoPlayer.loopPointReached += LoadScene;
      }
-     void LoadScene(VideoPlayer vp)
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return)){
+            SceneManager.LoadScene(Escena);
+        }
+    }
+    void LoadScene(VideoPlayer vp)
      {
           SceneManager.LoadScene( Escena );
       }
