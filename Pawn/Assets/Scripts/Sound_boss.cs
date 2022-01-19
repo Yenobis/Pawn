@@ -12,7 +12,7 @@ public class Sound_boss : MonoBehaviour
         TOTAL_SONIDOS
     }
 
-    private bool isWalking, isRunning, isAttacking;
+    private bool isWalking, isRunning, isAttacking, isHit;
     private float cur_health;
     private bool alreadyDead = false;
 
@@ -35,19 +35,20 @@ public class Sound_boss : MonoBehaviour
         BossAI variables = gameObject.GetComponent<BossAI>();
         isWalking = variables.isWalking;
         isRunning = variables.isRunning;
+        isHit = variables.isHit;
         cur_health = variables.cur_health;
         isAttacking = GetComponentInChildren<Sword>().atacando;
         //isAttacking = variables.isAttacking;
         if (Time.timeScale == 1f)
         {
-            if (!isAttacking && (isWalking || isRunning))
+            if ((!isAttacking || !isHit) && (isWalking || isRunning))
             {
                 if (!audios[(int)Sonidos.CAMINAR].isPlaying)
                 {
                     audios[(int)Sonidos.CAMINAR].Play();
                 }
             }
-            if (isAttacking)
+            if (isAttacking || isHit)
             {
                 audios[(int)Sonidos.CAMINAR].Pause();
                 if (!audios[(int)Sonidos.GOLPE].isPlaying)
