@@ -16,9 +16,10 @@ public class HudMenuBoss : MonoBehaviour
     [SerializeField] GameObject Graphics;
     [Header("Pawn")]
     [SerializeField] GameObject player;
+    [SerializeField] GameObject boss;
     [SerializeField] GameObject menuVictoria;
     private bool isOnDeathScreen;
-    private bool victory = false;
+    public bool victory = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +61,12 @@ public class HudMenuBoss : MonoBehaviour
 
             }
         }
+        if (boss.GetComponent<BossAI>().destruido == true)
+        {
+
+            StartCoroutine(EndDemo());
+        }
+
         if (player.GetComponent<PlayerController>().cur_health == 0 && !isOnDeathScreen)
         {
             player.GetComponent<PlayerController>().enabled = false;
@@ -68,16 +75,6 @@ public class HudMenuBoss : MonoBehaviour
             muerte.GetComponent<Animator>().SetBool("muerte", true);
             StartCoroutine(DeathMenu());
         }
-        else
-        {
-            if (victory)
-            {
-                Cursor.visible = true;
-                menuVictoria.SetActive(true);
-                //GameObject.Find("HUDContinuara").SetActive(true);
-            }
-        }
-
 
     }
 
@@ -89,9 +86,13 @@ public class HudMenuBoss : MonoBehaviour
 
 
     }
-    public void EndDemo()
+    public IEnumerator EndDemo()
     {
+        yield return new WaitForSeconds(6.2f);
         victory = true;
+        Cursor.visible = true;
+        menuVictoria.SetActive(true);
+        //GameObject.Find("HUDContinuara").SetActive(true);
     }
     public void Resume()
     {

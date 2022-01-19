@@ -62,7 +62,7 @@ public class BossAI : MonoBehaviour
     [HideInInspector]
     public bool isWalking, isRunning, isAttacking, isHit;
     private bool desaparecido = false;
-    private bool destruido = false;
+    public bool destruido = false;
     private Quaternion rotacion_inicial;
 
     private void Awake()
