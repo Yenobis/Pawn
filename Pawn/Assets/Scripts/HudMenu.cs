@@ -29,6 +29,11 @@ public class HudMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown("b"))
+        {
+            SceneManager.LoadScene("Boss");
+        }
+
         if (Input.GetKeyDown("escape"))
         {
             hudPause.SetActive(!hudPause.activeSelf);
