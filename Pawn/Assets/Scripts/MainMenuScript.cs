@@ -76,16 +76,6 @@ public class MainMenuScript : MonoBehaviour
         resolutionDropdown.AddOptions(opciones);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
-        //Fullscreen
-        if (PlayerPrefs.GetInt(MasterFullScreen) == 1) {
-            fullscreenToggle.isOn = true;
-            Screen.fullScreen = true;
-        }else
-        {
-            fullscreenToggle.isOn = false;
-            Screen.fullScreen = false;
-        }
-       
 
         firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
         if (firstPlayInt == 0 )
@@ -95,6 +85,10 @@ public class MainMenuScript : MonoBehaviour
             musicSlider.value = defVolumen;
             sfxSlider.value = defVolumen;
             ambientalSlider.value = defVolumen;
+            SetResolution(-1);
+            fullscreenToggle.isOn = true;
+            Screen.fullScreen = true;
+
             PlayerPrefs.SetInt(FirstPlay, -1);
         }
         else {
@@ -106,6 +100,18 @@ public class MainMenuScript : MonoBehaviour
             //Resolución
             resolutionDropdown.value = PlayerPrefs.GetInt(MasterResolution);
             //Cambiar brillo del postprocesado **FALTA VERLO**
+
+            //Fullscreen
+            if (PlayerPrefs.GetInt(MasterFullScreen) == 1)
+            {
+                fullscreenToggle.isOn = true;
+                Screen.fullScreen = true;
+            }
+            else
+            {
+                fullscreenToggle.isOn = false;
+                Screen.fullScreen = false;
+            }
         }
     }
     public void LoadScene(string escena){
