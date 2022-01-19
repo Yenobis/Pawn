@@ -217,7 +217,6 @@ public class MainMenuScript : MonoBehaviour
         PlayerPrefs.SetFloat(BackgroundMusic, musicSlider.value);
         PlayerPrefs.SetFloat(SfxMusic, sfxSlider.value);
         PlayerPrefs.SetFloat(AmbientalMusic, ambientalSlider.value);
-        StartCoroutine(ConfirmationBox());
     }
     public void DescartarVolumen()
     {
@@ -267,8 +266,6 @@ public class MainMenuScript : MonoBehaviour
         PlayerPrefs.SetInt(MasterFullScreen, _isFullScreen ? 1:0);
         Screen.fullScreen = _isFullScreen;
 
-
-        StartCoroutine(ConfirmationBox());
     }
 
     public void ResetButtom(string MenuType)
