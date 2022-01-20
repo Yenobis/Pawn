@@ -112,6 +112,10 @@ public class MainMenuScript : MonoBehaviour
                 fullscreenToggle.isOn = false;
                 Screen.fullScreen = false;
             }
+            if (SceneManager.GetActiveScene().name != "NewMenu")
+            {
+                PlayerPrefs.SetString("Partida_Guardada", SceneManager.GetActiveScene().name);
+            }
         }
     }
     public void LoadScene(string escena){
