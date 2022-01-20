@@ -7,8 +7,7 @@ public class animationState : MonoBehaviour
     private int life;
     private float cur_health;
     Animator animator;
-    bool estoyAtacando = false;
-
+    bool estoyAtacando;
 
     void Start()
     {
@@ -21,7 +20,10 @@ public class animationState : MonoBehaviour
         bool keyPressed = false;
         bool isWalking = animator.GetBool("isWalking");
         bool isRunning = animator.GetBool("isRunning");
+<<<<<<< HEAD
         
+=======
+>>>>>>> parent of 635ce24 (Cambios en el ataque de Pawn y en la vida y velocidad entre ataques del jefe)
         bool isAttacking = animator.GetBool("isAttacking");
         bool runPressed = Input.GetKey("left shift");
         //life = GameObject.Find("Pawn").GetComponent<PawnHealthScript>().life;
@@ -47,6 +49,7 @@ public class animationState : MonoBehaviour
             animator.SetBool("isRunning", false);
         }
 
+<<<<<<< HEAD
 
         if (!isAttacking && attackPressed && cur_health > 0)
         {
@@ -55,6 +58,14 @@ public class animationState : MonoBehaviour
         else if (isAttacking && !attackPressed)
         {
             animator.SetBool("isAttacking", false);
+=======
+        
+        if (!isAttacking && attackPressed && cur_health > 0 && !estoyAtacando)
+        {
+            animator.SetTrigger("isAttacking");
+        } else if  (isAttacking && !attackPressed) {
+            //animator.SetBool("isAttacking", false);
+>>>>>>> parent of 635ce24 (Cambios en el ataque de Pawn y en la vida y velocidad entre ataques del jefe)
         }
 
         if (cur_health <= 0)
@@ -87,6 +98,5 @@ public class animationState : MonoBehaviour
         estoyAtacando = false;
         
     }
-
 
 }
