@@ -7,8 +7,7 @@ public class animationState : MonoBehaviour
     private int life;
     private float cur_health;
     Animator animator;
-    bool estoyAtacando = false;
-
+    bool estoyAtacando;
 
     void Start()
     {
@@ -21,8 +20,7 @@ public class animationState : MonoBehaviour
         bool keyPressed = false;
         bool isWalking = animator.GetBool("isWalking");
         bool isRunning = animator.GetBool("isRunning");
-        
-        bool isAttacking = animator.GetBool("isAttacking");
+        //bool isAttacking = animator.GetBool("isAttacking");
         bool runPressed = Input.GetKey("left shift");
         //life = GameObject.Find("Pawn").GetComponent<PawnHealthScript>().life;
         cur_health = GameObject.Find("Pawn").GetComponent<PlayerController>().cur_health;
@@ -48,13 +46,12 @@ public class animationState : MonoBehaviour
         }
 
 
-        if (!isAttacking && attackPressed && cur_health > 0)
+        
+        if (/*!isAttacking && */attackPressed && cur_health > 0 && !estoyAtacando)
         {
-            animator.SetBool("isAttacking", true);
-        }
-        else if (isAttacking && !attackPressed)
-        {
-            animator.SetBool("isAttacking", false);
+            animator.SetTrigger("isAttacking");
+        } else if  (/*isAttacking && */!attackPressed) {
+            //animator.SetBool("isAttacking", false);
         }
 
         if (cur_health <= 0)
@@ -87,6 +84,5 @@ public class animationState : MonoBehaviour
         estoyAtacando = false;
         
     }
-
 
 }

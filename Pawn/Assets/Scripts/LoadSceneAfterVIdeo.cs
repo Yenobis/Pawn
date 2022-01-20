@@ -17,6 +17,13 @@
         if (Input.GetKeyDown(KeyCode.Return)){
             SceneManager.LoadScene(Escena);
         }
+
+        if (Input.GetKeyDown("b")){
+            SceneManager.LoadScene(Escena);
+        }
+
+
+
     }
     void LoadScene(VideoPlayer vp)
      {

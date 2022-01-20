@@ -327,7 +327,7 @@ MonoBehaviour:
   pos_player: {x: 0, y: 0, z: 0}
   walkPointRange: 10
   timeBetweenPoints: 0
-  timeBetweenAttacks: 1.5
+  timeBetweenAttacks: 3
   projectile: {fileID: 0}
   fovRadius: 6
   angle: 190
