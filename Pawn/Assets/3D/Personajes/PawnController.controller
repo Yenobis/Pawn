@@ -332,9 +332,6 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-<<<<<<< HEAD
-    m_Controller: {fileID: 0}
-=======
     m_Controller: {fileID: 9100000}
   - m_Name: isAttacking
     m_Type: 9
@@ -342,7 +339,6 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
->>>>>>> parent of 635ce24 (Cambios en el ataque de Pawn y en la vida y velocidad entre ataques del jefe)
   - m_Name: isHit
     m_Type: 4
     m_DefaultFloat: 0
@@ -354,17 +350,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-<<<<<<< HEAD
-    m_Controller: {fileID: 0}
-  - m_Name: isAttacking
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-=======
     m_Controller: {fileID: 9100000}
->>>>>>> parent of 635ce24 (Cambios en el ataque de Pawn y en la vida y velocidad entre ataques del jefe)
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer

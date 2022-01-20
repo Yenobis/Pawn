@@ -46488,19 +46488,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938010582089, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.y
-<<<<<<< HEAD
       value: 0.00000027567148
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938010582089, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000033527613
-=======
-      value: 0.0000002682209
-      objectReference: {fileID: 0}
-    - target: {fileID: 1640001938010582089, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.000000031664968
->>>>>>> parent of 635ce24 (Cambios en el ataque de Pawn y en la vida y velocidad entre ataques del jefe)
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938028263544, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: isHit
@@ -46604,7 +46596,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938236349301, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalRotation.y
-<<<<<<< HEAD
       value: 0.00000023841858
       objectReference: {fileID: 0}
     - target: {fileID: 1640001938236349301, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
@@ -46658,13 +46649,6 @@ PrefabInstance:
     - target: {fileID: 2547928543342265269, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 74.48051
-=======
-      value: 0.00000026077032
-      objectReference: {fileID: 0}
-    - target: {fileID: 1640001938236349301, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.00000004656613
->>>>>>> parent of 635ce24 (Cambios en el ataque de Pawn y en la vida y velocidad entre ataques del jefe)
       objectReference: {fileID: 0}
     - target: {fileID: 3300303931862885999, guid: dc32ac05e41b36c4fb8b7d3219d705a2, type: 3}
       propertyPath: m_UpdateMode
